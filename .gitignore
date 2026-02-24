@@ -1,0 +1,38 @@
+# Dependencies
+/vendor/
+
+# Composer (libraries typically don't commit lock)
+composer.lock
+
+# PHPUnit
+.phpunit.cache/
+coverage/
+*.coverage
+.phpunit.result.cache
+
+# PHPStan
+.phpstan.cache/
+
+# IDEs
+/.idea/
+/.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env
+.env
+.env.*
+
+# Node (if any tooling adds it)
+node_modules/
+
+# Build artifacts (only if you decide not to commit them)
+# /src/Generated/
+# /resources/openapi/openapi.json
+# /generated/

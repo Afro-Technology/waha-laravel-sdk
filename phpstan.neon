@@ -1,0 +1,21 @@
+includes:
+    - vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    level: 6
+    paths:
+        - src
+        - tests
+
+    excludePaths:
+        - src/Generated
+        - src/Generated/**
+        - src/OpenApi/Tags
+        - src/OpenApi/Tags/**
+        - src/Facades
+        - src/Facades/**
+        - src/OpenApi/WahaApiProxy.php
+        - src/OpenApi/WahaManagerProxy.php
+        - src/OpenApi/WahaTagProxy.php
+
+    treatPhpDocTypesAsCertain: false

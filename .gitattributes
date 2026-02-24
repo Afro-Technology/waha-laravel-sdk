@@ -1,0 +1,9 @@
+* text=auto
+
+# Ensure vendored / generated code doesn't bloat diffs.
+generated/** linguist-generated=true
+
+# Export ignores for release archives
+/.github export-ignore
+/tests export-ignore
+/phpunit.xml.dist export-ignore

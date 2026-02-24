@@ -1,0 +1,73 @@
+name: OpenAPI Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          tools: composer
+          coverage: none
+
+      - name: Setup Node (for npx generator)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Run OpenAPI sync (fetch + generate + ide-helper if changed)
+        env:
+          WAHA_OPENAPI_URL: "https://waha.devlike.pro/swagger/openapi.json"
+          WAHA_SPEC_PATH: "resources/openapi/openapi.json"
+          WAHA_GENERATED_PATH: "src/Generated"
+          WAHA_OPENAPI_GENERATOR_DRIVER: "auto"
+          WAHA_OPENAPI_TIMEOUT: "30"
+          WAHA_OPENAPI_GENERATOR_TIMEOUT: "300"
+        run: php bin/openapi-sync.php
+
+      - name: Check git diff
+        id: diff
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(openapi): sync spec + regenerate client"
+          branch: "bot/openapi-sync"
+          delete-branch: true
+          title: "chore(openapi): sync spec + regenerate client"
+          body: |
+            Automated update:
+            - fetched latest OpenAPI spec
+            - regenerated client
+            - regenerated IDE helper
+          labels: |
+            openapi
+            automation
+          base: main
