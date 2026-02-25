@@ -25,6 +25,7 @@ use Vendor\Waha\WahaManager;
  * @method \Vendor\Waha\OpenApi\Tags\AppsTag apps()
  * @method \Vendor\Waha\OpenApi\Tags\ObservabilityTag observability()
  * @method \Vendor\Waha\OpenApi\Tags\StorageTag storage()
+ *
  * @method mixed getQR(?string $format = 'image', ?string $session = null)
  * @method mixed requestCode(string $phoneNumber, ?string $method = null, ?string $session = null)
  * @method mixed screenshot(?string $session = null)
@@ -128,7 +129,7 @@ use Vendor\Waha\WahaManager;
  * @method mixed removeParticipants(string $id, array $participants, ?string $session = null)
  * @method mixed promoteToAdmin(string $id, array $participants, ?string $session = null)
  * @method mixed demoteToAdmin(string $id, array $participants, ?string $session = null)
- * @method mixed setPresence(string $presence, ?string $chatId = null, ?string $session = null)
+ * @method mixed setPresence(string $chatId, string $presence, ?string $session = null)
  * @method array getPresenceAll(?string $session = null)
  * @method \Vendor\Waha\Generated\Model\WAHAChatPresences getPresence(string $chatId, ?string $session = null)
  * @method mixed subscribe(string $chatId, ?string $session = null)
@@ -141,7 +142,6 @@ use Vendor\Waha\WahaManager;
  * @method mixed browserTrace(?float $seconds = 30, ?array $categories = ['*'], ?string $session = null)
  * @method mixed convertVoice(?string $url = null, ?string $data = null, ?string $session = null)
  * @method mixed convertVideo(?string $url = null, ?string $data = null, ?string $session = null)
- * @method mixed webhook(string $id, ?string $session = null)
  * @method array getLanguages()
  */
 final class WahaManagerProxy

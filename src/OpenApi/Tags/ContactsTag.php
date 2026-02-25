@@ -21,4 +21,6 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method \Vendor\Waha\Generated\Model\LidToPhoneNumber findPNByLid(string $lid, ?string $session = null)
  * @method \Vendor\Waha\Generated\Model\LidToPhoneNumber findLIDByPhoneNumber(string $phoneNumber, ?string $session = null)
  */
-final class ContactsTag extends WahaTagProxy {}
+final class ContactsTag extends WahaTagProxy
+{
+}

@@ -13,7 +13,8 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed get(string $id)
  * @method mixed update(string $id, string $id2, string $app, array $config, ?bool $enabled = true, ?string $session = null)
  * @method mixed delete(string $id)
- * @method mixed webhook(string $id, ?string $session = null)
  * @method array getLanguages()
  */
-final class AppsTag extends WahaTagProxy {}
+final class AppsTag extends WahaTagProxy
+{
+}

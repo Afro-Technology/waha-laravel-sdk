@@ -35,4 +35,6 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed promoteToAdmin(string $id, array $participants, ?string $session = null)
  * @method mixed demoteToAdmin(string $id, array $participants, ?string $session = null)
  */
-final class GroupsTag extends WahaTagProxy {}
+final class GroupsTag extends WahaTagProxy
+{
+}

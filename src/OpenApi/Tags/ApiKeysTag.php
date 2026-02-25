@@ -13,4 +13,6 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method \Vendor\Waha\Generated\Model\ApiKeyDTO update(string $id, bool $isAdmin, bool $isActive, ?string $session = null)
  * @method mixed delete(string $id)
  */
-final class ApiKeysTag extends WahaTagProxy {}
+final class ApiKeysTag extends WahaTagProxy
+{
+}
