@@ -107,7 +107,7 @@ jobs:
 
           # Canonical spec path in repo
           WAHA_SPEC_PATH: "resources/openapi/openapi.json"
-          WAHA_GENERATED_PATH: "src/Generated"
+          WAHA_GENERATED_PATH: "src"
 
           # Deterministic generator
           WAHA_OPENAPI_GENERATOR_DRIVER: "docker"
