@@ -60,7 +60,7 @@ function stripFileScheme(string $input): string
 
 $urlOrPath = envString('WAHA_OPENAPI_URL', 'https://waha.devlike.pro/swagger/openapi.json');
 $specPath = envString('WAHA_SPEC_PATH', PackagePath::path('resources/openapi/openapi.json'));
-$outDir = envString('WAHA_GENERATED_PATH', PackagePath::path('src/Generated'));
+$outDir = envString('WAHA_GENERATED_PATH', PackagePath::path('src'));
 
 $basicAuth = [
     'username' => envString('WAHA_SWAGGER_USERNAME', ''),
