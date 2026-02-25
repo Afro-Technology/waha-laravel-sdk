@@ -23,7 +23,6 @@ src/Generated/Api/PresenceApi.php
 src/Generated/Api/ProfileApi.php
 src/Generated/Api/SessionsApi.php
 src/Generated/Api/StatusApi.php
-src/Generated/Api/StorageApi.php
 src/Generated/ApiException.php
 src/Generated/Configuration.php
 src/Generated/HeaderSelector.php

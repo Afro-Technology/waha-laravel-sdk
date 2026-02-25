@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static ?array lastHttp()
  * @method static ?string lastHttpCurl()
  * @method static mixed withDebug(callable $fn)
+ *
  * @method static \Vendor\Waha\OpenApi\Tags\SessionsTag sessions()
  * @method static \Vendor\Waha\OpenApi\Tags\PairingTag pairing()
  * @method static \Vendor\Waha\OpenApi\Tags\ProfileTag profile()
@@ -33,6 +34,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \Vendor\Waha\OpenApi\Tags\AppsTag apps()
  * @method static \Vendor\Waha\OpenApi\Tags\ObservabilityTag observability()
  * @method static \Vendor\Waha\OpenApi\Tags\StorageTag storage()
+ *
  * @method static mixed getQR(?string $format = 'image', ?string $session = null)
  * @method static mixed requestCode(string $phoneNumber, ?string $method = null, ?string $session = null)
  * @method static mixed screenshot(?string $session = null)
@@ -136,7 +138,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static mixed removeParticipants(string $id, array $participants, ?string $session = null)
  * @method static mixed promoteToAdmin(string $id, array $participants, ?string $session = null)
  * @method static mixed demoteToAdmin(string $id, array $participants, ?string $session = null)
- * @method static mixed setPresence(string $presence, ?string $chatId = null, ?string $session = null)
+ * @method static mixed setPresence(string $chatId, string $presence, ?string $session = null)
  * @method static array getPresenceAll(?string $session = null)
  * @method static \Vendor\Waha\Generated\Model\WAHAChatPresences getPresence(string $chatId, ?string $session = null)
  * @method static mixed subscribe(string $chatId, ?string $session = null)
@@ -149,7 +151,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static mixed browserTrace(?float $seconds = 30, ?array $categories = ['*'], ?string $session = null)
  * @method static mixed convertVoice(?string $url = null, ?string $data = null, ?string $session = null)
  * @method static mixed convertVideo(?string $url = null, ?string $data = null, ?string $session = null)
- * @method static mixed webhook(string $id, ?string $session = null)
  * @method static array getLanguages()
  */
 class Waha extends Facade
