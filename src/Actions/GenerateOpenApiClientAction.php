@@ -20,12 +20,14 @@ final class GenerateOpenApiClientAction
      */
     public function execute(string $specPath, string $outDir, array $options = [], ?callable $logger = null): void
     {
-        if (! is_file($specPath)) {
-            throw new \RuntimeException("Spec file not found: {$specPath}");
+        $specAbs = $this->toAbsolutePath($specPath);
+        if (! is_file($specAbs)) {
+            throw new \RuntimeException("Spec file not found: {$specAbs}");
         }
 
-        if (! is_dir($outDir)) {
-            @mkdir($outDir, 0777, true);
+        $outAbs = $this->toAbsolutePath($outDir);
+        if (! is_dir($outAbs)) {
+            @mkdir($outAbs, 0777, true);
         }
 
         $driver = (string) ($options['driver'] ?? 'auto');
@@ -38,10 +40,10 @@ final class GenerateOpenApiClientAction
         }
 
         $process = match ($driver) {
-            'npx' => $this->makeNpxProcess($specPath, $outDir),
-            'jar' => $this->makeJarProcess($specPath, $outDir, (string) ($options['jar'] ?? '')),
-            'binary' => $this->makeBinaryProcess($specPath, $outDir, (string) ($options['binary'] ?? 'openapi-generator-cli')),
-            'docker' => $this->makeDockerProcess($specPath, $outDir, (string) ($options['docker_image'] ?? 'openapitools/openapi-generator-cli:v7.6.0')),
+            'npx' => $this->makeNpxProcess($specAbs, $outAbs),
+            'jar' => $this->makeJarProcess($specAbs, $outAbs, (string) ($options['jar'] ?? '')),
+            'binary' => $this->makeBinaryProcess($specAbs, $outAbs, (string) ($options['binary'] ?? 'openapi-generator-cli')),
+            'docker' => $this->makeDockerProcess($specAbs, $outAbs, (string) ($options['docker_image'] ?? 'openapitools/openapi-generator-cli:v7.6.0')),
             default => null,
         };
 
@@ -50,7 +52,7 @@ final class GenerateOpenApiClientAction
         }
 
         $process->setTimeout((int) ($options['timeout_seconds'] ?? 300));
-        $process->run(function ($type, $buffer) use ($logger) {
+        $process->run(function ($type, $buffer) use ($logger): void {
             $logger && $logger((string) $buffer);
         });
 
@@ -58,7 +60,7 @@ final class GenerateOpenApiClientAction
             throw new \RuntimeException('OpenAPI generation failed.');
         }
 
-        $logger && $logger("Generated client into: {$outDir}\n");
+        $logger && $logger("Generated client into: {$outAbs}\n");
     }
 
     /**
@@ -76,45 +78,48 @@ final class GenerateOpenApiClientAction
         ];
     }
 
-    private function makeDockerProcess(string $specPath, string $outDir, string $image): Process
+    private function makeDockerProcess(string $specAbs, string $outAbs, string $image): Process
     {
+        // Docker volume mount için host path absolute olmak zorunda.
+        $specDir = dirname($specAbs);
+
         $cmd = array_merge(
             [
                 'docker', 'run', '--rm',
-                '-v', dirname($specPath).':/spec',
-                '-v', $outDir.':/out',
+                '-v', $specDir.':/spec',
+                '-v', $outAbs.':/out',
                 $image,
                 'generate',
             ],
-            $this->commonArgs('/spec/'.basename($specPath), '/out')
+            $this->commonArgs('/spec/'.basename($specAbs), '/out')
         );
 
         return new Process($cmd);
     }
 
-    private function makeBinaryProcess(string $specPath, string $outDir, string $binary): Process
+    private function makeBinaryProcess(string $specAbs, string $outAbs, string $binary): Process
     {
-        $cmd = array_merge([$binary, 'generate'], $this->commonArgs($specPath, $outDir));
+        $cmd = array_merge([$binary, 'generate'], $this->commonArgs($specAbs, $outAbs));
 
         return new Process($cmd);
     }
 
-    private function makeJarProcess(string $specPath, string $outDir, string $jar): Process
+    private function makeJarProcess(string $specAbs, string $outAbs, string $jar): Process
     {
         if ($jar === '' || ! is_file($jar)) {
             throw new \RuntimeException('JAR driver selected but jar path is missing. Provide --jar or set waha.openapi.generator.jar');
         }
 
-        $cmd = array_merge(['java', '-jar', $jar, 'generate'], $this->commonArgs($specPath, $outDir));
+        $cmd = array_merge(['java', '-jar', $jar, 'generate'], $this->commonArgs($specAbs, $outAbs));
 
         return new Process($cmd);
     }
 
-    private function makeNpxProcess(string $specPath, string $outDir): Process
+    private function makeNpxProcess(string $specAbs, string $outAbs): Process
     {
         $cmd = array_merge(
             ['npx', '--yes', '@openapitools/openapi-generator-cli', 'generate'],
-            $this->commonArgs($specPath, $outDir)
+            $this->commonArgs($specAbs, $outAbs)
         );
 
         return new Process($cmd);
@@ -171,5 +176,29 @@ final class GenerateOpenApiClientAction
         $process->run();
 
         return $process->isSuccessful();
+    }
+
+    private function toAbsolutePath(string $path): string
+    {
+        if ($path === '') {
+            return $path;
+        }
+
+        // Unix absolute
+        if (str_starts_with($path, '/')) {
+            return $path;
+        }
+
+        // Windows absolute (C:\ or C:/)
+        if (preg_match('/^[A-Za-z]:[\\\\\\/]/', $path) === 1) {
+            return $path;
+        }
+
+        $cwd = getcwd();
+        if ($cwd === false) {
+            return $path;
+        }
+
+        return rtrim($cwd, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.ltrim($path, DIRECTORY_SEPARATOR);
     }
 }
