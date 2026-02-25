@@ -72,41 +72,19 @@ jobs:
           docker logs waha --tail 200
           exit 1
 
-      - name: Fetch OpenAPI spec from WAHA (-json) into repo file
+      - name: Run OpenAPI sync (fetch + generate + ide-helper if changed)
         env:
-          SWAGGER_USER: ${{ secrets.WAHA_SWAGGER_USERNAME }}
-          SWAGGER_PASS: ${{ secrets.WAHA_SWAGGER_PASSWORD }}
-        run: |
-          set -e
-          mkdir -p resources/openapi
+          # Source is live WAHA instance
+          WAHA_OPENAPI_URL: "http://localhost:3000/-json"
 
-          CURL_AUTH_ARGS=""
-          if [ -n "$SWAGGER_USER" ] && [ -n "$SWAGGER_PASS" ]; then
-            CURL_AUTH_ARGS="-u ${SWAGGER_USER}:${SWAGGER_PASS}"
-          fi
-
-          # Retry fetch to avoid transient "connection reset by peer".
-          for i in {1..10}; do
-            if curl -fsS $CURL_AUTH_ARGS "http://localhost:3000/-json" -o "resources/openapi/openapi.json"; then
-              echo "Fetched spec successfully"
-              exit 0
-            fi
-
-            echo "Fetch failed, retrying... attempt=$i"
-            sleep 2
-          done
-
-          echo "Failed to fetch spec after retries"
-          docker logs waha --tail 200
-          exit 1
-
-      - name: Run OpenAPI sync (generate + ide-helper if changed)
-        env:
-          # Source is local file (your openapi-sync.php supports local paths after your change)
-          WAHA_OPENAPI_URL: "resources/openapi/openapi.json"
+          # Swagger basic auth for fetching spec (if enabled)
+          WAHA_SWAGGER_USERNAME: ${{ secrets.WAHA_SWAGGER_USERNAME }}
+          WAHA_SWAGGER_PASSWORD: ${{ secrets.WAHA_SWAGGER_PASSWORD }}
 
           # Canonical spec path in repo
           WAHA_SPEC_PATH: "resources/openapi/openapi.json"
+
+          # Generated output root (per your current layout)
           WAHA_GENERATED_PATH: "src"
 
           # Deterministic generator
@@ -117,14 +95,18 @@ jobs:
           WAHA_OPENAPI_GENERATOR_TIMEOUT: "300"
         run: php bin/openapi-sync.php
 
-      - name: Run Pint (fix)
+      - name: Run Pint (fix) - only if changes exist
         run: |
           set -e
-          if [ -x "vendor/bin/pint" ]; then
-            vendor/bin/pint
+          if ! git diff --quiet; then
+            if [ -x "vendor/bin/pint" ]; then
+              vendor/bin/pint
+            else
+              echo "Pint not found at vendor/bin/pint. Make sure laravel/pint is installed."
+              exit 1
+            fi
           else
-            echo "Pint not found at vendor/bin/pint. Make sure laravel/pint is installed."
-            exit 1
+            echo "No changes detected; skipping Pint."
           fi
 
       - name: Stop WAHA
@@ -155,7 +137,7 @@ jobs:
             - fetched OpenAPI spec from running WAHA instance (/ -json)
             - regenerated client
             - regenerated IDE helper
-            - applied Pint fixes
+            - applied Pint fixes (if any)
           labels: |
             openapi
             automation
