@@ -14,7 +14,7 @@ The format is based on **Keep a Changelog**, and this project follows **Semantic
 ### Fixed
 -
 
-## [0.1.0] - YYYY-MM-DD
+## [0.1.0] - 2026-02-25
 ### Added
 - Initial public release.
 - OpenAPI fetch/generate/update tooling.
