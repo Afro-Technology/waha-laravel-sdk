@@ -41,16 +41,33 @@ jobs:
             -e "WHATSAPP_SWAGGER_PASSWORD=${{ secrets.WAHA_SWAGGER_PASSWORD }}" \
             devlikeapro/waha:latest
 
-      - name: Wait for WAHA
+      - name: Wait for WAHA (-json reachable)
+        env:
+          SWAGGER_USER: ${{ secrets.WAHA_SWAGGER_USERNAME }}
+          SWAGGER_PASS: ${{ secrets.WAHA_SWAGGER_PASSWORD }}
         run: |
           set -e
-          for i in {1..60}; do
-            if curl -fsS "http://localhost:3000/-json" > /dev/null; then
-              echo "WAHA is ready"
+
+          # Build curl auth args only if both secrets are provided.
+          CURL_AUTH_ARGS=""
+          if [ -n "$SWAGGER_USER" ] && [ -n "$SWAGGER_PASS" ]; then
+            CURL_AUTH_ARGS="-u ${SWAGGER_USER}:${SWAGGER_PASS}"
+          fi
+
+          # Wait until /-json returns HTTP 200.
+          # We tolerate connection resets and 401 while the service is starting / credentials mismatch.
+          for i in {1..90}; do
+            code=$(curl -sS -o /dev/null -w "%{http_code}" $CURL_AUTH_ARGS "http://localhost:3000/-json" || true)
+
+            if [ "$code" = "200" ]; then
+              echo "WAHA is ready (/-json -> 200)"
               exit 0
             fi
+
+            echo "Waiting for WAHA... attempt=$i http_code=$code"
             sleep 2
           done
+
           echo "WAHA did not become ready in time"
           docker logs waha --tail 200
           exit 1
@@ -63,16 +80,29 @@ jobs:
           set -e
           mkdir -p resources/openapi
 
-          # If Swagger basic auth is configured, use it. Otherwise fetch without auth.
+          CURL_AUTH_ARGS=""
           if [ -n "$SWAGGER_USER" ] && [ -n "$SWAGGER_PASS" ]; then
-            curl -fsS -u "${SWAGGER_USER}:${SWAGGER_PASS}" "http://localhost:3000/-json" -o "resources/openapi/openapi.json"
-          else
-            curl -fsS "http://localhost:3000/-json" -o "resources/openapi/openapi.json"
+            CURL_AUTH_ARGS="-u ${SWAGGER_USER}:${SWAGGER_PASS}"
           fi
+
+          # Retry fetch to avoid transient "connection reset by peer".
+          for i in {1..10}; do
+            if curl -fsS $CURL_AUTH_ARGS "http://localhost:3000/-json" -o "resources/openapi/openapi.json"; then
+              echo "Fetched spec successfully"
+              exit 0
+            fi
+
+            echo "Fetch failed, retrying... attempt=$i"
+            sleep 2
+          done
+
+          echo "Failed to fetch spec after retries"
+          docker logs waha --tail 200
+          exit 1
 
       - name: Run OpenAPI sync (generate + ide-helper if changed)
         env:
-          # Treat source as local path (your script supports it after your change)
+          # Source is local file (your openapi-sync.php supports local paths after your change)
           WAHA_OPENAPI_URL: "resources/openapi/openapi.json"
 
           # Canonical spec path in repo
@@ -116,10 +146,10 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(openapi): Sync spec + regenerate client"
+          commit-message: "chore(openapi): sync spec + regenerate client"
           branch: "bot/openapi-sync"
           delete-branch: true
-          title: "chore(openapi): Sync spec + regenerate client"
+          title: "chore(openapi): sync spec + regenerate client"
           body: |
             Automated update:
             - fetched OpenAPI spec from running WAHA instance (/ -json)
