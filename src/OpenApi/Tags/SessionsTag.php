@@ -18,5 +18,8 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method \Vendor\Waha\Generated\Model\SessionDTO stop(?string $session = null)
  * @method \Vendor\Waha\Generated\Model\SessionDTO logout(?string $session = null)
  * @method \Vendor\Waha\Generated\Model\SessionDTO restart(?string $session = null)
+ * @method \Vendor\Waha\Generated\Model\SessionDTO start(string $name, ?\Vendor\Waha\Generated\Model\SessionConfig $config = null)
+ * @method mixed stop(string $name, ?bool $logout = false)
+ * @method mixed logout(string $name)
  */
 final class SessionsTag extends WahaTagProxy {}

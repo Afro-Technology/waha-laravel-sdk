@@ -17,5 +17,6 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed cpuProfile(?float $seconds = 30)
  * @method mixed heapsnapshot()
  * @method mixed browserTrace(?float $seconds = 30, ?array $categories = ['*'], ?string $session = null)
+ * @method \Vendor\Waha\Generated\Model\WAHAEnvironment get()
  */
 final class ObservabilityTag extends WahaTagProxy {}

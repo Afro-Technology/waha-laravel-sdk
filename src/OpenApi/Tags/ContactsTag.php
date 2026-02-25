@@ -16,6 +16,7 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed block(string $contactId, ?string $session = null)
  * @method mixed unblock(string $contactId, ?string $session = null)
  * @method \Vendor\Waha\Generated\Model\Result put(string $chatId, string $firstName, string $lastName, ?string $session = null)
+ * @method array getAll(?float $limit = 100, ?float $offset = 0, ?string $session = null)
  * @method \Vendor\Waha\Generated\Model\CountResponse getLidsCount(?string $session = null)
  * @method \Vendor\Waha\Generated\Model\LidToPhoneNumber findPNByLid(string $lid, ?string $session = null)
  * @method \Vendor\Waha\Generated\Model\LidToPhoneNumber findLIDByPhoneNumber(string $phoneNumber, ?string $session = null)
