@@ -39,7 +39,8 @@ jobs:
           WAHA_OPENAPI_URL: "https://waha.devlike.pro/swagger/openapi.json"
           WAHA_SPEC_PATH: "resources/openapi/openapi.json"
           WAHA_GENERATED_PATH: "src/Generated"
-          WAHA_OPENAPI_GENERATOR_DRIVER: "auto"
+          WAHA_OPENAPI_GENERATOR_DRIVER: "docker"
+          WAHA_OPENAPI_GENERATOR_IMAGE: "openapitools/openapi-generator-cli:v7.6.0"
           WAHA_OPENAPI_TIMEOUT: "30"
           WAHA_OPENAPI_GENERATOR_TIMEOUT: "300"
         run: php bin/openapi-sync.php
