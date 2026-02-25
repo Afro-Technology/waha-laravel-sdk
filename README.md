@@ -1,3 +1,7 @@
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/afro-technology/waha-laravel-sdk.svg?style=flat-square)](https://packagist.org/packages/afro-technology/waha-laravel-sdk)
+[![Total Downloads](https://img.shields.io/packagist/dt/afro-technology/waha-laravel-sdk.svg?style=flat-square)](https://packagist.org/packages/afro-technology/waha-laravel-sdk)
+[![License](https://img.shields.io/packagist/l/afro-technology/waha-laravel-sdk.svg?style=flat-square)](LICENSE)
+[![OpenAPI Sync](https://github.com/Afro-Technology/waha-laravel-sdk/actions/workflows/openapi-sync.yml/badge.svg)](https://github.com/Afro-Technology/waha-laravel-sdk/actions/workflows/openapi-sync.yml)
 # WAHA Laravel SDK
 
 Laravel-oriented SDK for **WAHA** (WhatsApp HTTP API / Web WhatsApp gateway).  
