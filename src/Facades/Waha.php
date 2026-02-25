@@ -136,7 +136,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static mixed removeParticipants(string $id, array $participants, ?string $session = null)
  * @method static mixed promoteToAdmin(string $id, array $participants, ?string $session = null)
  * @method static mixed demoteToAdmin(string $id, array $participants, ?string $session = null)
- * @method static mixed setPresence(string $chatId, string $presence, ?string $session = null)
+ * @method static mixed setPresence(string $presence, ?string $chatId = null, ?string $session = null)
  * @method static array getPresenceAll(?string $session = null)
  * @method static \Vendor\Waha\Generated\Model\WAHAChatPresences getPresence(string $chatId, ?string $session = null)
  * @method static mixed subscribe(string $chatId, ?string $session = null)
