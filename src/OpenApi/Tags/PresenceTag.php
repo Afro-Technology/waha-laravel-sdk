@@ -13,6 +13,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method \Vendor\Waha\Generated\Model\WAHAChatPresences getPresence(string $chatId, ?string $session = null)
  * @method mixed subscribe(string $chatId, ?string $session = null)
  */
-final class PresenceTag extends WahaTagProxy
-{
-}
+final class PresenceTag extends WahaTagProxy {}

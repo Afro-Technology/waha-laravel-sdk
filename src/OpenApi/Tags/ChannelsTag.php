@@ -23,6 +23,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method array getSearchCountries(?string $session = null)
  * @method array getSearchCategories(?string $session = null)
  */
-final class ChannelsTag extends WahaTagProxy
-{
-}
+final class ChannelsTag extends WahaTagProxy {}

@@ -10,6 +10,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  *
  * @method mixed rejectCall(string $from, string $id, ?string $session = null)
  */
-final class CallsTag extends WahaTagProxy
-{
-}
+final class CallsTag extends WahaTagProxy {}

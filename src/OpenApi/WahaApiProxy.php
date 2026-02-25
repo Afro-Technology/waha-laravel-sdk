@@ -25,7 +25,6 @@ use Vendor\Waha\Debug\WahaDebugManager;
  * @method \Vendor\Waha\OpenApi\Tags\AppsTag apps()
  * @method \Vendor\Waha\OpenApi\Tags\ObservabilityTag observability()
  * @method \Vendor\Waha\OpenApi\Tags\StorageTag storage()
- *
  * @method mixed getQR(?string $format = 'image', ?string $session = null)
  * @method mixed requestCode(string $phoneNumber, ?string $method = null, ?string $session = null)
  * @method mixed screenshot(?string $session = null)
