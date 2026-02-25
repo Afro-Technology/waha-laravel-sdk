@@ -26,7 +26,7 @@ jobs:
           tools: composer
           coverage: none
 
-      - name: Setup Node (for npx generator)
+      - name: Setup Node (optional; keep if you ever switch driver to npx)
         uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -34,16 +34,73 @@ jobs:
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist
 
-      - name: Run OpenAPI sync (fetch + generate + ide-helper if changed)
+      - name: Start WAHA (latest)
+        run: |
+          docker run -d --name waha -p 3000:3000 \
+            -e "WHATSAPP_SWAGGER_USERNAME=${{ secrets.WAHA_SWAGGER_USERNAME }}" \
+            -e "WHATSAPP_SWAGGER_PASSWORD=${{ secrets.WAHA_SWAGGER_PASSWORD }}" \
+            devlikeapro/waha:latest
+
+      - name: Wait for WAHA
+        run: |
+          set -e
+          for i in {1..60}; do
+            if curl -fsS "http://localhost:3000/-json" > /dev/null; then
+              echo "WAHA is ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "WAHA did not become ready in time"
+          docker logs waha --tail 200
+          exit 1
+
+      - name: Fetch OpenAPI spec from WAHA (-json) into repo file
         env:
-          WAHA_OPENAPI_URL: "https://waha.devlike.pro/swagger/openapi.json"
+          SWAGGER_USER: ${{ secrets.WAHA_SWAGGER_USERNAME }}
+          SWAGGER_PASS: ${{ secrets.WAHA_SWAGGER_PASSWORD }}
+        run: |
+          set -e
+          mkdir -p resources/openapi
+
+          # If Swagger basic auth is configured, use it. Otherwise fetch without auth.
+          if [ -n "$SWAGGER_USER" ] && [ -n "$SWAGGER_PASS" ]; then
+            curl -fsS -u "${SWAGGER_USER}:${SWAGGER_PASS}" "http://localhost:3000/-json" -o "resources/openapi/openapi.json"
+          else
+            curl -fsS "http://localhost:3000/-json" -o "resources/openapi/openapi.json"
+          fi
+
+      - name: Run OpenAPI sync (generate + ide-helper if changed)
+        env:
+          # Treat source as local path (your script supports it after your change)
+          WAHA_OPENAPI_URL: "resources/openapi/openapi.json"
+
+          # Canonical spec path in repo
           WAHA_SPEC_PATH: "resources/openapi/openapi.json"
           WAHA_GENERATED_PATH: "src/Generated"
+
+          # Deterministic generator
           WAHA_OPENAPI_GENERATOR_DRIVER: "docker"
           WAHA_OPENAPI_GENERATOR_IMAGE: "openapitools/openapi-generator-cli:v7.6.0"
+
           WAHA_OPENAPI_TIMEOUT: "30"
           WAHA_OPENAPI_GENERATOR_TIMEOUT: "300"
         run: php bin/openapi-sync.php
+
+      - name: Run Pint (fix)
+        run: |
+          set -e
+          if [ -x "vendor/bin/pint" ]; then
+            vendor/bin/pint
+          else
+            echo "Pint not found at vendor/bin/pint. Make sure laravel/pint is installed."
+            exit 1
+          fi
+
+      - name: Stop WAHA
+        if: always()
+        run: |
+          docker rm -f waha || true
 
       - name: Check git diff
         id: diff
@@ -59,15 +116,16 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(openapi): sync spec + regenerate client"
+          commit-message: "chore(openapi): Sync spec + regenerate client"
           branch: "bot/openapi-sync"
           delete-branch: true
-          title: "chore(openapi): sync spec + regenerate client"
+          title: "chore(openapi): Sync spec + regenerate client"
           body: |
             Automated update:
-            - fetched latest OpenAPI spec
+            - fetched OpenAPI spec from running WAHA instance (/ -json)
             - regenerated client
             - regenerated IDE helper
+            - applied Pint fixes
           labels: |
             openapi
             automation
