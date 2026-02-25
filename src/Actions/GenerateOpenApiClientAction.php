@@ -74,7 +74,7 @@ final class GenerateOpenApiClientAction
             '-o', $out,
             '--skip-validate-spec',
             '--global-property=apis,models,apiTests=false,modelTests=false,apiDocs=false,modelDocs=false'
-            .',supportingFiles=ApiException.php:Configuration.php:HeaderSelector.php:ObjectSerializer.php',
+            .',supportingFiles=ApiException.php:Configuration.php:HeaderSelector.php:ObjectSerializer.php:ModelInterface.php',
             '--additional-properties=invokerPackage=Vendor\\Waha\\Generated,packageName=VendorWahaGenerated,srcBasePath=Generated',
         ];
     }
