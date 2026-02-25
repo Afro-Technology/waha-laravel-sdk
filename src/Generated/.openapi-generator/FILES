@@ -23,9 +23,9 @@ src/Generated/Api/PresenceApi.php
 src/Generated/Api/ProfileApi.php
 src/Generated/Api/SessionsApi.php
 src/Generated/Api/StatusApi.php
-src/Generated/Api/StorageApi.php
 src/Generated/ApiException.php
 src/Generated/Configuration.php
+src/Generated/FormDataProcessor.php
 src/Generated/HeaderSelector.php
 src/Generated/Model/ApiKeyDTO.php
 src/Generated/Model/ApiKeyRequest.php
@@ -149,7 +149,6 @@ src/Generated/Model/Result.php
 src/Generated/Model/RetriesConfiguration.php
 src/Generated/Model/Row.php
 src/Generated/Model/S3MediaData.php
-src/Generated/Model/ScreenshotControllerScreenshot200Response.php
 src/Generated/Model/Section.php
 src/Generated/Model/SendButtonsRequest.php
 src/Generated/Model/SendListMessage.php

@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.1",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
@@ -30,9 +30,9 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "Vendor\\Waha\\Generated\\" : "src/Generated/" }
+        "psr-4": { "VendorWahaGenerated\\" : "src/Generated/" }
     },
     "autoload-dev": {
-        "psr-4": { "Vendor\\Waha\\Generated\\Test\\" : "test/" }
+        "psr-4": { "VendorWahaGenerated\\Test\\" : "test/" }
     }
 }

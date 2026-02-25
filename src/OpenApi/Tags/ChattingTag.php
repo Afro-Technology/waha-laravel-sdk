@@ -33,4 +33,6 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method array reply(string $chatId, string $text, ?string $reply_to = null, ?bool $linkPreview = true, ?bool $linkPreviewHighQuality = false, ?string $session = null)
  * @method mixed dEPRECATED(string $chatId, string $url, string $title, ?string $session = null)
  */
-final class ChattingTag extends WahaTagProxy {}
+final class ChattingTag extends WahaTagProxy
+{
+}
