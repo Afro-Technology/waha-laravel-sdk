@@ -22,4 +22,6 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed stop(string $name, ?bool $logout = false)
  * @method mixed logout(string $name)
  */
-final class SessionsTag extends WahaTagProxy {}
+final class SessionsTag extends WahaTagProxy
+{
+}

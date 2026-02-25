@@ -25,4 +25,6 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method array unarchiveChat(string $chatId, ?string $session = null)
  * @method array unreadChat(string $chatId, ?string $session = null)
  */
-final class ChatsTag extends WahaTagProxy {}
+final class ChatsTag extends WahaTagProxy
+{
+}

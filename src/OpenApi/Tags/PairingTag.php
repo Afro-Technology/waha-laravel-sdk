@@ -12,4 +12,6 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed requestCode(string $phoneNumber, ?string $method = null, ?string $session = null)
  * @method mixed screenshot(?string $session = null)
  */
-final class PairingTag extends WahaTagProxy {}
+final class PairingTag extends WahaTagProxy
+{
+}

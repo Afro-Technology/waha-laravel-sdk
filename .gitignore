@@ -1,5 +1,6 @@
 # Dependencies
 /vendor/
+/src/.openapi-generator/
 
 # Composer (libraries typically don't commit lock)
 composer.lock
