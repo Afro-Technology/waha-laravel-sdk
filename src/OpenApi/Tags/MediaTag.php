@@ -11,6 +11,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed convertVoice(?string $url = null, ?string $data = null, ?string $session = null)
  * @method mixed convertVideo(?string $url = null, ?string $data = null, ?string $session = null)
  */
-final class MediaTag extends WahaTagProxy
-{
-}
+final class MediaTag extends WahaTagProxy {}

@@ -19,6 +19,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed browserTrace(?float $seconds = 30, ?array $categories = ['*'], ?string $session = null)
  * @method \Vendor\Waha\Generated\Model\WAHAEnvironment get()
  */
-final class ObservabilityTag extends WahaTagProxy
-{
-}
+final class ObservabilityTag extends WahaTagProxy {}

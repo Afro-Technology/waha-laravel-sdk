@@ -15,6 +15,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed delete(string $id)
  * @method array getLanguages()
  */
-final class AppsTag extends WahaTagProxy
-{
-}
+final class AppsTag extends WahaTagProxy {}

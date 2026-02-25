@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static ?array lastHttp()
  * @method static ?string lastHttpCurl()
  * @method static mixed withDebug(callable $fn)
- *
  * @method static \Vendor\Waha\OpenApi\Tags\SessionsTag sessions()
  * @method static \Vendor\Waha\OpenApi\Tags\PairingTag pairing()
  * @method static \Vendor\Waha\OpenApi\Tags\ProfileTag profile()
@@ -34,7 +33,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static \Vendor\Waha\OpenApi\Tags\AppsTag apps()
  * @method static \Vendor\Waha\OpenApi\Tags\ObservabilityTag observability()
  * @method static \Vendor\Waha\OpenApi\Tags\StorageTag storage()
- *
  * @method static mixed getQR(?string $format = 'image', ?string $session = null)
  * @method static mixed requestCode(string $phoneNumber, ?string $method = null, ?string $session = null)
  * @method static mixed screenshot(?string $session = null)

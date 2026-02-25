@@ -16,6 +16,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed putChatLabels(string $chatId, array $labels, ?string $session = null)
  * @method mixed getChatsByLabel(string $labelId, ?string $session = null)
  */
-final class LabelsTag extends WahaTagProxy
-{
-}
+final class LabelsTag extends WahaTagProxy {}

@@ -15,6 +15,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method mixed deleteStatus(?string $id = null, ?array $contacts = null, ?string $session = null)
  * @method \Vendor\Waha\Generated\Model\NewMessageIDResponse getNewMessageId(?string $session = null)
  */
-final class StatusTag extends WahaTagProxy
-{
-}
+final class StatusTag extends WahaTagProxy {}

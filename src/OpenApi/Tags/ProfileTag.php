@@ -14,6 +14,4 @@ use Vendor\Waha\OpenApi\WahaTagProxy;
  * @method \Vendor\Waha\Generated\Model\Result setProfilePicture(mixed $file, ?string $session = null)
  * @method \Vendor\Waha\Generated\Model\Result deleteProfilePicture(?string $session = null)
  */
-final class ProfileTag extends WahaTagProxy
-{
-}
+final class ProfileTag extends WahaTagProxy {}
