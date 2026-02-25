@@ -1,5 +1,5 @@
 {
-  "name": "vendor/waha-laravel-sdk",
+  "name": "afro-technology/waha-laravel-sdk",
   "description": "Laravel SDK for WAHA with multi-host, optional DB pinning, and OpenAPI generated client",
   "type": "library",
   "license": "MIT",
