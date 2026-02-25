@@ -5,10 +5,14 @@ on:
     branches: ["main"]
   pull_request:
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
+jobs:
+  pint:
+    name: Pint
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,11 +28,11 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            vendor
             ~/.composer/cache/files
-          key: composer-${{ runner.os }}-${{ hashFiles('**/composer.lock') }}-${{ hashFiles('composer.json') }}
+            ~/.cache/composer
+          key: composer-${{ runner.os }}-php84-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            composer-${{ runner.os }}-
+            composer-${{ runner.os }}-php84-
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist
@@ -36,8 +40,62 @@ jobs:
       - name: Pint
         run: composer pint:test
 
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          tools: composer
+          coverage: none
+
+      - name: Cache Composer
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.composer/cache/files
+            ~/.cache/composer
+          key: composer-${{ runner.os }}-php84-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-php84-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
+
       - name: PHPStan
         run: composer stan
+
+  phpunit:
+    name: PHPUnit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          tools: composer
+          coverage: none
+
+      - name: Cache Composer
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.composer/cache/files
+            ~/.cache/composer
+          key: composer-${{ runner.os }}-php84-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            composer-${{ runner.os }}-php84-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
 
       - name: PHPUnit
         run: composer test
