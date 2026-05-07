@@ -1,6 +1,6 @@
 <?php
 /**
- * WALocation
+ * GetChatsOverviewParams
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Vendor\Waha\Generated\ObjectSerializer;
 
 /**
- * WALocation Class Doc Comment
+ * GetChatsOverviewParams Class Doc Comment
  *
  * @category Class
  * @package  Vendor\Waha\Generated
@@ -40,7 +40,7 @@ use \Vendor\Waha\Generated\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetChatsOverviewParams implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WALocation';
+    protected static $openAPIModelName = 'GetChatsOverviewParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +57,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'latitude' => 'string',
-        'longitude' => 'string',
-        'live' => 'bool',
-        'name' => 'string',
-        'address' => 'string',
-        'url' => 'string',
-        'description' => 'string',
-        'thumbnail' => 'string'
+        'merge' => 'bool',
+        'limit' => 'float',
+        'offset' => 'float'
     ];
 
     /**
@@ -75,14 +70,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'latitude' => null,
-        'longitude' => null,
-        'live' => null,
-        'name' => null,
-        'address' => null,
-        'url' => null,
-        'description' => null,
-        'thumbnail' => null
+        'merge' => null,
+        'limit' => null,
+        'offset' => null
     ];
 
     /**
@@ -91,14 +81,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'latitude' => false,
-        'longitude' => false,
-        'live' => false,
-        'name' => false,
-        'address' => false,
-        'url' => false,
-        'description' => false,
-        'thumbnail' => false
+        'merge' => false,
+        'limit' => false,
+        'offset' => false
     ];
 
     /**
@@ -187,14 +172,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'latitude' => 'latitude',
-        'longitude' => 'longitude',
-        'live' => 'live',
-        'name' => 'name',
-        'address' => 'address',
-        'url' => 'url',
-        'description' => 'description',
-        'thumbnail' => 'thumbnail'
+        'merge' => 'merge',
+        'limit' => 'limit',
+        'offset' => 'offset'
     ];
 
     /**
@@ -203,14 +183,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'latitude' => 'setLatitude',
-        'longitude' => 'setLongitude',
-        'live' => 'setLive',
-        'name' => 'setName',
-        'address' => 'setAddress',
-        'url' => 'setUrl',
-        'description' => 'setDescription',
-        'thumbnail' => 'setThumbnail'
+        'merge' => 'setMerge',
+        'limit' => 'setLimit',
+        'offset' => 'setOffset'
     ];
 
     /**
@@ -219,14 +194,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'latitude' => 'getLatitude',
-        'longitude' => 'getLongitude',
-        'live' => 'getLive',
-        'name' => 'getName',
-        'address' => 'getAddress',
-        'url' => 'getUrl',
-        'description' => 'getDescription',
-        'thumbnail' => 'getThumbnail'
+        'merge' => 'getMerge',
+        'limit' => 'getLimit',
+        'offset' => 'getOffset'
     ];
 
     /**
@@ -286,14 +256,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('latitude', $data ?? [], null);
-        $this->setIfExists('longitude', $data ?? [], null);
-        $this->setIfExists('live', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('address', $data ?? [], null);
-        $this->setIfExists('url', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('thumbnail', $data ?? [], null);
+        $this->setIfExists('merge', $data ?? [], true);
+        $this->setIfExists('limit', $data ?? [], 20);
+        $this->setIfExists('offset', $data ?? [], null);
     }
 
     /**
@@ -323,15 +288,6 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['latitude'] === null) {
-            $invalidProperties[] = "'latitude' can't be null";
-        }
-        if ($this->container['longitude'] === null) {
-            $invalidProperties[] = "'longitude' can't be null";
-        }
-        if ($this->container['live'] === null) {
-            $invalidProperties[] = "'live' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -348,217 +304,82 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets latitude
+     * Gets merge
      *
-     * @return string
+     * @return bool|null
      */
-    public function getLatitude()
+    public function getMerge()
     {
-        return $this->container['latitude'];
+        return $this->container['merge'];
     }
 
     /**
-     * Sets latitude
+     * Sets merge
      *
-     * @param string $latitude latitude
+     * @param bool|null $merge Merge LID (@lid) and phone-number (@c.us) chats referencing the same contact
      *
      * @return self
      */
-    public function setLatitude($latitude)
+    public function setMerge($merge)
     {
-        if (is_null($latitude)) {
-            throw new \InvalidArgumentException('non-nullable latitude cannot be null');
+        if (is_null($merge)) {
+            throw new \InvalidArgumentException('non-nullable merge cannot be null');
         }
-        $this->container['latitude'] = $latitude;
+        $this->container['merge'] = $merge;
 
         return $this;
     }
 
     /**
-     * Gets longitude
+     * Gets limit
      *
-     * @return string
+     * @return float|null
      */
-    public function getLongitude()
+    public function getLimit()
     {
-        return $this->container['longitude'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets longitude
+     * Sets limit
      *
-     * @param string $longitude longitude
+     * @param float|null $limit limit
      *
      * @return self
      */
-    public function setLongitude($longitude)
+    public function setLimit($limit)
     {
-        if (is_null($longitude)) {
-            throw new \InvalidArgumentException('non-nullable longitude cannot be null');
+        if (is_null($limit)) {
+            throw new \InvalidArgumentException('non-nullable limit cannot be null');
         }
-        $this->container['longitude'] = $longitude;
+        $this->container['limit'] = $limit;
 
         return $this;
     }
 
     /**
-     * Gets live
+     * Gets offset
      *
-     * @return bool
+     * @return float|null
      */
-    public function getLive()
+    public function getOffset()
     {
-        return $this->container['live'];
+        return $this->container['offset'];
     }
 
     /**
-     * Sets live
+     * Sets offset
      *
-     * @param bool $live live
+     * @param float|null $offset offset
      *
      * @return self
      */
-    public function setLive($live)
+    public function setOffset($offset)
     {
-        if (is_null($live)) {
-            throw new \InvalidArgumentException('non-nullable live cannot be null');
+        if (is_null($offset)) {
+            throw new \InvalidArgumentException('non-nullable offset cannot be null');
         }
-        $this->container['live'] = $live;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets address
-     *
-     * @return string|null
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     *
-     * @param string|null $address address
-     *
-     * @return self
-     */
-    public function setAddress($address)
-    {
-        if (is_null($address)) {
-            throw new \InvalidArgumentException('non-nullable address cannot be null');
-        }
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string|null $url url
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        if (is_null($url)) {
-            throw new \InvalidArgumentException('non-nullable url cannot be null');
-        }
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
-        }
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail
-     *
-     * @return string|null
-     */
-    public function getThumbnail()
-    {
-        return $this->container['thumbnail'];
-    }
-
-    /**
-     * Sets thumbnail
-     *
-     * @param string|null $thumbnail thumbnail
-     *
-     * @return self
-     */
-    public function setThumbnail($thumbnail)
-    {
-        if (is_null($thumbnail)) {
-            throw new \InvalidArgumentException('non-nullable thumbnail cannot be null');
-        }
-        $this->container['thumbnail'] = $thumbnail;
+        $this->container['offset'] = $offset;
 
         return $this;
     }

@@ -3,13 +3,14 @@
 namespace Vendor\Waha\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
+use Vendor\Waha\WahaServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
     protected function getPackageProviders($app): array
     {
         return [
-            \Vendor\Waha\WahaServiceProvider::class,
+            WahaServiceProvider::class,
         ];
     }
 

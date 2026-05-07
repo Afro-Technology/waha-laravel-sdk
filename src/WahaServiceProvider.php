@@ -2,6 +2,7 @@
 
 namespace Vendor\Waha;
 
+use Illuminate\Redis\RedisManager;
 use Illuminate\Support\ServiceProvider;
 use Vendor\Waha\Console\FetchOpenApiSpecCommand;
 use Vendor\Waha\Console\GenerateIdeHelperCommand;
@@ -48,7 +49,7 @@ class WahaServiceProvider extends ServiceProvider
             $driver = config('waha.pin_store.driver', 'auto');
             $ttl = (int) config('waha.pin_store.ttl_seconds', 0);
 
-            $redisAvailable = class_exists(\Illuminate\Redis\RedisManager::class) && $app->bound('redis');
+            $redisAvailable = class_exists(RedisManager::class) && $app->bound('redis');
             $dbAvailable = $this->pinTablesExist();
 
             $redis = fn () => new RedisPinStore($app->make('redis'), config('waha.pin_store.redis_connection', 'default'));
@@ -76,7 +77,7 @@ class WahaServiceProvider extends ServiceProvider
             }
 
             // no backing store
-            return new class implements \Vendor\Waha\Contracts\PinStore
+            return new class implements PinStore
             {
                 public function getHostForSession(string $sessionName): ?string
                 {
@@ -124,13 +125,13 @@ class WahaServiceProvider extends ServiceProvider
         });
 
         // Single source of truth: Manager singleton
-        $this->app->singleton(\Vendor\Waha\WahaManager::class, function () {
-            return new \Vendor\Waha\WahaManager(config('waha'), $this->app->make(WahaDebugManager::class));
+        $this->app->singleton(WahaManager::class, function () {
+            return new WahaManager(config('waha'), $this->app->make(WahaDebugManager::class));
         });
 
         // Facade accessor: use alias only (NO separate singleton that calls make() again)
 
-        $this->app->alias(\Vendor\Waha\WahaManager::class, 'waha');
+        $this->app->alias(WahaManager::class, 'waha');
 
     }
 

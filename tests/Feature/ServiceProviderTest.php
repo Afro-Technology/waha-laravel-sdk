@@ -4,6 +4,7 @@ namespace Vendor\Waha\Tests\Feature;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Vendor\Waha\Facades\Waha as WahaFacade;
+use Vendor\Waha\OpenApi\WahaApiProxy;
 use Vendor\Waha\Tests\TestCase;
 use Vendor\Waha\WahaManager;
 
@@ -27,6 +28,6 @@ final class ServiceProviderTest extends TestCase
     public function test_facade_resolves_client(): void
     {
         $client = WahaFacade::host('primary');
-        $this->assertInstanceOf(\Vendor\Waha\OpenApi\WahaApiProxy::class, $client);
+        $this->assertInstanceOf(WahaApiProxy::class, $client);
     }
 }

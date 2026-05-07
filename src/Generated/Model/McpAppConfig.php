@@ -1,6 +1,6 @@
 <?php
 /**
- * WALocation
+ * McpAppConfig
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Vendor\Waha\Generated\ObjectSerializer;
 
 /**
- * WALocation Class Doc Comment
+ * McpAppConfig Class Doc Comment
  *
  * @category Class
  * @package  Vendor\Waha\Generated
@@ -40,7 +40,7 @@ use \Vendor\Waha\Generated\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
+class McpAppConfig implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WALocation';
+    protected static $openAPIModelName = 'McpAppConfig';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +57,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'latitude' => 'string',
-        'longitude' => 'string',
-        'live' => 'bool',
-        'name' => 'string',
-        'address' => 'string',
-        'url' => 'string',
-        'description' => 'string',
-        'thumbnail' => 'string'
+        'actions' => '\Vendor\Waha\Generated\Model\SessionActionsDTO',
+        'key_id' => 'string',
+        'key' => 'string'
     ];
 
     /**
@@ -75,14 +70,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'latitude' => null,
-        'longitude' => null,
-        'live' => null,
-        'name' => null,
-        'address' => null,
-        'url' => null,
-        'description' => null,
-        'thumbnail' => null
+        'actions' => null,
+        'key_id' => null,
+        'key' => null
     ];
 
     /**
@@ -91,14 +81,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'latitude' => false,
-        'longitude' => false,
-        'live' => false,
-        'name' => false,
-        'address' => false,
-        'url' => false,
-        'description' => false,
-        'thumbnail' => false
+        'actions' => false,
+        'key_id' => false,
+        'key' => false
     ];
 
     /**
@@ -187,14 +172,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'latitude' => 'latitude',
-        'longitude' => 'longitude',
-        'live' => 'live',
-        'name' => 'name',
-        'address' => 'address',
-        'url' => 'url',
-        'description' => 'description',
-        'thumbnail' => 'thumbnail'
+        'actions' => 'actions',
+        'key_id' => 'key_id',
+        'key' => 'key'
     ];
 
     /**
@@ -203,14 +183,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'latitude' => 'setLatitude',
-        'longitude' => 'setLongitude',
-        'live' => 'setLive',
-        'name' => 'setName',
-        'address' => 'setAddress',
-        'url' => 'setUrl',
-        'description' => 'setDescription',
-        'thumbnail' => 'setThumbnail'
+        'actions' => 'setActions',
+        'key_id' => 'setKeyId',
+        'key' => 'setKey'
     ];
 
     /**
@@ -219,14 +194,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'latitude' => 'getLatitude',
-        'longitude' => 'getLongitude',
-        'live' => 'getLive',
-        'name' => 'getName',
-        'address' => 'getAddress',
-        'url' => 'getUrl',
-        'description' => 'getDescription',
-        'thumbnail' => 'getThumbnail'
+        'actions' => 'getActions',
+        'key_id' => 'getKeyId',
+        'key' => 'getKey'
     ];
 
     /**
@@ -286,14 +256,9 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('latitude', $data ?? [], null);
-        $this->setIfExists('longitude', $data ?? [], null);
-        $this->setIfExists('live', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('address', $data ?? [], null);
-        $this->setIfExists('url', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('thumbnail', $data ?? [], null);
+        $this->setIfExists('actions', $data ?? [], null);
+        $this->setIfExists('key_id', $data ?? [], null);
+        $this->setIfExists('key', $data ?? [], null);
     }
 
     /**
@@ -323,14 +288,8 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['latitude'] === null) {
-            $invalidProperties[] = "'latitude' can't be null";
-        }
-        if ($this->container['longitude'] === null) {
-            $invalidProperties[] = "'longitude' can't be null";
-        }
-        if ($this->container['live'] === null) {
-            $invalidProperties[] = "'live' can't be null";
+        if ($this->container['actions'] === null) {
+            $invalidProperties[] = "'actions' can't be null";
         }
         return $invalidProperties;
     }
@@ -348,217 +307,82 @@ class WALocation implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets latitude
+     * Gets actions
      *
-     * @return string
+     * @return \Vendor\Waha\Generated\Model\SessionActionsDTO
      */
-    public function getLatitude()
+    public function getActions()
     {
-        return $this->container['latitude'];
+        return $this->container['actions'];
     }
 
     /**
-     * Sets latitude
+     * Sets actions
      *
-     * @param string $latitude latitude
+     * @param \Vendor\Waha\Generated\Model\SessionActionsDTO $actions Permission scopes for the generated API key.
      *
      * @return self
      */
-    public function setLatitude($latitude)
+    public function setActions($actions)
     {
-        if (is_null($latitude)) {
-            throw new \InvalidArgumentException('non-nullable latitude cannot be null');
+        if (is_null($actions)) {
+            throw new \InvalidArgumentException('non-nullable actions cannot be null');
         }
-        $this->container['latitude'] = $latitude;
+        $this->container['actions'] = $actions;
 
         return $this;
     }
 
     /**
-     * Gets longitude
-     *
-     * @return string
-     */
-    public function getLongitude()
-    {
-        return $this->container['longitude'];
-    }
-
-    /**
-     * Sets longitude
-     *
-     * @param string $longitude longitude
-     *
-     * @return self
-     */
-    public function setLongitude($longitude)
-    {
-        if (is_null($longitude)) {
-            throw new \InvalidArgumentException('non-nullable longitude cannot be null');
-        }
-        $this->container['longitude'] = $longitude;
-
-        return $this;
-    }
-
-    /**
-     * Gets live
-     *
-     * @return bool
-     */
-    public function getLive()
-    {
-        return $this->container['live'];
-    }
-
-    /**
-     * Sets live
-     *
-     * @param bool $live live
-     *
-     * @return self
-     */
-    public function setLive($live)
-    {
-        if (is_null($live)) {
-            throw new \InvalidArgumentException('non-nullable live cannot be null');
-        }
-        $this->container['live'] = $live;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
+     * Gets key_id
      *
      * @return string|null
      */
-    public function getName()
+    public function getKeyId()
     {
-        return $this->container['name'];
+        return $this->container['key_id'];
     }
 
     /**
-     * Sets name
+     * Sets key_id
      *
-     * @param string|null $name name
+     * @param string|null $key_id ID of the API key created for this app. Read-only.
      *
      * @return self
      */
-    public function setName($name)
+    public function setKeyId($key_id)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($key_id)) {
+            throw new \InvalidArgumentException('non-nullable key_id cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['key_id'] = $key_id;
 
         return $this;
     }
 
     /**
-     * Gets address
+     * Gets key
      *
      * @return string|null
      */
-    public function getAddress()
+    public function getKey()
     {
-        return $this->container['address'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets address
+     * Sets key
      *
-     * @param string|null $address address
+     * @param string|null $key The API key value. Populated on read; not persisted in this record.
      *
      * @return self
      */
-    public function setAddress($address)
+    public function setKey($key)
     {
-        if (is_null($address)) {
-            throw new \InvalidArgumentException('non-nullable address cannot be null');
+        if (is_null($key)) {
+            throw new \InvalidArgumentException('non-nullable key cannot be null');
         }
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string|null $url url
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        if (is_null($url)) {
-            throw new \InvalidArgumentException('non-nullable url cannot be null');
-        }
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
-        }
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail
-     *
-     * @return string|null
-     */
-    public function getThumbnail()
-    {
-        return $this->container['thumbnail'];
-    }
-
-    /**
-     * Sets thumbnail
-     *
-     * @param string|null $thumbnail thumbnail
-     *
-     * @return self
-     */
-    public function setThumbnail($thumbnail)
-    {
-        if (is_null($thumbnail)) {
-            throw new \InvalidArgumentException('non-nullable thumbnail cannot be null');
-        }
-        $this->container['thumbnail'] = $thumbnail;
+        $this->container['key'] = $key;
 
         return $this;
     }
