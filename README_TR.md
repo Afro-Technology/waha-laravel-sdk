@@ -26,9 +26,10 @@ WAHA (WhatsApp HTTP API / Web WhatsApp gateway) için Laravel odaklı bir SDK.
   - [Response formatları](#response-formatları)
   - [Debug & son HTTP çağrısı](#debug--son-http-çağrısı)
 - [Webhook](#webhook)
-  - [webhook_secret ayarı](#webhook_secret-ayarı)
-  - [İmza doğrulama (WebhookVerifier)](#imza-doğrulama-webhookverifier)
-  - [Örnek route/controller](#örnek-routecontroller)
+  - [Endpoint ve secret](#endpoint-ve-secret)
+  - [Processing modu](#processing-modu)
+  - [Handlerlar](#handlerlar)
+  - [Event storage](#event-storage)
 - [OpenAPI süreci](#openapi-süreci)
 - [IDE Helper](#ide-helper)
 - [Test & CI](#test--ci)
@@ -56,7 +57,7 @@ Laravel auto-discovery varsayılan olarak açık.
 ### Config publish (önerilir)
 
 ```bash
-php artisan vendor:publish --provider="Vendor\Waha\WahaServiceProvider" --tag="waha-config"
+php artisan vendor:publish --provider="AfroTechnology\Waha\WahaServiceProvider" --tag="waha-config"
 ```
 
 `config/waha.php` oluşur.
@@ -185,7 +186,7 @@ WAHA_RESPONSE_FORMAT=model   # model|array|json
 ## Hızlı Başlangıç
 
 ```php
-use Vendor\Waha\Facades\Waha;
+use AfroTechnology\Waha\Facades\Waha;
 
 $msg = Waha::sendText(
     chatId: '905xxxxxxxxx@c.us',
@@ -292,80 +293,106 @@ Waha::withDebug(function () {
 
 WAHA, gelen mesajlar / event’ler için webhook ile sistemine HTTP istekleri atabilir.
 
-### webhook_secret ayarı
+### Endpoint ve secret
 
-SDK, host bazında şu path’ten secret okur:
+`waha.webhooks.enabled` true olduğunda paket şu route’u otomatik register eder:
 
-```php
-config('waha.hosts.<hostKey>.webhook_secret')
+```text
+POST /webhooks/waha/{hostKey}
 ```
 
-Örnek `.env`:
+Route stateless çalışır ve `{hostKey}` ile ilgili host’un webhook secret değerini çözer:
 
 ```env
 WAHA_PRIMARY_WEBHOOK_SECRET=super-long-random-secret
 ```
 
-**Aynı secret’ı WAHA tarafında da tanımlamak zorundasın** (WAHA’nın kurulumuna göre yeri değişebilir).
+Aynı secret’ı WAHA tarafında da tanımlamalısın. Paket WAHA webhook HMAC header’larını event, handler, job veya storage çalıştırmadan önce doğrular.
 
-### İmza doğrulama (WebhookVerifier)
+Beklenen WAHA header’ları:
 
-Pakette şunu bulacaksın:
+- `X-Webhook-Hmac`
+- `X-Webhook-Hmac-Algorithm`
+- `X-Webhook-Request-Id`
+- `X-Webhook-Timestamp`
 
-- `Vendor\Waha\Security\WebhookVerifier`
+### Processing modu
 
-Bu sınıf, request’in **raw body**’sini alır ve host’un `webhook_secret` değeriyle HMAC üretip imzayı doğrular.
+Default processing modu `sync`; böylece yeni kurulum queue worker olmadan da çalışır:
 
-Notlar:
-
-- İmza header formatı şu olabilir:
-  - `sha256=<hex>`
-  - `<hex>`
-- Header adı WAHA kurulumuna göre değişebilir. Birçok setup’ta benzeri kullanılır: `X-Waha-Signature`.
-
-### Örnek route/controller
-
-**routes/api.php**
-
-```php
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Vendor\Waha\Security\WebhookVerifier;
-
-Route::post('/webhooks/waha/{hostKey}', function (Request $request, string $hostKey, WebhookVerifier $verifier) {
-    $raw = $request->getContent();
-
-    // Header adını WAHA webhook ayarına göre değiştir
-    $signature = $request->header('X-Waha-Signature');
-
-    if (!$verifier->verify($hostKey, $raw, $signature)) {
-        abort(401, 'Invalid webhook signature');
-    }
-
-    $payload = $request->json()->all();
-
-    // WAHA payload yapısı deploy’a göre değişebilir.
-    // İlk kurulumda dd($payload) ile şekli gör, sonra event bazlı yönlendir:
-    $event = $payload['event'] ?? null;
-
-    if ($event === 'message') {
-        $message = $payload['payload'] ?? $payload;
-        // db’ye yaz, media indir, workflow tetikle vb.
-    }
-
-    return response()->json(['ok' => true]);
-});
+```env
+WAHA_WEBHOOKS_PROCESSING_MODE=sync
 ```
 
-**Güvenlik:** imzayı doğrulamadan payload’ı işleme.
+Production için `queue` modu önerilir. Böylece WAHA hızlıca cevap alır, uygulama içi işler Laravel worker içinde yürür:
+
+```env
+WAHA_WEBHOOKS_PROCESSING_MODE=queue
+WAHA_WEBHOOKS_QUEUE_CONNECTION=redis
+WAHA_WEBHOOKS_QUEUE_NAME=waha-webhooks
+```
+
+Queue modunda paket request’i doğrular, gerekiyorsa inbox event olarak kaydeder, `ProcessWahaWebhookJob` dispatch eder ve JSON cevabı hemen döner. Sync modunda handler HTTP request içinde çalışır; bu da WAHA’nın uygulama işini beklemesine neden olabilir.
+
+### Handlerlar
+
+WAHA event isimlerini `config/waha.php` içinde handler class’larına map edebilirsin:
+
+```php
+'webhooks' => [
+    'handlers' => [
+        'message.any' => \App\Waha\Handlers\AnyMessageHandler::class,
+        'message.*' => \App\Waha\Handlers\MessageHandler::class,
+    ],
+],
+```
+
+Handler class şu contract’ı implement etmeli:
+
+```php
+use AfroTechnology\Waha\Webhooks\Contracts\WahaWebhookHandler;
+use AfroTechnology\Waha\Webhooks\Events\WahaWebhookReceived;
+
+final class AnyMessageHandler implements WahaWebhookHandler
+{
+    public function handle(WahaWebhookReceived $event): void
+    {
+        $payload = $event->payload;
+    }
+}
+```
+
+### Event storage
+
+Event storage default kapalıdır. Açmak istiyorsan önce paket migration’larını publish edip migrate et:
+
+```bash
+php artisan vendor:publish --provider="AfroTechnology\Waha\WahaServiceProvider" --tag="waha-migrations"
+php artisan migrate
+```
+
+Sonra storage’ı aç:
+
+```env
+WAHA_WEBHOOKS_STORE_ENABLED=true
+WAHA_WEBHOOKS_STORE_RAW=true
+WAHA_WEBHOOKS_STORE_RETENTION_DAYS=7
+```
+
+Stored event kayıtları payload metadata’sının yanında `queued`, `processing`, `processed`, `failed`, attempt sayısı, timestamp’ler ve son hata bilgisini tutar. Retry için Laravel’in normal queue retry araçlarını kullan.
+
+**Güvenlik:** webhook payload’ını güvenilmeyen input olarak ele al. Paket kabul edilen request’leri işlemeden önce doğrular.
 
 ---
 
 ## OpenAPI süreci
 
 SDK, WAHA OpenAPI spec’ini kullanır ve generated client üretir.
+Generated client sınıfları `AfroTechnology\Waha\Generated` namespace’i altında
+üretilir; README’deki facade/tag örnekleri paket içinde expose edilen proxy surface
+ile uyumludur.
 
-Komutlar:
+Paketi kullanan Laravel uygulaması içindeki komutlar:
 
 - Spec çek:
   ```bash
@@ -383,6 +410,10 @@ Komutlar:
   ```
 
 Ayarlar: `config/waha.php` → `openapi`.
+
+Bu paket reposunda ve zamanlanmış GitHub Actions sync sürecinde paket-local
+entrypoint `php bin/openapi-sync.php` komutudur; spec’i çeker, client/proxy
+surface’i paket namespace’iyle yeniden üretir ve diff’i review için bırakır.
 
 ---
 

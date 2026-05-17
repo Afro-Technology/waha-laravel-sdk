@@ -30,9 +30,10 @@ It provides:
   - [Response formats](#response-formats)
   - [Debug & last HTTP](#debug--last-http)
 - [Webhooks](#webhooks)
-  - [Configuring webhook_secret](#configuring-webhook_secret)
-  - [Verifying signatures (WebhookVerifier)](#verifying-signatures-webhookverifier)
-  - [Example route/controller](#example-routecontroller)
+  - [Endpoint and secret](#endpoint-and-secret)
+  - [Processing mode](#processing-mode)
+  - [Handlers](#handlers)
+  - [Event storage](#event-storage)
 - [OpenAPI workflow](#openapi-workflow)
 - [IDE Helper](#ide-helper)
 - [Testing & CI](#testing--ci)
@@ -60,7 +61,7 @@ Laravel package discovery is enabled by default.
 ### Publish config (recommended)
 
 ```bash
-php artisan vendor:publish --provider="Vendor\Waha\WahaServiceProvider" --tag="waha-config"
+php artisan vendor:publish --provider="AfroTechnology\Waha\WahaServiceProvider" --tag="waha-config"
 ```
 
 This creates `config/waha.php`.
@@ -189,7 +190,7 @@ WAHA_RESPONSE_FORMAT=model   # model|array|json
 ## Quick Start
 
 ```php
-use Vendor\Waha\Facades\Waha;
+use AfroTechnology\Waha\Facades\Waha;
 
 $msg = Waha::sendText(
     chatId: '905xxxxxxxxx@c.us',
@@ -296,80 +297,106 @@ Waha::withDebug(function () {
 
 WAHA can deliver inbound events (messages, status updates, etc.) to your Laravel app via HTTP webhooks.
 
-### Configuring webhook_secret
+### Endpoint and secret
 
-This SDK expects a shared secret per host under:
+When `waha.webhooks.enabled` is true, the package registers this route:
 
-```php
-config('waha.hosts.<hostKey>.webhook_secret')
+```text
+POST /webhooks/waha/{hostKey}
 ```
 
-Example `.env`:
+The route is stateless and uses the configured host key to resolve the webhook secret:
 
 ```env
 WAHA_PRIMARY_WEBHOOK_SECRET=super-long-random-secret
 ```
 
-**You must configure the same secret in WAHA** (how/where depends on your WAHA deployment).
+Configure the same secret in WAHA. The package verifies WAHA webhook HMAC headers before dispatching events, handlers, jobs, or storage.
 
-### Verifying signatures (WebhookVerifier)
+Expected WAHA headers:
 
-The package ships with:
+- `X-Webhook-Hmac`
+- `X-Webhook-Hmac-Algorithm`
+- `X-Webhook-Request-Id`
+- `X-Webhook-Timestamp`
 
-- `Vendor\Waha\Security\WebhookVerifier`
+### Processing mode
 
-It verifies an **HMAC signature** of the raw request body using the host’s `webhook_secret`.
+The default processing mode is `sync` so a fresh install works without a queue worker:
 
-Important details:
-
-- The verifier accepts signature formats:
-  - `sha256=<hex>` (common)
-  - `<hex>` (raw)
-- Header name is WAHA/deployment specific. Many setups use something like `X-Waha-Signature`.
-
-### Example route/controller
-
-**routes/api.php**
-
-```php
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Vendor\Waha\Security\WebhookVerifier;
-
-Route::post('/webhooks/waha/{hostKey}', function (Request $request, string $hostKey, WebhookVerifier $verifier) {
-    $raw = $request->getContent();
-
-    // Adjust header name to match your WAHA webhook configuration
-    $signature = $request->header('X-Waha-Signature');
-
-    if (!$verifier->verify($hostKey, $raw, $signature)) {
-        abort(401, 'Invalid webhook signature');
-    }
-
-    $payload = $request->json()->all(); // or $request->all()
-
-    // WAHA payload structure depends on your deployment.
-    // Inspect once with dd($payload), then branch by event type.
-    $event = $payload['event'] ?? null;
-
-    if ($event === 'message') {
-        $message = $payload['payload'] ?? $payload;
-        // persist message, download media, trigger workflows, etc.
-    }
-
-    return response()->json(['ok' => true]);
-});
+```env
+WAHA_WEBHOOKS_PROCESSING_MODE=sync
 ```
 
-**Security note:** always verify signature *before* processing, and treat payload as untrusted input.
+For production, prefer queue mode so WAHA is acknowledged quickly and your application work happens inside Laravel workers:
+
+```env
+WAHA_WEBHOOKS_PROCESSING_MODE=queue
+WAHA_WEBHOOKS_QUEUE_CONNECTION=redis
+WAHA_WEBHOOKS_QUEUE_NAME=waha-webhooks
+```
+
+Queue mode validates the request, optionally stores an inbox event, dispatches `ProcessWahaWebhookJob`, and returns JSON immediately. Sync mode runs handlers inside the HTTP request and can make WAHA wait for application-level work.
+
+### Handlers
+
+Map WAHA event names to handler classes in `config/waha.php`:
+
+```php
+'webhooks' => [
+    'handlers' => [
+        'message.any' => \App\Waha\Handlers\AnyMessageHandler::class,
+        'message.*' => \App\Waha\Handlers\MessageHandler::class,
+    ],
+],
+```
+
+Handlers must implement:
+
+```php
+use AfroTechnology\Waha\Webhooks\Contracts\WahaWebhookHandler;
+use AfroTechnology\Waha\Webhooks\Events\WahaWebhookReceived;
+
+final class AnyMessageHandler implements WahaWebhookHandler
+{
+    public function handle(WahaWebhookReceived $event): void
+    {
+        $payload = $event->payload;
+    }
+}
+```
+
+### Event storage
+
+Event storage is disabled by default. To enable it, publish and run the package migrations first:
+
+```bash
+php artisan vendor:publish --provider="AfroTechnology\Waha\WahaServiceProvider" --tag="waha-migrations"
+php artisan migrate
+```
+
+Then enable storage:
+
+```env
+WAHA_WEBHOOKS_STORE_ENABLED=true
+WAHA_WEBHOOKS_STORE_RAW=true
+WAHA_WEBHOOKS_STORE_RETENTION_DAYS=7
+```
+
+Stored events include payload metadata plus processing state such as `queued`, `processing`, `processed`, `failed`, attempt count, timestamps, and last error. Use Laravel's normal queue retry tools for retries.
+
+**Security note:** treat webhook payloads as untrusted input. The package verifies accepted requests before processing.
 
 ---
 
 ## OpenAPI workflow
 
 This SDK uses WAHA’s OpenAPI spec to route calls and generate the underlying client.
+Generated client classes are namespaced under `AfroTechnology\Waha\Generated`, and
+the documented facade/tag examples only use methods exposed by the packaged proxy
+surface.
 
-Common commands (provided by this package):
+Common commands inside a consuming Laravel application (provided by this package):
 
 - Fetch spec:
   ```bash
@@ -387,6 +414,10 @@ Common commands (provided by this package):
   ```
 
 Configuration lives under `config/waha.php` → `openapi`.
+
+For this package repository and the scheduled GitHub Actions sync, the package-local
+entrypoint is `php bin/openapi-sync.php`; it fetches the spec, regenerates the
+client/proxy surface with the package namespace, and leaves the diff for review.
 
 ---
 
