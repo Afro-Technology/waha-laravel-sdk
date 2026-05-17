@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Tests;
+namespace AfroTechnology\Waha\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -9,7 +9,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            \Vendor\Waha\WahaServiceProvider::class,
+            \AfroTechnology\Waha\WahaServiceProvider::class,
         ];
     }
 
@@ -22,5 +22,13 @@ abstract class TestCase extends Orchestra
         $app['config']->set('waha.hosts.primary.base_url', 'http://localhost');
         $app['config']->set('waha.hosts.primary.admin_api_key', 'test');
         $app['config']->set('waha.hosts.primary.default_session', 'default');
+        $app['config']->set('waha.hosts.primary.webhook_secret', 'secret');
+
+        $app['config']->set('database.default', 'testing');
+        $app['config']->set('database.connections.testing', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+            'prefix' => '',
+        ]);
     }
 }
