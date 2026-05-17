@@ -2,6 +2,7 @@
 
 namespace AfroTechnology\Waha\Tests;
 
+use AfroTechnology\Waha\WahaServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
@@ -9,7 +10,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app): array
     {
         return [
-            \AfroTechnology\Waha\WahaServiceProvider::class,
+            WahaServiceProvider::class,
         ];
     }
 
