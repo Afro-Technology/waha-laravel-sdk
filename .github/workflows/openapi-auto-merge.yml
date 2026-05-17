@@ -1,0 +1,93 @@
+name: OpenAPI Auto Merge
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.event == 'pull_request' &&
+        github.event.workflow_run.head_branch == 'bot/openapi-sync'
+      )
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Find OpenAPI pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.OPENAPI_SYNC_TOKEN || github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          number="$(gh pr list --repo "$REPOSITORY" --head "bot/openapi-sync" --state open --json number --jq '.[0].number // ""')"
+
+          if [ -z "$number" ]; then
+            echo "No open bot/openapi-sync pull request found."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          url="$(gh pr view "$number" --repo "$REPOSITORY" --json url --jq '.url')"
+          labels="$(gh pr view "$number" --repo "$REPOSITORY" --json labels --jq '[.labels[].name] | join(",")')"
+
+          case ",$labels," in
+            *,openapi,*automation,*|*,automation,*openapi,*)
+              ;;
+            *)
+              echo "::error::Pull request #$number is missing openapi/automation labels."
+              exit 1
+              ;;
+          esac
+
+          unexpected=0
+          while IFS= read -r path; do
+            case "$path" in
+              resources/openapi/openapi.json|\
+              src/Generated/*|\
+              src/OpenApi/Tags/*|\
+              src/OpenApi/WahaApiProxy.php|\
+              src/OpenApi/WahaManagerProxy.php|\
+              src/Facades/Waha.php)
+                ;;
+              *)
+                echo "::error file=${path}::OpenAPI PR contains an unexpected file."
+                unexpected=1
+                ;;
+            esac
+          done < <(gh pr diff "$number" --repo "$REPOSITORY" --name-only)
+
+          if [ "$unexpected" -ne 0 ]; then
+            exit 1
+          fi
+
+          echo "found=true" >> "$GITHUB_OUTPUT"
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Merge OpenAPI pull request with ruleset bypass
+        if: steps.pr.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.OPENAPI_SYNC_TOKEN || github.token }}
+          PR_URL: ${{ steps.pr.outputs.url }}
+          EXPECTED_SHA: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
+        run: |
+          set -euo pipefail
+
+          args=(--squash --delete-branch --admin --subject "chore(openapi): sync spec + regenerate client")
+
+          if [ -n "$EXPECTED_SHA" ]; then
+            args+=(--match-head-commit "$EXPECTED_SHA")
+          fi
+
+          gh pr merge "$PR_URL" "${args[@]}"
