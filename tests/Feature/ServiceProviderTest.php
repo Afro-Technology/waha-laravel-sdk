@@ -1,11 +1,11 @@
 <?php
 
-namespace Vendor\Waha\Tests\Feature;
+namespace AfroTechnology\Waha\Tests\Feature;
 
+use AfroTechnology\Waha\Facades\Waha as WahaFacade;
+use AfroTechnology\Waha\Tests\TestCase;
+use AfroTechnology\Waha\WahaManager;
 use Illuminate\Contracts\Container\BindingResolutionException;
-use Vendor\Waha\Facades\Waha as WahaFacade;
-use Vendor\Waha\Tests\TestCase;
-use Vendor\Waha\WahaManager;
 
 final class ServiceProviderTest extends TestCase
 {
@@ -27,6 +27,6 @@ final class ServiceProviderTest extends TestCase
     public function test_facade_resolves_client(): void
     {
         $client = WahaFacade::host('primary');
-        $this->assertInstanceOf(\Vendor\Waha\OpenApi\WahaApiProxy::class, $client);
+        $this->assertInstanceOf(\AfroTechnology\Waha\OpenApi\WahaApiProxy::class, $client);
     }
 }
