@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Actions;
+namespace AfroTechnology\Waha\Actions;
 
 final class UpdateOpenApiAction
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\Waha\Console;
+namespace AfroTechnology\Waha\Console;
 
+use AfroTechnology\Waha\Actions\GenerateIdeHelperAction;
+use AfroTechnology\Waha\Support\PackagePath;
 use Illuminate\Console\Command;
-use Vendor\Waha\Actions\GenerateIdeHelperAction;
-use Vendor\Waha\Support\PackagePath;
 
 final class GenerateIdeHelperCommand extends Command
 {

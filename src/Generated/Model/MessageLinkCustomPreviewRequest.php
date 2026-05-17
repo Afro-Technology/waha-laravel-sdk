@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * MessageLinkCustomPreviewRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class MessageLinkCustomPreviewRequest implements ModelInterface, ArrayAccess, \J
         'text' => 'string',
         'reply_to' => 'string',
         'link_preview_high_quality' => 'bool',
-        'preview' => '\Vendor\Waha\Generated\Model\LinkPreviewData',
+        'preview' => '\AfroTechnology\Waha\Generated\Model\LinkPreviewData',
         'session' => 'string'
     ];
 
@@ -447,7 +447,7 @@ class MessageLinkCustomPreviewRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Gets preview
      *
-     * @return \Vendor\Waha\Generated\Model\LinkPreviewData
+     * @return \AfroTechnology\Waha\Generated\Model\LinkPreviewData
      */
     public function getPreview()
     {
@@ -457,7 +457,7 @@ class MessageLinkCustomPreviewRequest implements ModelInterface, ArrayAccess, \J
     /**
      * Sets preview
      *
-     * @param \Vendor\Waha\Generated\Model\LinkPreviewData $preview preview
+     * @param \AfroTechnology\Waha\Generated\Model\LinkPreviewData $preview preview
      *
      * @return self
      */

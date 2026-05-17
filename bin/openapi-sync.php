@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Vendor\Waha\Actions\FetchOpenApiSpecAction;
-use Vendor\Waha\Actions\GenerateIdeHelperAction;
-use Vendor\Waha\Actions\GenerateOpenApiClientAction;
-use Vendor\Waha\Support\PackagePath;
+use AfroTechnology\Waha\Actions\FetchOpenApiSpecAction;
+use AfroTechnology\Waha\Actions\GenerateIdeHelperAction;
+use AfroTechnology\Waha\Actions\GenerateOpenApiClientAction;
+use AfroTechnology\Waha\Support\PackagePath;
 
 require __DIR__.'/../vendor/autoload.php';
 

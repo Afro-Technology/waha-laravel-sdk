@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * EventMessageRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class EventMessageRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'chat_id' => 'string',
         'reply_to' => 'string',
-        'event' => '\Vendor\Waha\Generated\Model\EventMessage'
+        'event' => '\AfroTechnology\Waha\Generated\Model\EventMessage'
     ];
 
     /**
@@ -366,7 +366,7 @@ class EventMessageRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets event
      *
-     * @return \Vendor\Waha\Generated\Model\EventMessage
+     * @return \AfroTechnology\Waha\Generated\Model\EventMessage
      */
     public function getEvent()
     {
@@ -376,7 +376,7 @@ class EventMessageRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets event
      *
-     * @param \Vendor\Waha\Generated\Model\EventMessage $event event
+     * @param \AfroTechnology\Waha\Generated\Model\EventMessage $event event
      *
      * @return self
      */

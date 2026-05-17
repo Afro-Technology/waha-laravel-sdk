@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * ChattingApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -200,9 +200,9 @@ class ChattingApi
      * @param  string $session session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerDEPRECATEDCheckNumberStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WANumberExistResult
+     * @return \AfroTechnology\Waha\Generated\Model\WANumberExistResult
      * @deprecated
      */
     public function chattingControllerDEPRECATEDCheckNumberStatus($phone, $session, string $contentType = self::contentTypes['chattingControllerDEPRECATEDCheckNumberStatus'][0])
@@ -220,9 +220,9 @@ class ChattingApi
      * @param  string $session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerDEPRECATEDCheckNumberStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WANumberExistResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WANumberExistResult, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function chattingControllerDEPRECATEDCheckNumberStatusWithHttpInfo($phone, $session, string $contentType = self::contentTypes['chattingControllerDEPRECATEDCheckNumberStatus'][0])
@@ -266,11 +266,11 @@ class ChattingApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\WANumberExistResult' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WANumberExistResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WANumberExistResult' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WANumberExistResult' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -288,13 +288,13 @@ class ChattingApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WANumberExistResult', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WANumberExistResult', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WANumberExistResult';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WANumberExistResult';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -327,7 +327,7 @@ class ChattingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WANumberExistResult',
+                        '\AfroTechnology\Waha\Generated\Model\WANumberExistResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -375,7 +375,7 @@ class ChattingApi
      */
     public function chattingControllerDEPRECATEDCheckNumberStatusAsyncWithHttpInfo($phone, $session, string $contentType = self::contentTypes['chattingControllerDEPRECATEDCheckNumberStatus'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WANumberExistResult';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WANumberExistResult';
         $request = $this->chattingControllerDEPRECATEDCheckNumberStatusRequest($phone, $session, $contentType);
 
         return $this->client
@@ -533,12 +533,12 @@ class ChattingApi
     /**
      * Operation chattingControllerForwardMessage
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageForwardRequest $message_forward_request message_forward_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageForwardRequest $message_forward_request message_forward_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerForwardMessage'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WAMessage
+     * @return \AfroTechnology\Waha\Generated\Model\WAMessage
      */
     public function chattingControllerForwardMessage($message_forward_request, string $contentType = self::contentTypes['chattingControllerForwardMessage'][0])
     {
@@ -549,12 +549,12 @@ class ChattingApi
     /**
      * Operation chattingControllerForwardMessageWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageForwardRequest $message_forward_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageForwardRequest $message_forward_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerForwardMessage'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WAMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WAMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function chattingControllerForwardMessageWithHttpInfo($message_forward_request, string $contentType = self::contentTypes['chattingControllerForwardMessage'][0])
     {
@@ -597,11 +597,11 @@ class ChattingApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\WAMessage' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WAMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WAMessage' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WAMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -619,13 +619,13 @@ class ChattingApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WAMessage', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WAMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WAMessage';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WAMessage';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -658,7 +658,7 @@ class ChattingApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WAMessage',
+                        '\AfroTechnology\Waha\Generated\Model\WAMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -671,7 +671,7 @@ class ChattingApi
     /**
      * Operation chattingControllerForwardMessageAsync
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageForwardRequest $message_forward_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageForwardRequest $message_forward_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerForwardMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -690,7 +690,7 @@ class ChattingApi
     /**
      * Operation chattingControllerForwardMessageAsyncWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageForwardRequest $message_forward_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageForwardRequest $message_forward_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerForwardMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -698,7 +698,7 @@ class ChattingApi
      */
     public function chattingControllerForwardMessageAsyncWithHttpInfo($message_forward_request, string $contentType = self::contentTypes['chattingControllerForwardMessage'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WAMessage';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WAMessage';
         $request = $this->chattingControllerForwardMessageRequest($message_forward_request, $contentType);
 
         return $this->client
@@ -740,7 +740,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerForwardMessage'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageForwardRequest $message_forward_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageForwardRequest $message_forward_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerForwardMessage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -851,9 +851,9 @@ class ChattingApi
      * @param  string $filter_ack Filter messages by acknowledgment status (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerGetMessages'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WAMessage[]
+     * @return \AfroTechnology\Waha\Generated\Model\WAMessage[]
      * @deprecated
      */
     public function chattingControllerGetMessages($chat_id, $session, $limit, $sort_by = 'timestamp', $sort_order = null, $download_media = true, $offset = null, $filter_timestamp_lte = null, $filter_timestamp_gte = null, $filter_from_me = null, $filter_ack = null, string $contentType = self::contentTypes['chattingControllerGetMessages'][0])
@@ -880,9 +880,9 @@ class ChattingApi
      * @param  string $filter_ack Filter messages by acknowledgment status (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerGetMessages'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WAMessage[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WAMessage[], HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function chattingControllerGetMessagesWithHttpInfo($chat_id, $session, $limit, $sort_by = 'timestamp', $sort_order = null, $download_media = true, $offset = null, $filter_timestamp_lte = null, $filter_timestamp_gte = null, $filter_from_me = null, $filter_ack = null, string $contentType = self::contentTypes['chattingControllerGetMessages'][0])
@@ -926,11 +926,11 @@ class ChattingApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\WAMessage[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WAMessage[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WAMessage[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WAMessage[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -948,13 +948,13 @@ class ChattingApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WAMessage[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WAMessage[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WAMessage[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WAMessage[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -987,7 +987,7 @@ class ChattingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WAMessage[]',
+                        '\AfroTechnology\Waha\Generated\Model\WAMessage[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1053,7 +1053,7 @@ class ChattingApi
      */
     public function chattingControllerGetMessagesAsyncWithHttpInfo($chat_id, $session, $limit, $sort_by = 'timestamp', $sort_order = null, $download_media = true, $offset = null, $filter_timestamp_lte = null, $filter_timestamp_gte = null, $filter_from_me = null, $filter_ack = null, string $contentType = self::contentTypes['chattingControllerGetMessages'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WAMessage[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WAMessage[]';
         $request = $this->chattingControllerGetMessagesRequest($chat_id, $session, $limit, $sort_by, $sort_order, $download_media, $offset, $filter_timestamp_lte, $filter_timestamp_gte, $filter_from_me, $filter_ack, $contentType);
 
         return $this->client
@@ -1318,10 +1318,10 @@ class ChattingApi
      *
      * DEPRECATED - you can set \&quot;reply_to\&quot; field when sending text, image, etc
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReplyRequest $message_reply_request message_reply_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReplyRequest $message_reply_request message_reply_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerReply'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      * @deprecated
@@ -1337,10 +1337,10 @@ class ChattingApi
      *
      * DEPRECATED - you can set \&quot;reply_to\&quot; field when sending text, image, etc
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReplyRequest $message_reply_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReplyRequest $message_reply_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerReply'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -1462,7 +1462,7 @@ class ChattingApi
      *
      * DEPRECATED - you can set \&quot;reply_to\&quot; field when sending text, image, etc
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReplyRequest $message_reply_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReplyRequest $message_reply_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerReply'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1484,7 +1484,7 @@ class ChattingApi
      *
      * DEPRECATED - you can set \&quot;reply_to\&quot; field when sending text, image, etc
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReplyRequest $message_reply_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReplyRequest $message_reply_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerReply'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1535,7 +1535,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerReply'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReplyRequest $message_reply_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReplyRequest $message_reply_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerReply'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1634,10 +1634,10 @@ class ChattingApi
      *
      * Send buttons message (interactive)
      *
-     * @param  \Vendor\Waha\Generated\Model\SendButtonsRequest $send_buttons_request send_buttons_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendButtonsRequest $send_buttons_request send_buttons_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtons'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -1652,10 +1652,10 @@ class ChattingApi
      *
      * Send buttons message (interactive)
      *
-     * @param  \Vendor\Waha\Generated\Model\SendButtonsRequest $send_buttons_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendButtonsRequest $send_buttons_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtons'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -1713,7 +1713,7 @@ class ChattingApi
      *
      * Send buttons message (interactive)
      *
-     * @param  \Vendor\Waha\Generated\Model\SendButtonsRequest $send_buttons_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendButtonsRequest $send_buttons_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtons'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1735,7 +1735,7 @@ class ChattingApi
      *
      * Send buttons message (interactive)
      *
-     * @param  \Vendor\Waha\Generated\Model\SendButtonsRequest $send_buttons_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendButtonsRequest $send_buttons_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtons'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1773,7 +1773,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendButtons'
      *
-     * @param  \Vendor\Waha\Generated\Model\SendButtonsRequest $send_buttons_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendButtonsRequest $send_buttons_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtons'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1872,10 +1872,10 @@ class ChattingApi
      *
      * Reply on a button message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageButtonReply $message_button_reply message_button_reply (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageButtonReply $message_button_reply message_button_reply (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtonsReply'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1889,10 +1889,10 @@ class ChattingApi
      *
      * Reply on a button message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageButtonReply $message_button_reply (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageButtonReply $message_button_reply (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtonsReply'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1949,7 +1949,7 @@ class ChattingApi
      *
      * Reply on a button message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageButtonReply $message_button_reply (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageButtonReply $message_button_reply (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtonsReply'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1970,7 +1970,7 @@ class ChattingApi
      *
      * Reply on a button message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageButtonReply $message_button_reply (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageButtonReply $message_button_reply (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtonsReply'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2007,7 +2007,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendButtonsReply'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageButtonReply $message_button_reply (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageButtonReply $message_button_reply (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendButtonsReply'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2103,10 +2103,10 @@ class ChattingApi
     /**
      * Operation chattingControllerSendContactVcard
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request message_contact_vcard_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request message_contact_vcard_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendContactVcard'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2118,10 +2118,10 @@ class ChattingApi
     /**
      * Operation chattingControllerSendContactVcardWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendContactVcard'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2176,7 +2176,7 @@ class ChattingApi
     /**
      * Operation chattingControllerSendContactVcardAsync
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendContactVcard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2195,7 +2195,7 @@ class ChattingApi
     /**
      * Operation chattingControllerSendContactVcardAsyncWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendContactVcard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2232,7 +2232,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendContactVcard'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageContactVcardRequest $message_contact_vcard_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendContactVcard'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2330,10 +2330,10 @@ class ChattingApi
      *
      * Send a file
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageFileRequest $message_file_request message_file_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageFileRequest $message_file_request message_file_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendFile'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -2348,10 +2348,10 @@ class ChattingApi
      *
      * Send a file
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageFileRequest $message_file_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageFileRequest $message_file_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendFile'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2472,7 +2472,7 @@ class ChattingApi
      *
      * Send a file
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageFileRequest $message_file_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageFileRequest $message_file_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2493,7 +2493,7 @@ class ChattingApi
      *
      * Send a file
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageFileRequest $message_file_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageFileRequest $message_file_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2543,7 +2543,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendFile'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageFileRequest $message_file_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageFileRequest $message_file_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendFile'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2641,10 +2641,10 @@ class ChattingApi
      *
      * Send an image
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageImageRequest $message_image_request message_image_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageImageRequest $message_image_request message_image_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendImage'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -2659,10 +2659,10 @@ class ChattingApi
      *
      * Send an image
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageImageRequest $message_image_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageImageRequest $message_image_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendImage'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2783,7 +2783,7 @@ class ChattingApi
      *
      * Send an image
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageImageRequest $message_image_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageImageRequest $message_image_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendImage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2804,7 +2804,7 @@ class ChattingApi
      *
      * Send an image
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageImageRequest $message_image_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageImageRequest $message_image_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendImage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2854,7 +2854,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendImage'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageImageRequest $message_image_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageImageRequest $message_image_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendImage'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2952,10 +2952,10 @@ class ChattingApi
      *
      * Send a text message with a CUSTOM link preview.
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request message_link_custom_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request message_link_custom_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkCustomPreview'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -2970,10 +2970,10 @@ class ChattingApi
      *
      * Send a text message with a CUSTOM link preview.
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkCustomPreview'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3094,7 +3094,7 @@ class ChattingApi
      *
      * Send a text message with a CUSTOM link preview.
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkCustomPreview'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3115,7 +3115,7 @@ class ChattingApi
      *
      * Send a text message with a CUSTOM link preview.
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkCustomPreview'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3165,7 +3165,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendLinkCustomPreview'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkCustomPreviewRequest $message_link_custom_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkCustomPreview'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3263,10 +3263,10 @@ class ChattingApi
      *
      * 
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request message_link_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request message_link_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkPreviewDEPRECATED'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -3281,10 +3281,10 @@ class ChattingApi
      *
      * 
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkPreviewDEPRECATED'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -3342,7 +3342,7 @@ class ChattingApi
      *
      * 
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkPreviewDEPRECATED'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3364,7 +3364,7 @@ class ChattingApi
      *
      * 
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkPreviewDEPRECATED'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3402,7 +3402,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendLinkPreviewDEPRECATED'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLinkPreviewRequest $message_link_preview_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLinkPreviewDEPRECATED'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3501,10 +3501,10 @@ class ChattingApi
      *
      * Send a list message (interactive)
      *
-     * @param  \Vendor\Waha\Generated\Model\SendListRequest $send_list_request send_list_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendListRequest $send_list_request send_list_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendList'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -3519,10 +3519,10 @@ class ChattingApi
      *
      * Send a list message (interactive)
      *
-     * @param  \Vendor\Waha\Generated\Model\SendListRequest $send_list_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendListRequest $send_list_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendList'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3643,7 +3643,7 @@ class ChattingApi
      *
      * Send a list message (interactive)
      *
-     * @param  \Vendor\Waha\Generated\Model\SendListRequest $send_list_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendListRequest $send_list_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3664,7 +3664,7 @@ class ChattingApi
      *
      * Send a list message (interactive)
      *
-     * @param  \Vendor\Waha\Generated\Model\SendListRequest $send_list_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendListRequest $send_list_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3714,7 +3714,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendList'
      *
-     * @param  \Vendor\Waha\Generated\Model\SendListRequest $send_list_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendListRequest $send_list_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3810,10 +3810,10 @@ class ChattingApi
     /**
      * Operation chattingControllerSendLocation
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLocationRequest $message_location_request message_location_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLocationRequest $message_location_request message_location_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLocation'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -3826,10 +3826,10 @@ class ChattingApi
     /**
      * Operation chattingControllerSendLocationWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLocationRequest $message_location_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLocationRequest $message_location_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLocation'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3948,7 +3948,7 @@ class ChattingApi
     /**
      * Operation chattingControllerSendLocationAsync
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLocationRequest $message_location_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLocationRequest $message_location_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3967,7 +3967,7 @@ class ChattingApi
     /**
      * Operation chattingControllerSendLocationAsyncWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLocationRequest $message_location_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLocationRequest $message_location_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4017,7 +4017,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendLocation'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageLocationRequest $message_location_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageLocationRequest $message_location_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendLocation'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4115,10 +4115,10 @@ class ChattingApi
      *
      * Send a poll with options
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollRequest $message_poll_request message_poll_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollRequest $message_poll_request message_poll_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPoll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4132,10 +4132,10 @@ class ChattingApi
      *
      * Send a poll with options
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollRequest $message_poll_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollRequest $message_poll_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPoll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4192,7 +4192,7 @@ class ChattingApi
      *
      * Send a poll with options
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollRequest $message_poll_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollRequest $message_poll_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPoll'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4213,7 +4213,7 @@ class ChattingApi
      *
      * Send a poll with options
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollRequest $message_poll_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollRequest $message_poll_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPoll'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4250,7 +4250,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendPoll'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollRequest $message_poll_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollRequest $message_poll_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPoll'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4348,10 +4348,10 @@ class ChattingApi
      *
      * Vote on a poll
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request message_poll_vote_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request message_poll_vote_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPollVote'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4365,10 +4365,10 @@ class ChattingApi
      *
      * Vote on a poll
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPollVote'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4425,7 +4425,7 @@ class ChattingApi
      *
      * Vote on a poll
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPollVote'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4446,7 +4446,7 @@ class ChattingApi
      *
      * Vote on a poll
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPollVote'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4483,7 +4483,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendPollVote'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessagePollVoteRequest $message_poll_vote_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendPollVote'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4579,10 +4579,10 @@ class ChattingApi
     /**
      * Operation chattingControllerSendSeen
      *
-     * @param  \Vendor\Waha\Generated\Model\SendSeenRequest $send_seen_request send_seen_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendSeenRequest $send_seen_request send_seen_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendSeen'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -4595,10 +4595,10 @@ class ChattingApi
     /**
      * Operation chattingControllerSendSeenWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\SendSeenRequest $send_seen_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendSeenRequest $send_seen_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendSeen'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4717,7 +4717,7 @@ class ChattingApi
     /**
      * Operation chattingControllerSendSeenAsync
      *
-     * @param  \Vendor\Waha\Generated\Model\SendSeenRequest $send_seen_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendSeenRequest $send_seen_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendSeen'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4736,7 +4736,7 @@ class ChattingApi
     /**
      * Operation chattingControllerSendSeenAsyncWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\SendSeenRequest $send_seen_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendSeenRequest $send_seen_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendSeen'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4786,7 +4786,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendSeen'
      *
-     * @param  \Vendor\Waha\Generated\Model\SendSeenRequest $send_seen_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SendSeenRequest $send_seen_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendSeen'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4884,12 +4884,12 @@ class ChattingApi
      *
      * Send a text message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageTextRequest $message_text_request message_text_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageTextRequest $message_text_request message_text_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendText'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WAMessage
+     * @return \AfroTechnology\Waha\Generated\Model\WAMessage
      */
     public function chattingControllerSendText($message_text_request, string $contentType = self::contentTypes['chattingControllerSendText'][0])
     {
@@ -4902,12 +4902,12 @@ class ChattingApi
      *
      * Send a text message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageTextRequest $message_text_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageTextRequest $message_text_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendText'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WAMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WAMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function chattingControllerSendTextWithHttpInfo($message_text_request, string $contentType = self::contentTypes['chattingControllerSendText'][0])
     {
@@ -4950,11 +4950,11 @@ class ChattingApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\WAMessage' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WAMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WAMessage' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WAMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4972,13 +4972,13 @@ class ChattingApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WAMessage', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WAMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WAMessage';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WAMessage';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5011,7 +5011,7 @@ class ChattingApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WAMessage',
+                        '\AfroTechnology\Waha\Generated\Model\WAMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5026,7 +5026,7 @@ class ChattingApi
      *
      * Send a text message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageTextRequest $message_text_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageTextRequest $message_text_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendText'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5047,7 +5047,7 @@ class ChattingApi
      *
      * Send a text message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageTextRequest $message_text_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageTextRequest $message_text_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendText'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5055,7 +5055,7 @@ class ChattingApi
      */
     public function chattingControllerSendTextAsyncWithHttpInfo($message_text_request, string $contentType = self::contentTypes['chattingControllerSendText'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WAMessage';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WAMessage';
         $request = $this->chattingControllerSendTextRequest($message_text_request, $contentType);
 
         return $this->client
@@ -5097,7 +5097,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendText'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageTextRequest $message_text_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageTextRequest $message_text_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendText'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5200,7 +5200,7 @@ class ChattingApi
      * @param  string $session session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendTextGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      * @deprecated
@@ -5221,7 +5221,7 @@ class ChattingApi
      * @param  string $session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendTextGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -5555,10 +5555,10 @@ class ChattingApi
      *
      * Send a video
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVideoRequest $message_video_request message_video_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVideoRequest $message_video_request message_video_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVideo'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5572,10 +5572,10 @@ class ChattingApi
      *
      * Send a video
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVideoRequest $message_video_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVideoRequest $message_video_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVideo'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5632,7 +5632,7 @@ class ChattingApi
      *
      * Send a video
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVideoRequest $message_video_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVideoRequest $message_video_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVideo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5653,7 +5653,7 @@ class ChattingApi
      *
      * Send a video
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVideoRequest $message_video_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVideoRequest $message_video_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVideo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5690,7 +5690,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendVideo'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVideoRequest $message_video_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVideoRequest $message_video_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVideo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5788,10 +5788,10 @@ class ChattingApi
      *
      * Send an voice message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVoiceRequest $message_voice_request message_voice_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVoiceRequest $message_voice_request message_voice_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVoice'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -5806,10 +5806,10 @@ class ChattingApi
      *
      * Send an voice message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVoiceRequest $message_voice_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVoiceRequest $message_voice_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVoice'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5930,7 +5930,7 @@ class ChattingApi
      *
      * Send an voice message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVoiceRequest $message_voice_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVoiceRequest $message_voice_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5951,7 +5951,7 @@ class ChattingApi
      *
      * Send an voice message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVoiceRequest $message_voice_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVoiceRequest $message_voice_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6001,7 +6001,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSendVoice'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageVoiceRequest $message_voice_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageVoiceRequest $message_voice_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSendVoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6099,10 +6099,10 @@ class ChattingApi
      *
      * React to a message with an emoji
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReactionRequest $message_reaction_request message_reaction_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReactionRequest $message_reaction_request message_reaction_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetReaction'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -6117,10 +6117,10 @@ class ChattingApi
      *
      * React to a message with an emoji
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReactionRequest $message_reaction_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReactionRequest $message_reaction_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetReaction'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6241,7 +6241,7 @@ class ChattingApi
      *
      * React to a message with an emoji
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReactionRequest $message_reaction_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReactionRequest $message_reaction_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetReaction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6262,7 +6262,7 @@ class ChattingApi
      *
      * React to a message with an emoji
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReactionRequest $message_reaction_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReactionRequest $message_reaction_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetReaction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6312,7 +6312,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSetReaction'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageReactionRequest $message_reaction_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageReactionRequest $message_reaction_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetReaction'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6410,10 +6410,10 @@ class ChattingApi
      *
      * Star or unstar a message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageStarRequest $message_star_request message_star_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageStarRequest $message_star_request message_star_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetStar'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6427,10 +6427,10 @@ class ChattingApi
      *
      * Star or unstar a message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageStarRequest $message_star_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageStarRequest $message_star_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetStar'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6487,7 +6487,7 @@ class ChattingApi
      *
      * Star or unstar a message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageStarRequest $message_star_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageStarRequest $message_star_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetStar'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6508,7 +6508,7 @@ class ChattingApi
      *
      * Star or unstar a message
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageStarRequest $message_star_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageStarRequest $message_star_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetStar'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6545,7 +6545,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerSetStar'
      *
-     * @param  \Vendor\Waha\Generated\Model\MessageStarRequest $message_star_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\MessageStarRequest $message_star_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerSetStar'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6641,10 +6641,10 @@ class ChattingApi
     /**
      * Operation chattingControllerStartTyping
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStartTyping'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6656,10 +6656,10 @@ class ChattingApi
     /**
      * Operation chattingControllerStartTypingWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStartTyping'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6714,7 +6714,7 @@ class ChattingApi
     /**
      * Operation chattingControllerStartTypingAsync
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStartTyping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6733,7 +6733,7 @@ class ChattingApi
     /**
      * Operation chattingControllerStartTypingAsyncWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStartTyping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6770,7 +6770,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerStartTyping'
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStartTyping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6866,10 +6866,10 @@ class ChattingApi
     /**
      * Operation chattingControllerStopTyping
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStopTyping'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6881,10 +6881,10 @@ class ChattingApi
     /**
      * Operation chattingControllerStopTypingWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStopTyping'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6939,7 +6939,7 @@ class ChattingApi
     /**
      * Operation chattingControllerStopTypingAsync
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStopTyping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6958,7 +6958,7 @@ class ChattingApi
     /**
      * Operation chattingControllerStopTypingAsyncWithHttpInfo
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStopTyping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6995,7 +6995,7 @@ class ChattingApi
     /**
      * Create request for operation 'chattingControllerStopTyping'
      *
-     * @param  \Vendor\Waha\Generated\Model\ChatRequest $chat_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChatRequest $chat_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['chattingControllerStopTyping'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

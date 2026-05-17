@@ -1,9 +1,9 @@
 <?php
 
-namespace Vendor\Waha\Security;
+namespace AfroTechnology\Waha\Security;
 
-use Vendor\Waha\Contracts\ApiKeyProvider;
-use Vendor\Waha\Contracts\HostRegistry;
+use AfroTechnology\Waha\Contracts\ApiKeyProvider;
+use AfroTechnology\Waha\Contracts\HostRegistry;
 
 class ConfigApiKeyProvider implements ApiKeyProvider
 {

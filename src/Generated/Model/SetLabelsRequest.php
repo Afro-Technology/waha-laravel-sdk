@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SetLabelsRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class SetLabelsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'labels' => '\Vendor\Waha\Generated\Model\LabelID[]'
+        'labels' => '\AfroTechnology\Waha\Generated\Model\LabelID[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class SetLabelsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets labels
      *
-     * @return \Vendor\Waha\Generated\Model\LabelID[]
+     * @return \AfroTechnology\Waha\Generated\Model\LabelID[]
      */
     public function getLabels()
     {
@@ -305,7 +305,7 @@ class SetLabelsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets labels
      *
-     * @param \Vendor\Waha\Generated\Model\LabelID[] $labels labels
+     * @param \AfroTechnology\Waha\Generated\Model\LabelID[] $labels labels
      *
      * @return self
      */

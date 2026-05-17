@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * WAMessageReaction Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -64,7 +64,7 @@ class WAMessageReaction implements ModelInterface, ArrayAccess, \JsonSerializabl
         'source' => 'string',
         'to' => 'string',
         'participant' => 'string',
-        'reaction' => '\Vendor\Waha\Generated\Model\WAReaction'
+        'reaction' => '\AfroTechnology\Waha\Generated\Model\WAReaction'
     ];
 
     /**
@@ -588,7 +588,7 @@ class WAMessageReaction implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets reaction
      *
-     * @return \Vendor\Waha\Generated\Model\WAReaction
+     * @return \AfroTechnology\Waha\Generated\Model\WAReaction
      */
     public function getReaction()
     {
@@ -598,7 +598,7 @@ class WAMessageReaction implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets reaction
      *
-     * @param \Vendor\Waha\Generated\Model\WAReaction $reaction Reaction to the message. Either the reaction (emoji) or empty string to remove the reaction
+     * @param \AfroTechnology\Waha\Generated\Model\WAReaction $reaction Reaction to the message. Either the reaction (emoji) or empty string to remove the reaction
      *
      * @return self
      */

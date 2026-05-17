@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * ApiKeysApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -136,12 +136,12 @@ class ApiKeysApi
      *
      * Create a new API key
      *
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerCreate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ApiKeyDTO
+     * @return \AfroTechnology\Waha\Generated\Model\ApiKeyDTO
      */
     public function apiKeysControllerCreate($api_key_request, string $contentType = self::contentTypes['apiKeysControllerCreate'][0])
     {
@@ -154,12 +154,12 @@ class ApiKeysApi
      *
      * Create a new API key
      *
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerCreate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ApiKeyDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ApiKeyDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiKeysControllerCreateWithHttpInfo($api_key_request, string $contentType = self::contentTypes['apiKeysControllerCreate'][0])
     {
@@ -202,11 +202,11 @@ class ApiKeysApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\ApiKeyDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ApiKeyDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ApiKeyDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ApiKeyDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -224,13 +224,13 @@ class ApiKeysApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ApiKeyDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ApiKeyDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -263,7 +263,7 @@ class ApiKeysApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ApiKeyDTO',
+                        '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -278,7 +278,7 @@ class ApiKeysApi
      *
      * Create a new API key
      *
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -299,7 +299,7 @@ class ApiKeysApi
      *
      * Create a new API key
      *
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -307,7 +307,7 @@ class ApiKeysApi
      */
     public function apiKeysControllerCreateAsyncWithHttpInfo($api_key_request, string $contentType = self::contentTypes['apiKeysControllerCreate'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ApiKeyDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO';
         $request = $this->apiKeysControllerCreateRequest($api_key_request, $contentType);
 
         return $this->client
@@ -349,7 +349,7 @@ class ApiKeysApi
     /**
      * Create request for operation 'apiKeysControllerCreate'
      *
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -450,7 +450,7 @@ class ApiKeysApi
      * @param  string $id id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerDelete'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -467,7 +467,7 @@ class ApiKeysApi
      * @param  string $id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerDelete'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -683,9 +683,9 @@ class ApiKeysApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerList'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ApiKeyDTO[]
+     * @return \AfroTechnology\Waha\Generated\Model\ApiKeyDTO[]
      */
     public function apiKeysControllerList(string $contentType = self::contentTypes['apiKeysControllerList'][0])
     {
@@ -700,9 +700,9 @@ class ApiKeysApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerList'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ApiKeyDTO[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ApiKeyDTO[], HTTP status code, HTTP response headers (array of strings)
      */
     public function apiKeysControllerListWithHttpInfo(string $contentType = self::contentTypes['apiKeysControllerList'][0])
     {
@@ -745,11 +745,11 @@ class ApiKeysApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ApiKeyDTO[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ApiKeyDTO[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ApiKeyDTO[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ApiKeyDTO[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -767,13 +767,13 @@ class ApiKeysApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ApiKeyDTO[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ApiKeyDTO[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -806,7 +806,7 @@ class ApiKeysApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ApiKeyDTO[]',
+                        '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -848,7 +848,7 @@ class ApiKeysApi
      */
     public function apiKeysControllerListAsyncWithHttpInfo(string $contentType = self::contentTypes['apiKeysControllerList'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ApiKeyDTO[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO[]';
         $request = $this->apiKeysControllerListRequest($contentType);
 
         return $this->client
@@ -974,12 +974,12 @@ class ApiKeysApi
      * Update an API key
      *
      * @param  string $id id (required)
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerUpdate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ApiKeyDTO
+     * @return \AfroTechnology\Waha\Generated\Model\ApiKeyDTO
      */
     public function apiKeysControllerUpdate($id, $api_key_request, string $contentType = self::contentTypes['apiKeysControllerUpdate'][0])
     {
@@ -993,12 +993,12 @@ class ApiKeysApi
      * Update an API key
      *
      * @param  string $id (required)
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerUpdate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ApiKeyDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ApiKeyDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiKeysControllerUpdateWithHttpInfo($id, $api_key_request, string $contentType = self::contentTypes['apiKeysControllerUpdate'][0])
     {
@@ -1041,11 +1041,11 @@ class ApiKeysApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ApiKeyDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ApiKeyDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ApiKeyDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ApiKeyDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1063,13 +1063,13 @@ class ApiKeysApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ApiKeyDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ApiKeyDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1102,7 +1102,7 @@ class ApiKeysApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ApiKeyDTO',
+                        '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1118,7 +1118,7 @@ class ApiKeysApi
      * Update an API key
      *
      * @param  string $id (required)
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1140,7 +1140,7 @@ class ApiKeysApi
      * Update an API key
      *
      * @param  string $id (required)
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1148,7 +1148,7 @@ class ApiKeysApi
      */
     public function apiKeysControllerUpdateAsyncWithHttpInfo($id, $api_key_request, string $contentType = self::contentTypes['apiKeysControllerUpdate'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ApiKeyDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ApiKeyDTO';
         $request = $this->apiKeysControllerUpdateRequest($id, $api_key_request, $contentType);
 
         return $this->client
@@ -1191,7 +1191,7 @@ class ApiKeysApi
      * Create request for operation 'apiKeysControllerUpdate'
      *
      * @param  string $id (required)
-     * @param  \Vendor\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ApiKeyRequest $api_key_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiKeysControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

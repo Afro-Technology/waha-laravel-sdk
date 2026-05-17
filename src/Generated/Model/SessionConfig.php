@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SessionConfig Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,14 +58,14 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'metadata' => 'object',
-        'proxy' => '\Vendor\Waha\Generated\Model\ProxyConfig',
+        'proxy' => '\AfroTechnology\Waha\Generated\Model\ProxyConfig',
         'debug' => 'bool',
-        'ignore' => '\Vendor\Waha\Generated\Model\IgnoreConfig',
-        'client' => '\Vendor\Waha\Generated\Model\ClientSessionConfig',
-        'noweb' => '\Vendor\Waha\Generated\Model\NowebConfig',
-        'gows' => '\Vendor\Waha\Generated\Model\GowsConfig',
-        'webjs' => '\Vendor\Waha\Generated\Model\WebjsConfig',
-        'webhooks' => '\Vendor\Waha\Generated\Model\WebhookConfig[]'
+        'ignore' => '\AfroTechnology\Waha\Generated\Model\IgnoreConfig',
+        'client' => '\AfroTechnology\Waha\Generated\Model\ClientSessionConfig',
+        'noweb' => '\AfroTechnology\Waha\Generated\Model\NowebConfig',
+        'gows' => '\AfroTechnology\Waha\Generated\Model\GowsConfig',
+        'webjs' => '\AfroTechnology\Waha\Generated\Model\WebjsConfig',
+        'webhooks' => '\AfroTechnology\Waha\Generated\Model\WebhookConfig[]'
     ];
 
     /**
@@ -375,7 +375,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets proxy
      *
-     * @return \Vendor\Waha\Generated\Model\ProxyConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\ProxyConfig|null
      */
     public function getProxy()
     {
@@ -385,7 +385,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets proxy
      *
-     * @param \Vendor\Waha\Generated\Model\ProxyConfig|null $proxy proxy
+     * @param \AfroTechnology\Waha\Generated\Model\ProxyConfig|null $proxy proxy
      *
      * @return self
      */
@@ -429,7 +429,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ignore
      *
-     * @return \Vendor\Waha\Generated\Model\IgnoreConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\IgnoreConfig|null
      */
     public function getIgnore()
     {
@@ -439,7 +439,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ignore
      *
-     * @param \Vendor\Waha\Generated\Model\IgnoreConfig|null $ignore Ignore some events related to specific chats
+     * @param \AfroTechnology\Waha\Generated\Model\IgnoreConfig|null $ignore Ignore some events related to specific chats
      *
      * @return self
      */
@@ -456,7 +456,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets client
      *
-     * @return \Vendor\Waha\Generated\Model\ClientSessionConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\ClientSessionConfig|null
      */
     public function getClient()
     {
@@ -466,7 +466,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets client
      *
-     * @param \Vendor\Waha\Generated\Model\ClientSessionConfig|null $client How connected session renders in device - in format 'Browser (Device)' - Firefox (MacOS)
+     * @param \AfroTechnology\Waha\Generated\Model\ClientSessionConfig|null $client How connected session renders in device - in format 'Browser (Device)' - Firefox (MacOS)
      *
      * @return self
      */
@@ -483,7 +483,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets noweb
      *
-     * @return \Vendor\Waha\Generated\Model\NowebConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\NowebConfig|null
      */
     public function getNoweb()
     {
@@ -493,7 +493,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets noweb
      *
-     * @param \Vendor\Waha\Generated\Model\NowebConfig|null $noweb noweb
+     * @param \AfroTechnology\Waha\Generated\Model\NowebConfig|null $noweb noweb
      *
      * @return self
      */
@@ -510,7 +510,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets gows
      *
-     * @return \Vendor\Waha\Generated\Model\GowsConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\GowsConfig|null
      */
     public function getGows()
     {
@@ -520,7 +520,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gows
      *
-     * @param \Vendor\Waha\Generated\Model\GowsConfig|null $gows gows
+     * @param \AfroTechnology\Waha\Generated\Model\GowsConfig|null $gows gows
      *
      * @return self
      */
@@ -537,7 +537,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets webjs
      *
-     * @return \Vendor\Waha\Generated\Model\WebjsConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\WebjsConfig|null
      */
     public function getWebjs()
     {
@@ -547,7 +547,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets webjs
      *
-     * @param \Vendor\Waha\Generated\Model\WebjsConfig|null $webjs WebJS-specific settings.
+     * @param \AfroTechnology\Waha\Generated\Model\WebjsConfig|null $webjs WebJS-specific settings.
      *
      * @return self
      */
@@ -564,7 +564,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets webhooks
      *
-     * @return \Vendor\Waha\Generated\Model\WebhookConfig[]|null
+     * @return \AfroTechnology\Waha\Generated\Model\WebhookConfig[]|null
      */
     public function getWebhooks()
     {
@@ -574,7 +574,7 @@ class SessionConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets webhooks
      *
-     * @param \Vendor\Waha\Generated\Model\WebhookConfig[]|null $webhooks webhooks
+     * @param \AfroTechnology\Waha\Generated\Model\WebhookConfig[]|null $webhooks webhooks
      *
      * @return self
      */

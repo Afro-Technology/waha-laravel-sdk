@@ -20,7 +20,8 @@ docker run --rm -v "$(pwd):/work" -w /work openapitools/openapi-generator-cli:v$
   -i "$SPEC" \
   -g php \
   -o "$OUT_DIR" \
-  --additional-properties="invokerPackage=MediaBridge\\Waha\\Generated,packageName=MediaBridgeWahaGenerated,srcBasePath=lib" \
+  --global-property="apis,models,apiTests=false,modelTests=false,apiDocs=false,modelDocs=false,supportingFiles=ApiException.php:Configuration.php:HeaderSelector.php:ObjectSerializer.php:ModelInterface.php" \
+  --additional-properties="invokerPackage=AfroTechnology\\Waha\\Generated,packageName=AfroTechnologyWahaGenerated,srcBasePath=lib" \
   --skip-validate-spec
 
 echo "Done. Output: $OUT_DIR"

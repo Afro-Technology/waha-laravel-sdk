@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SessionUpdateRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class SessionUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'apps' => '\Vendor\Waha\Generated\Model\App[]',
-        'config' => '\Vendor\Waha\Generated\Model\SessionConfig'
+        'apps' => '\AfroTechnology\Waha\Generated\Model\App[]',
+        'config' => '\AfroTechnology\Waha\Generated\Model\SessionConfig'
     ];
 
     /**
@@ -299,7 +299,7 @@ class SessionUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets apps
      *
-     * @return \Vendor\Waha\Generated\Model\App[]|null
+     * @return \AfroTechnology\Waha\Generated\Model\App[]|null
      */
     public function getApps()
     {
@@ -309,7 +309,7 @@ class SessionUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets apps
      *
-     * @param \Vendor\Waha\Generated\Model\App[]|null $apps Apps to be synchronized for this session.
+     * @param \AfroTechnology\Waha\Generated\Model\App[]|null $apps Apps to be synchronized for this session.
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class SessionUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets config
      *
-     * @return \Vendor\Waha\Generated\Model\SessionConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\SessionConfig|null
      */
     public function getConfig()
     {
@@ -336,7 +336,7 @@ class SessionUpdateRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets config
      *
-     * @param \Vendor\Waha\Generated\Model\SessionConfig|null $config config
+     * @param \AfroTechnology\Waha\Generated\Model\SessionConfig|null $config config
      *
      * @return self
      */

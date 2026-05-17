@@ -1,8 +1,8 @@
 <?php
 
-namespace Vendor\Waha\Pin;
+namespace AfroTechnology\Waha\Pin;
 
-use Vendor\Waha\Contracts\PinStore;
+use AfroTechnology\Waha\Contracts\PinStore;
 
 /**
  * Write-through cache:

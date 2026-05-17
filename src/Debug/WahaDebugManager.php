@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Debug;
+namespace AfroTechnology\Waha\Debug;
 
 final class WahaDebugManager
 {

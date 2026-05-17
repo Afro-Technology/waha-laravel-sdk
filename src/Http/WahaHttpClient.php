@@ -1,13 +1,13 @@
 <?php
 
-namespace Vendor\Waha\Http;
+namespace AfroTechnology\Waha\Http;
 
+use AfroTechnology\Waha\Contracts\ApiKeyProvider;
+use AfroTechnology\Waha\Contracts\HostRegistry;
+use AfroTechnology\Waha\Contracts\SessionRouter;
+use AfroTechnology\Waha\Support\ApiKeyMissingException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Vendor\Waha\Contracts\ApiKeyProvider;
-use Vendor\Waha\Contracts\HostRegistry;
-use Vendor\Waha\Contracts\SessionRouter;
-use Vendor\Waha\Support\ApiKeyMissingException;
 
 class WahaHttpClient
 {

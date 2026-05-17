@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * OverviewBodyRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class OverviewBodyRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pagination' => '\Vendor\Waha\Generated\Model\OverviewPaginationParams',
-        'filter' => '\Vendor\Waha\Generated\Model\OverviewFilter'
+        'pagination' => '\AfroTechnology\Waha\Generated\Model\OverviewPaginationParams',
+        'filter' => '\AfroTechnology\Waha\Generated\Model\OverviewFilter'
     ];
 
     /**
@@ -305,7 +305,7 @@ class OverviewBodyRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets pagination
      *
-     * @return \Vendor\Waha\Generated\Model\OverviewPaginationParams
+     * @return \AfroTechnology\Waha\Generated\Model\OverviewPaginationParams
      */
     public function getPagination()
     {
@@ -315,7 +315,7 @@ class OverviewBodyRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets pagination
      *
-     * @param \Vendor\Waha\Generated\Model\OverviewPaginationParams $pagination pagination
+     * @param \AfroTechnology\Waha\Generated\Model\OverviewPaginationParams $pagination pagination
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class OverviewBodyRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets filter
      *
-     * @return \Vendor\Waha\Generated\Model\OverviewFilter
+     * @return \AfroTechnology\Waha\Generated\Model\OverviewFilter
      */
     public function getFilter()
     {
@@ -342,7 +342,7 @@ class OverviewBodyRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets filter
      *
-     * @param \Vendor\Waha\Generated\Model\OverviewFilter $filter filter
+     * @param \AfroTechnology\Waha\Generated\Model\OverviewFilter $filter filter
      *
      * @return self
      */

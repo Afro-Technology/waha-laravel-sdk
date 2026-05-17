@@ -1,28 +1,34 @@
 <?php
 
-namespace Vendor\Waha;
+namespace AfroTechnology\Waha;
 
+use AfroTechnology\Waha\Console\FetchOpenApiSpecCommand;
+use AfroTechnology\Waha\Console\GenerateIdeHelperCommand;
+use AfroTechnology\Waha\Console\GenerateOpenApiClientCommand;
+use AfroTechnology\Waha\Console\UpdateOpenApiCommand;
+use AfroTechnology\Waha\Contracts\ApiKeyProvider;
+use AfroTechnology\Waha\Contracts\HostRegistry;
+use AfroTechnology\Waha\Contracts\PinStore;
+use AfroTechnology\Waha\Contracts\SessionRouter;
+use AfroTechnology\Waha\Debug\WahaDebugManager;
+use AfroTechnology\Waha\Debug\WahaDebugStore;
+use AfroTechnology\Waha\Http\WahaHttpClient;
+use AfroTechnology\Waha\Pin\CompositePinStore;
+use AfroTechnology\Waha\Pin\DbPinStore;
+use AfroTechnology\Waha\Pin\RedisPinStore;
+use AfroTechnology\Waha\Registry\ConfigHostRegistry;
+use AfroTechnology\Waha\Registry\DbHostRegistry;
+use AfroTechnology\Waha\Routing\NullRouter;
+use AfroTechnology\Waha\Routing\PinningRouter;
+use AfroTechnology\Waha\Security\ConfigApiKeyProvider;
+use AfroTechnology\Waha\Security\DbApiKeyProvider;
+use AfroTechnology\Waha\Webhooks\Config\WebhookConfigResolver;
+use AfroTechnology\Waha\Webhooks\Console\PruneWebhookEventsCommand;
+use AfroTechnology\Waha\Webhooks\EventStore\WebhookEventStoreFactory;
+use AfroTechnology\Waha\Webhooks\Http\WahaWebhookController;
+use AfroTechnology\Waha\Webhooks\WahaWebhookRouter;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Vendor\Waha\Console\FetchOpenApiSpecCommand;
-use Vendor\Waha\Console\GenerateIdeHelperCommand;
-use Vendor\Waha\Console\GenerateOpenApiClientCommand;
-use Vendor\Waha\Console\UpdateOpenApiCommand;
-use Vendor\Waha\Contracts\ApiKeyProvider;
-use Vendor\Waha\Contracts\HostRegistry;
-use Vendor\Waha\Contracts\PinStore;
-use Vendor\Waha\Contracts\SessionRouter;
-use Vendor\Waha\Debug\WahaDebugManager;
-use Vendor\Waha\Debug\WahaDebugStore;
-use Vendor\Waha\Http\WahaHttpClient;
-use Vendor\Waha\Pin\CompositePinStore;
-use Vendor\Waha\Pin\DbPinStore;
-use Vendor\Waha\Pin\RedisPinStore;
-use Vendor\Waha\Registry\ConfigHostRegistry;
-use Vendor\Waha\Registry\DbHostRegistry;
-use Vendor\Waha\Routing\NullRouter;
-use Vendor\Waha\Routing\PinningRouter;
-use Vendor\Waha\Security\ConfigApiKeyProvider;
-use Vendor\Waha\Security\DbApiKeyProvider;
 
 class WahaServiceProvider extends ServiceProvider
 {
@@ -76,7 +82,7 @@ class WahaServiceProvider extends ServiceProvider
             }
 
             // no backing store
-            return new class implements \Vendor\Waha\Contracts\PinStore
+            return new class implements \AfroTechnology\Waha\Contracts\PinStore
             {
                 public function getHostForSession(string $sessionName): ?string
                 {
@@ -124,13 +130,25 @@ class WahaServiceProvider extends ServiceProvider
         });
 
         // Single source of truth: Manager singleton
-        $this->app->singleton(\Vendor\Waha\WahaManager::class, function () {
-            return new \Vendor\Waha\WahaManager(config('waha'), $this->app->make(WahaDebugManager::class));
+        $this->app->singleton(\AfroTechnology\Waha\WahaManager::class, function () {
+            return new \AfroTechnology\Waha\WahaManager(config('waha'), $this->app->make(WahaDebugManager::class));
         });
 
         // Facade accessor: use alias only (NO separate singleton that calls make() again)
 
-        $this->app->alias(\Vendor\Waha\WahaManager::class, 'waha');
+        $this->app->alias(\AfroTechnology\Waha\WahaManager::class, 'waha');
+
+        // Resolver can be singleton.
+        $this->app->singleton(WebhookConfigResolver::class, fn () => new WebhookConfigResolver);
+
+        $this->app->singleton(WahaWebhookRouter::class, fn ($app) => new WahaWebhookRouter($app));
+
+        $this->app->singleton(
+            WebhookEventStoreFactory::class,
+            fn ($app) => new WebhookEventStoreFactory(
+                $app->make(WebhookConfigResolver::class)
+            )
+        );
 
     }
 
@@ -150,8 +168,32 @@ class WahaServiceProvider extends ServiceProvider
                 GenerateOpenApiClientCommand::class,
                 UpdateOpenApiCommand::class,
                 GenerateIdeHelperCommand::class,
+                PruneWebhookEventsCommand::class,
             ]);
         }
+
+        $this->registerWebhookRoutes();
+
+    }
+
+    private function registerWebhookRoutes(): void
+    {
+        /** @var array<string,mixed> $webhooks */
+        $webhooks = (array) config('waha.webhooks', []);
+
+        if (! (bool) ($webhooks['enabled'] ?? true)) {
+            return;
+        }
+
+        $route = (array) ($webhooks['route'] ?? []);
+        $prefix = (string) ($route['prefix'] ?? '/webhooks/waha');
+        $middleware = array_values((array) ($route['middleware'] ?? ['api']));
+
+        Route::middleware($middleware)
+            ->prefix(trim($prefix, '/'))
+            ->group(function (): void {
+                Route::post('{hostKey}', WahaWebhookController::class);
+            });
     }
 
     private function pinTablesExist(): bool

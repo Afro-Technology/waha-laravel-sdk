@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Actions;
+namespace AfroTechnology\Waha\Actions;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;

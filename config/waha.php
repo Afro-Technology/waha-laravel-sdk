@@ -1,6 +1,6 @@
 <?php
 
-use Vendor\Waha\Support\PackagePath;
+use AfroTechnology\Waha\Support\PackagePath;
 
 return [
     /*
@@ -62,6 +62,11 @@ return [
             'admin_api_key' => env('WAHA_PRIMARY_ADMIN_KEY'),
             'default_session' => env('WAHA_PRIMARY_DEFAULT_SESSION', 'default'),
             'webhook_secret' => env('WAHA_PRIMARY_WEBHOOK_SECRET'),
+            'webhooks' => [
+                // host override
+                'require_hmac' => env('WAHA_HOST_PRIMARY_WEBHOOK_REQUIRE_HMAC', null), // null = inherit
+                'store_events' => env('WAHA_HOST_PRIMARY_WEBHOOK_STORE_EVENTS', null),
+            ],
             'mode' => env('WAHA_PRIMARY_MODE', 'admin_fallback'), // admin_fallback|strict_session_key
 
             // Optional: session-scoped keys (WAHA 2026.1+)
@@ -91,7 +96,7 @@ return [
 
         // Default locations used by artisan commands (override with --spec/--out)
         'spec_path' => PackagePath::path('resources/openapi/openapi.json'),
-        'generated_path' => PackagePath::path('src/Generated'),
+        'generated_path' => PackagePath::path('src'),
 
         'generator' => [
             // Preferred default: local first. 'auto' tries npx -> jar -> binary -> docker.
@@ -133,5 +138,59 @@ return [
 
         // Used only when format=json
         'json_flags' => JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES,
+    ],
+
+    'webhooks' => [
+        // Global defaults
+        'enabled' => env('WAHA_WEBHOOKS_ENABLED', true),
+
+        // If true: missing HMAC => reject. If false: accept without verification.
+        'require_hmac' => env('WAHA_WEBHOOKS_REQUIRE_HMAC', true),
+
+        // Timestamp freshness window (ms). Example: 5 minutes.
+        'max_clock_skew_ms' => (int) env('WAHA_WEBHOOKS_MAX_CLOCK_SKEW_MS', 300000),
+
+        // Replay protection (request-id dedup)
+        'replay' => [
+            'enabled' => env('WAHA_WEBHOOKS_REPLAY_ENABLED', true),
+            'ttl_seconds' => (int) env('WAHA_WEBHOOKS_REPLAY_TTL_SECONDS', 900), // 15 min
+            'cache_prefix' => env('WAHA_WEBHOOKS_REPLAY_CACHE_PREFIX', 'waha:webhook:'),
+        ],
+
+        // Event store
+        'store' => [
+            'enabled' => env('WAHA_WEBHOOKS_STORE_ENABLED', false),
+            'store_raw' => env('WAHA_WEBHOOKS_STORE_RAW', true),
+            'retention_days' => (int) env('WAHA_WEBHOOKS_STORE_RETENTION_DAYS', 7),
+        ],
+
+        // Route
+        'route' => [
+            'prefix' => env('WAHA_WEBHOOKS_ROUTE_PREFIX', '/webhooks/waha'),
+            'middleware' => ['api'], // keep stateless
+        ],
+
+        'processing' => [
+            // 'sync' or 'queue'. Keep sync as the zero-worker default.
+            'mode' => env('WAHA_WEBHOOKS_PROCESSING_MODE', 'sync'),
+
+            // Only used when mode=queue
+            'queue_connection' => env('WAHA_WEBHOOKS_QUEUE_CONNECTION', null),
+            'queue_name' => env('WAHA_WEBHOOKS_QUEUE_NAME', 'default'),
+        ],
+
+        /**
+         * Optional handler mapping by event name.
+         * If an event is not mapped, SDK will still fire the Laravel event.
+         *
+         * Example:
+         * 'handlers' => [
+         *   'message.any' => \App\Waha\Handlers\AnyMessageHandler::class,
+         *   'message.created' => \App\Waha\Handlers\MessageCreatedHandler::class,
+         * ],
+         */
+        'handlers' => [
+            // eventName => FQCN
+        ],
     ],
 ];

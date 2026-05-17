@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * MessagePollRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class MessagePollRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'chat_id' => 'string',
         'reply_to' => 'string',
-        'poll' => '\Vendor\Waha\Generated\Model\MessagePoll',
+        'poll' => '\AfroTechnology\Waha\Generated\Model\MessagePoll',
         'session' => 'string'
     ];
 
@@ -376,7 +376,7 @@ class MessagePollRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets poll
      *
-     * @return \Vendor\Waha\Generated\Model\MessagePoll
+     * @return \AfroTechnology\Waha\Generated\Model\MessagePoll
      */
     public function getPoll()
     {
@@ -386,7 +386,7 @@ class MessagePollRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets poll
      *
-     * @param \Vendor\Waha\Generated\Model\MessagePoll $poll poll
+     * @param \AfroTechnology\Waha\Generated\Model\MessagePoll $poll poll
      *
      * @return self
      */

@@ -1,13 +1,13 @@
 <?php
 
-namespace Vendor\Waha\OpenApi;
+namespace AfroTechnology\Waha\OpenApi;
 
+use AfroTechnology\Waha\Debug\WahaDebugManager;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use Illuminate\Support\Facades\Log;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Vendor\Waha\Debug\WahaDebugManager;
 
 final class GeneratedClientFactory
 {
@@ -42,8 +42,8 @@ final class GeneratedClientFactory
         $method = OpenApiRouter::normalizeTagToMethod($tagName);
         $classShort = ucfirst($method).'Api';
 
-        $apiClass = "Vendor\\Waha\\Generated\\Api\\{$classShort}";
-        $configClass = 'Vendor\\Waha\\Generated\\Configuration';
+        $apiClass = "AfroTechnology\\Waha\\Generated\\Api\\{$classShort}";
+        $configClass = 'AfroTechnology\\Waha\\Generated\\Configuration';
 
         if (! class_exists($apiClass) || ! class_exists($configClass)) {
             throw new \RuntimeException(

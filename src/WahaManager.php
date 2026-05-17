@@ -1,13 +1,13 @@
 <?php
 
-namespace Vendor\Waha;
+namespace AfroTechnology\Waha;
 
-use Vendor\Waha\Debug\WahaDebugManager;
-use Vendor\Waha\OpenApi\GeneratedClientFactory;
-use Vendor\Waha\OpenApi\OpenApiRouter;
-use Vendor\Waha\OpenApi\OpenApiSpecRepository;
-use Vendor\Waha\OpenApi\WahaApiProxy;
-use Vendor\Waha\OpenApi\WahaManagerProxy;
+use AfroTechnology\Waha\Debug\WahaDebugManager;
+use AfroTechnology\Waha\OpenApi\GeneratedClientFactory;
+use AfroTechnology\Waha\OpenApi\OpenApiRouter;
+use AfroTechnology\Waha\OpenApi\OpenApiSpecRepository;
+use AfroTechnology\Waha\OpenApi\WahaApiProxy;
+use AfroTechnology\Waha\OpenApi\WahaManagerProxy;
 
 final class WahaManager
 {

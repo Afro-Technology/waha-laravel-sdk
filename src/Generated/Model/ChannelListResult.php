@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * ChannelListResult Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class ChannelListResult implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'page' => '\Vendor\Waha\Generated\Model\ChannelPagination',
-        'channels' => '\Vendor\Waha\Generated\Model\ChannelPublicInfo[]'
+        'page' => '\AfroTechnology\Waha\Generated\Model\ChannelPagination',
+        'channels' => '\AfroTechnology\Waha\Generated\Model\ChannelPublicInfo[]'
     ];
 
     /**
@@ -305,7 +305,7 @@ class ChannelListResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets page
      *
-     * @return \Vendor\Waha\Generated\Model\ChannelPagination
+     * @return \AfroTechnology\Waha\Generated\Model\ChannelPagination
      */
     public function getPage()
     {
@@ -315,7 +315,7 @@ class ChannelListResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets page
      *
-     * @param \Vendor\Waha\Generated\Model\ChannelPagination $page page
+     * @param \AfroTechnology\Waha\Generated\Model\ChannelPagination $page page
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class ChannelListResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets channels
      *
-     * @return \Vendor\Waha\Generated\Model\ChannelPublicInfo[]
+     * @return \AfroTechnology\Waha\Generated\Model\ChannelPublicInfo[]
      */
     public function getChannels()
     {
@@ -342,7 +342,7 @@ class ChannelListResult implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets channels
      *
-     * @param \Vendor\Waha\Generated\Model\ChannelPublicInfo[] $channels channels
+     * @param \AfroTechnology\Waha\Generated\Model\ChannelPublicInfo[] $channels channels
      *
      * @return self
      */

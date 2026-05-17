@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SendListMessage Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class SendListMessage implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'string',
         'footer' => 'string',
         'button' => 'string',
-        'sections' => '\Vendor\Waha\Generated\Model\Section[]'
+        'sections' => '\AfroTechnology\Waha\Generated\Model\Section[]'
     ];
 
     /**
@@ -437,7 +437,7 @@ class SendListMessage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets sections
      *
-     * @return \Vendor\Waha\Generated\Model\Section[]
+     * @return \AfroTechnology\Waha\Generated\Model\Section[]
      */
     public function getSections()
     {
@@ -447,7 +447,7 @@ class SendListMessage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sections
      *
-     * @param \Vendor\Waha\Generated\Model\Section[] $sections sections
+     * @param \AfroTechnology\Waha\Generated\Model\Section[] $sections sections
      *
      * @return self
      */

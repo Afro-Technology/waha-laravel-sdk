@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\Waha\Console;
+namespace AfroTechnology\Waha\Console;
 
+use AfroTechnology\Waha\Actions\GenerateOpenApiClientAction;
+use AfroTechnology\Waha\Support\PackagePath;
 use Illuminate\Console\Command;
-use Vendor\Waha\Actions\GenerateOpenApiClientAction;
-use Vendor\Waha\Support\PackagePath;
 
 final class GenerateOpenApiClientCommand extends Command
 {
@@ -29,7 +29,7 @@ final class GenerateOpenApiClientCommand extends Command
         }
 
         $out = (string) ($this->option('out')
-            ?: config('waha.openapi.generated_path', PackagePath::path('src/Generated')));
+            ?: config('waha.openapi.generated_path', PackagePath::path('src')));
 
         if ($out !== '' && ! str_starts_with($out, '/')) {
             $out = base_path($out);

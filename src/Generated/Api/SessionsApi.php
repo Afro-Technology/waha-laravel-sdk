@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SessionsApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -163,12 +163,12 @@ class SessionsApi
      *
      * Create a session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionCreateRequest $session_create_request session_create_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionCreateRequest $session_create_request session_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerCreate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionDTO
+     * @return \AfroTechnology\Waha\Generated\Model\SessionDTO
      */
     public function sessionsControllerCreate($session_create_request, string $contentType = self::contentTypes['sessionsControllerCreate'][0])
     {
@@ -181,12 +181,12 @@ class SessionsApi
      *
      * Create a session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionCreateRequest $session_create_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionCreateRequest $session_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerCreate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerCreateWithHttpInfo($session_create_request, string $contentType = self::contentTypes['sessionsControllerCreate'][0])
     {
@@ -229,11 +229,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -251,13 +251,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -290,7 +290,7 @@ class SessionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionDTO',
+                        '\AfroTechnology\Waha\Generated\Model\SessionDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -305,7 +305,7 @@ class SessionsApi
      *
      * Create a session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionCreateRequest $session_create_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionCreateRequest $session_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -326,7 +326,7 @@ class SessionsApi
      *
      * Create a session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionCreateRequest $session_create_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionCreateRequest $session_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -334,7 +334,7 @@ class SessionsApi
      */
     public function sessionsControllerCreateAsyncWithHttpInfo($session_create_request, string $contentType = self::contentTypes['sessionsControllerCreate'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
         $request = $this->sessionsControllerCreateRequest($session_create_request, $contentType);
 
         return $this->client
@@ -376,7 +376,7 @@ class SessionsApi
     /**
      * Create request for operation 'sessionsControllerCreate'
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionCreateRequest $session_create_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionCreateRequest $session_create_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -474,12 +474,12 @@ class SessionsApi
      *
      * Upsert and Start session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request session_start_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request session_start_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRACATEDStart'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionDTO
+     * @return \AfroTechnology\Waha\Generated\Model\SessionDTO
      * @deprecated
      */
     public function sessionsControllerDEPRACATEDStart($session_start_deprecated_request, string $contentType = self::contentTypes['sessionsControllerDEPRACATEDStart'][0])
@@ -493,12 +493,12 @@ class SessionsApi
      *
      * Upsert and Start session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRACATEDStart'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function sessionsControllerDEPRACATEDStartWithHttpInfo($session_start_deprecated_request, string $contentType = self::contentTypes['sessionsControllerDEPRACATEDStart'][0])
@@ -542,11 +542,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -564,13 +564,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -603,7 +603,7 @@ class SessionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionDTO',
+                        '\AfroTechnology\Waha\Generated\Model\SessionDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -618,7 +618,7 @@ class SessionsApi
      *
      * Upsert and Start session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRACATEDStart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -640,7 +640,7 @@ class SessionsApi
      *
      * Upsert and Start session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRACATEDStart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -649,7 +649,7 @@ class SessionsApi
      */
     public function sessionsControllerDEPRACATEDStartAsyncWithHttpInfo($session_start_deprecated_request, string $contentType = self::contentTypes['sessionsControllerDEPRACATEDStart'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
         $request = $this->sessionsControllerDEPRACATEDStartRequest($session_start_deprecated_request, $contentType);
 
         return $this->client
@@ -691,7 +691,7 @@ class SessionsApi
     /**
      * Create request for operation 'sessionsControllerDEPRACATEDStart'
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStartDeprecatedRequest $session_start_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRACATEDStart'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -790,10 +790,10 @@ class SessionsApi
      *
      * Logout and Delete session.
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request session_logout_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request session_logout_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDLogout'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -808,10 +808,10 @@ class SessionsApi
      *
      * Logout and Delete session.
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDLogout'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -869,7 +869,7 @@ class SessionsApi
      *
      * Logout and Delete session.
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDLogout'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -891,7 +891,7 @@ class SessionsApi
      *
      * Logout and Delete session.
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDLogout'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -929,7 +929,7 @@ class SessionsApi
     /**
      * Create request for operation 'sessionsControllerDEPRECATEDLogout'
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionLogoutDeprecatedRequest $session_logout_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDLogout'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1028,10 +1028,10 @@ class SessionsApi
      *
      * Stop (and Logout if asked) session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request session_stop_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request session_stop_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDStop'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
@@ -1046,10 +1046,10 @@ class SessionsApi
      *
      * Stop (and Logout if asked) session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDStop'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
@@ -1107,7 +1107,7 @@ class SessionsApi
      *
      * Stop (and Logout if asked) session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDStop'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1129,7 +1129,7 @@ class SessionsApi
      *
      * Stop (and Logout if asked) session
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDStop'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1167,7 +1167,7 @@ class SessionsApi
     /**
      * Create request for operation 'sessionsControllerDEPRECATEDStop'
      *
-     * @param  \Vendor\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionStopDeprecatedRequest $session_stop_deprecated_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDEPRECATEDStop'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1269,7 +1269,7 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDelete'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1286,7 +1286,7 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerDelete'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1504,9 +1504,9 @@ class SessionsApi
      * @param  string[] $expand Expand additional session details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionInfo
+     * @return \AfroTechnology\Waha\Generated\Model\SessionInfo
      */
     public function sessionsControllerGet($session, $expand = null, string $contentType = self::contentTypes['sessionsControllerGet'][0])
     {
@@ -1523,9 +1523,9 @@ class SessionsApi
      * @param  string[] $expand Expand additional session details. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionInfo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerGetWithHttpInfo($session, $expand = null, string $contentType = self::contentTypes['sessionsControllerGet'][0])
     {
@@ -1568,11 +1568,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\SessionInfo' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionInfo' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionInfo' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionInfo' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1590,13 +1590,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionInfo', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionInfo', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionInfo';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionInfo';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1629,7 +1629,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionInfo',
+                        '\AfroTechnology\Waha\Generated\Model\SessionInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1675,7 +1675,7 @@ class SessionsApi
      */
     public function sessionsControllerGetAsyncWithHttpInfo($session, $expand = null, string $contentType = self::contentTypes['sessionsControllerGet'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionInfo';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionInfo';
         $request = $this->sessionsControllerGetRequest($session, $expand, $contentType);
 
         return $this->client
@@ -1830,9 +1830,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerGetMe'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\MeInfo
+     * @return \AfroTechnology\Waha\Generated\Model\MeInfo
      */
     public function sessionsControllerGetMe($session, string $contentType = self::contentTypes['sessionsControllerGetMe'][0])
     {
@@ -1848,9 +1848,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerGetMe'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\MeInfo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\MeInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerGetMeWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerGetMe'][0])
     {
@@ -1893,11 +1893,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\MeInfo' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\MeInfo' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\MeInfo' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\MeInfo' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1915,13 +1915,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\MeInfo', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\MeInfo', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\MeInfo';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\MeInfo';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1954,7 +1954,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\MeInfo',
+                        '\AfroTechnology\Waha\Generated\Model\MeInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1998,7 +1998,7 @@ class SessionsApi
      */
     public function sessionsControllerGetMeAsyncWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerGetMe'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\MeInfo';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\MeInfo';
         $request = $this->sessionsControllerGetMeRequest($session, $contentType);
 
         return $this->client
@@ -2143,9 +2143,9 @@ class SessionsApi
      * @param  bool $all Return all sessions, including those that are in the STOPPED state. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerList'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionInfo[]
+     * @return \AfroTechnology\Waha\Generated\Model\SessionInfo[]
      */
     public function sessionsControllerList($expand = null, $all = null, string $contentType = self::contentTypes['sessionsControllerList'][0])
     {
@@ -2162,9 +2162,9 @@ class SessionsApi
      * @param  bool $all Return all sessions, including those that are in the STOPPED state. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerList'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionInfo[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionInfo[], HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerListWithHttpInfo($expand = null, $all = null, string $contentType = self::contentTypes['sessionsControllerList'][0])
     {
@@ -2207,11 +2207,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\SessionInfo[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionInfo[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionInfo[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionInfo[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2229,13 +2229,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionInfo[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionInfo[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionInfo[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionInfo[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2268,7 +2268,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionInfo[]',
+                        '\AfroTechnology\Waha\Generated\Model\SessionInfo[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2314,7 +2314,7 @@ class SessionsApi
      */
     public function sessionsControllerListAsyncWithHttpInfo($expand = null, $all = null, string $contentType = self::contentTypes['sessionsControllerList'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionInfo[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionInfo[]';
         $request = $this->sessionsControllerListRequest($expand, $all, $contentType);
 
         return $this->client
@@ -2464,9 +2464,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerLogout'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionDTO
+     * @return \AfroTechnology\Waha\Generated\Model\SessionDTO
      */
     public function sessionsControllerLogout($session, string $contentType = self::contentTypes['sessionsControllerLogout'][0])
     {
@@ -2482,9 +2482,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerLogout'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerLogoutWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerLogout'][0])
     {
@@ -2527,11 +2527,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2549,13 +2549,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2588,7 +2588,7 @@ class SessionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionDTO',
+                        '\AfroTechnology\Waha\Generated\Model\SessionDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2632,7 +2632,7 @@ class SessionsApi
      */
     public function sessionsControllerLogoutAsyncWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerLogout'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
         $request = $this->sessionsControllerLogoutRequest($session, $contentType);
 
         return $this->client
@@ -2776,9 +2776,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerRestart'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionDTO
+     * @return \AfroTechnology\Waha\Generated\Model\SessionDTO
      */
     public function sessionsControllerRestart($session, string $contentType = self::contentTypes['sessionsControllerRestart'][0])
     {
@@ -2794,9 +2794,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerRestart'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerRestartWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerRestart'][0])
     {
@@ -2839,11 +2839,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2861,13 +2861,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2900,7 +2900,7 @@ class SessionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionDTO',
+                        '\AfroTechnology\Waha\Generated\Model\SessionDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2944,7 +2944,7 @@ class SessionsApi
      */
     public function sessionsControllerRestartAsyncWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerRestart'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
         $request = $this->sessionsControllerRestartRequest($session, $contentType);
 
         return $this->client
@@ -3088,9 +3088,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerStart'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionDTO
+     * @return \AfroTechnology\Waha\Generated\Model\SessionDTO
      */
     public function sessionsControllerStart($session, string $contentType = self::contentTypes['sessionsControllerStart'][0])
     {
@@ -3106,9 +3106,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerStart'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerStartWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerStart'][0])
     {
@@ -3151,11 +3151,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3173,13 +3173,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3212,7 +3212,7 @@ class SessionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionDTO',
+                        '\AfroTechnology\Waha\Generated\Model\SessionDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3256,7 +3256,7 @@ class SessionsApi
      */
     public function sessionsControllerStartAsyncWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerStart'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
         $request = $this->sessionsControllerStartRequest($session, $contentType);
 
         return $this->client
@@ -3400,9 +3400,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerStop'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionDTO
+     * @return \AfroTechnology\Waha\Generated\Model\SessionDTO
      */
     public function sessionsControllerStop($session, string $contentType = self::contentTypes['sessionsControllerStop'][0])
     {
@@ -3418,9 +3418,9 @@ class SessionsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerStop'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerStopWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerStop'][0])
     {
@@ -3463,11 +3463,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3485,13 +3485,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3524,7 +3524,7 @@ class SessionsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionDTO',
+                        '\AfroTechnology\Waha\Generated\Model\SessionDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3568,7 +3568,7 @@ class SessionsApi
      */
     public function sessionsControllerStopAsyncWithHttpInfo($session, string $contentType = self::contentTypes['sessionsControllerStop'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
         $request = $this->sessionsControllerStopRequest($session, $contentType);
 
         return $this->client
@@ -3710,12 +3710,12 @@ class SessionsApi
      * Update a session
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\SessionUpdateRequest $session_update_request session_update_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionUpdateRequest $session_update_request session_update_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerUpdate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SessionDTO
+     * @return \AfroTechnology\Waha\Generated\Model\SessionDTO
      */
     public function sessionsControllerUpdate($session, $session_update_request, string $contentType = self::contentTypes['sessionsControllerUpdate'][0])
     {
@@ -3729,12 +3729,12 @@ class SessionsApi
      * Update a session
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\SessionUpdateRequest $session_update_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionUpdateRequest $session_update_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerUpdate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SessionDTO, HTTP status code, HTTP response headers (array of strings)
      */
     public function sessionsControllerUpdateWithHttpInfo($session, $session_update_request, string $contentType = self::contentTypes['sessionsControllerUpdate'][0])
     {
@@ -3777,11 +3777,11 @@ class SessionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SessionDTO' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SessionDTO' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3799,13 +3799,13 @@ class SessionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SessionDTO', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SessionDTO', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3838,7 +3838,7 @@ class SessionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SessionDTO',
+                        '\AfroTechnology\Waha\Generated\Model\SessionDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3854,7 +3854,7 @@ class SessionsApi
      * Update a session
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\SessionUpdateRequest $session_update_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionUpdateRequest $session_update_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3876,7 +3876,7 @@ class SessionsApi
      * Update a session
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\SessionUpdateRequest $session_update_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionUpdateRequest $session_update_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3884,7 +3884,7 @@ class SessionsApi
      */
     public function sessionsControllerUpdateAsyncWithHttpInfo($session, $session_update_request, string $contentType = self::contentTypes['sessionsControllerUpdate'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SessionDTO';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SessionDTO';
         $request = $this->sessionsControllerUpdateRequest($session, $session_update_request, $contentType);
 
         return $this->client
@@ -3927,7 +3927,7 @@ class SessionsApi
      * Create request for operation 'sessionsControllerUpdate'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\SessionUpdateRequest $session_update_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SessionUpdateRequest $session_update_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sessionsControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

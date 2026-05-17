@@ -24,22 +24,22 @@
   },
   "autoload": {
     "psr-4": {
-      "Vendor\\Waha\\": "src/",
-      "Vendor\\Waha\\Generated\\": "src/Generated/"
+      "AfroTechnology\\Waha\\": "src/",
+      "AfroTechnology\\Waha\\Generated\\": "src/Generated/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Vendor\\Waha\\Tests\\": "tests/"
+      "AfroTechnology\\Waha\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Vendor\\Waha\\WahaServiceProvider"
+        "AfroTechnology\\Waha\\WahaServiceProvider"
       ],
       "aliases": {
-        "Waha": "Vendor\\Waha\\Facades\\Waha"
+        "Waha": "AfroTechnology\\Waha\\Facades\\Waha"
       }
     }
   },
@@ -47,10 +47,20 @@
     "openapi:fetch": "php artisan waha:openapi:fetch",
     "openapi:generate": "php artisan waha:openapi:generate",
     "openapi:update": "php artisan waha:openapi:update",
+    "lint": "php bin/php-lint.php",
     "test": "vendor/bin/phpunit",
-    "pint": "vendor/bin/pint",
+    "format": "vendor/bin/pint",
+    "pint": "@format",
     "pint:test": "vendor/bin/pint --test",
-    "stan": "XDEBUG_MODE=off vendor/bin/phpstan analyse"
+    "stan": "XDEBUG_MODE=off vendor/bin/phpstan analyse",
+    "analyse": "@stan",
+    "ci:all": [
+      "@composer validate --strict --no-check-lock",
+      "@lint",
+      "@pint:test",
+      "@stan",
+      "@test"
+    ]
   },
   "minimum-stability": "stable",
   "prefer-stable": true,

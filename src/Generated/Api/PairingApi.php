@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * PairingApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -137,7 +137,7 @@ class PairingApi
      * @param  string $format format (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authControllerGetQR'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
@@ -156,7 +156,7 @@ class PairingApi
      * @param  string $format (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authControllerGetQR'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
@@ -467,10 +467,10 @@ class PairingApi
      * Request authentication code.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RequestCodeRequest $request_code_request request_code_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RequestCodeRequest $request_code_request request_code_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authControllerRequestCode'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -485,10 +485,10 @@ class PairingApi
      * Request authentication code.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RequestCodeRequest $request_code_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RequestCodeRequest $request_code_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authControllerRequestCode'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -546,7 +546,7 @@ class PairingApi
      * Request authentication code.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RequestCodeRequest $request_code_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RequestCodeRequest $request_code_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authControllerRequestCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -568,7 +568,7 @@ class PairingApi
      * Request authentication code.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RequestCodeRequest $request_code_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RequestCodeRequest $request_code_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authControllerRequestCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -606,7 +606,7 @@ class PairingApi
      * Create request for operation 'authControllerRequestCode'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RequestCodeRequest $request_code_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RequestCodeRequest $request_code_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['authControllerRequestCode'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -722,7 +722,7 @@ class PairingApi
      * @param  string $session session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['screenshotControllerScreenshot'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
@@ -740,7 +740,7 @@ class PairingApi
      * @param  string $session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['screenshotControllerScreenshot'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */

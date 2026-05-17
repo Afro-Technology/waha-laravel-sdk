@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Actions;
+namespace AfroTechnology\Waha\Actions;
 
 use Symfony\Component\Process\Process;
 
@@ -75,7 +75,7 @@ final class GenerateOpenApiClientAction
             '--skip-validate-spec',
             '--global-property=apis,models,apiTests=false,modelTests=false,apiDocs=false,modelDocs=false'
             .',supportingFiles=ApiException.php:Configuration.php:HeaderSelector.php:ObjectSerializer.php:ModelInterface.php',
-            '--additional-properties=invokerPackage=Vendor\\Waha\\Generated,packageName=VendorWahaGenerated,srcBasePath=Generated',
+            '--additional-properties=invokerPackage=AfroTechnology\\Waha\\Generated,packageName=AfroTechnologyWahaGenerated,srcBasePath=Generated',
         ];
     }
 

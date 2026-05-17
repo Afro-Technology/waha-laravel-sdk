@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * CallsApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -128,10 +128,10 @@ class CallsApi
      * Reject incoming call
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RejectCallRequest $reject_call_request reject_call_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RejectCallRequest $reject_call_request reject_call_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsControllerRejectCall'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -146,10 +146,10 @@ class CallsApi
      * Reject incoming call
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RejectCallRequest $reject_call_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RejectCallRequest $reject_call_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsControllerRejectCall'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -207,7 +207,7 @@ class CallsApi
      * Reject incoming call
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RejectCallRequest $reject_call_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RejectCallRequest $reject_call_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsControllerRejectCall'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -229,7 +229,7 @@ class CallsApi
      * Reject incoming call
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RejectCallRequest $reject_call_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RejectCallRequest $reject_call_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsControllerRejectCall'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -267,7 +267,7 @@ class CallsApi
      * Create request for operation 'callsControllerRejectCall'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\RejectCallRequest $reject_call_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\RejectCallRequest $reject_call_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['callsControllerRejectCall'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SessionDTO Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class SessionDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name' => 'string',
         'status' => 'string',
-        'config' => '\Vendor\Waha\Generated\Model\SessionConfig'
+        'config' => '\AfroTechnology\Waha\Generated\Model\SessionConfig'
     ];
 
     /**
@@ -406,7 +406,7 @@ class SessionDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets config
      *
-     * @return \Vendor\Waha\Generated\Model\SessionConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\SessionConfig|null
      */
     public function getConfig()
     {
@@ -416,7 +416,7 @@ class SessionDTO implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets config
      *
-     * @param \Vendor\Waha\Generated\Model\SessionConfig|null $config config
+     * @param \AfroTechnology\Waha\Generated\Model\SessionConfig|null $config config
      *
      * @return self
      */

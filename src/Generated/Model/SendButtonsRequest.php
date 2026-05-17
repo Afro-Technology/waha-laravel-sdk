@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SendButtonsRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,10 +59,10 @@ class SendButtonsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'chat_id' => 'string',
         'header' => 'string',
-        'header_image' => '\Vendor\Waha\Generated\Model\ProfilePictureRequestFile',
+        'header_image' => '\AfroTechnology\Waha\Generated\Model\ProfilePictureRequestFile',
         'body' => 'string',
         'footer' => 'string',
-        'buttons' => '\Vendor\Waha\Generated\Model\Button[]',
+        'buttons' => '\AfroTechnology\Waha\Generated\Model\Button[]',
         'session' => 'string'
     ];
 
@@ -406,7 +406,7 @@ class SendButtonsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets header_image
      *
-     * @return \Vendor\Waha\Generated\Model\ProfilePictureRequestFile|null
+     * @return \AfroTechnology\Waha\Generated\Model\ProfilePictureRequestFile|null
      */
     public function getHeaderImage()
     {
@@ -416,7 +416,7 @@ class SendButtonsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets header_image
      *
-     * @param \Vendor\Waha\Generated\Model\ProfilePictureRequestFile|null $header_image header_image
+     * @param \AfroTechnology\Waha\Generated\Model\ProfilePictureRequestFile|null $header_image header_image
      *
      * @return self
      */
@@ -487,7 +487,7 @@ class SendButtonsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets buttons
      *
-     * @return \Vendor\Waha\Generated\Model\Button[]
+     * @return \AfroTechnology\Waha\Generated\Model\Button[]
      */
     public function getButtons()
     {
@@ -497,7 +497,7 @@ class SendButtonsRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets buttons
      *
-     * @param \Vendor\Waha\Generated\Model\Button[] $buttons buttons
+     * @param \AfroTechnology\Waha\Generated\Model\Button[] $buttons buttons
      *
      * @return self
      */

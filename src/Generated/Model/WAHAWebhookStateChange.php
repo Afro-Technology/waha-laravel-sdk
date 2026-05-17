@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * WAHAWebhookStateChange Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -64,8 +64,8 @@ class WAHAWebhookStateChange implements ModelInterface, ArrayAccess, \JsonSerial
         'engine' => 'string',
         'event' => 'object',
         'payload' => 'object',
-        'me' => '\Vendor\Waha\Generated\Model\MeInfo',
-        'environment' => '\Vendor\Waha\Generated\Model\WAHAEnvironment'
+        'me' => '\AfroTechnology\Waha\Generated\Model\MeInfo',
+        'environment' => '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment'
     ];
 
     /**
@@ -686,7 +686,7 @@ class WAHAWebhookStateChange implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets me
      *
-     * @return \Vendor\Waha\Generated\Model\MeInfo|null
+     * @return \AfroTechnology\Waha\Generated\Model\MeInfo|null
      */
     public function getMe()
     {
@@ -696,7 +696,7 @@ class WAHAWebhookStateChange implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets me
      *
-     * @param \Vendor\Waha\Generated\Model\MeInfo|null $me me
+     * @param \AfroTechnology\Waha\Generated\Model\MeInfo|null $me me
      *
      * @return self
      */
@@ -713,7 +713,7 @@ class WAHAWebhookStateChange implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets environment
      *
-     * @return \Vendor\Waha\Generated\Model\WAHAEnvironment
+     * @return \AfroTechnology\Waha\Generated\Model\WAHAEnvironment
      */
     public function getEnvironment()
     {
@@ -723,7 +723,7 @@ class WAHAWebhookStateChange implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets environment
      *
-     * @param \Vendor\Waha\Generated\Model\WAHAEnvironment $environment environment
+     * @param \AfroTechnology\Waha\Generated\Model\WAHAEnvironment $environment environment
      *
      * @return self
      */

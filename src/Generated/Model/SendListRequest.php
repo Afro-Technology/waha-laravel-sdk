@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SendListRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class SendListRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'chat_id' => 'string',
-        'message' => '\Vendor\Waha\Generated\Model\SendListMessage',
+        'message' => '\AfroTechnology\Waha\Generated\Model\SendListMessage',
         'reply_to' => 'string',
         'session' => 'string'
     ];
@@ -349,7 +349,7 @@ class SendListRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets message
      *
-     * @return \Vendor\Waha\Generated\Model\SendListMessage
+     * @return \AfroTechnology\Waha\Generated\Model\SendListMessage
      */
     public function getMessage()
     {
@@ -359,7 +359,7 @@ class SendListRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param \Vendor\Waha\Generated\Model\SendListMessage $message message
+     * @param \AfroTechnology\Waha\Generated\Model\SendListMessage $message message
      *
      * @return self
      */

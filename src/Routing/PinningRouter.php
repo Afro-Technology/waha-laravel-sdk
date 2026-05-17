@@ -1,9 +1,9 @@
 <?php
 
-namespace Vendor\Waha\Routing;
+namespace AfroTechnology\Waha\Routing;
 
-use Vendor\Waha\Contracts\PinStore;
-use Vendor\Waha\Contracts\SessionRouter;
+use AfroTechnology\Waha\Contracts\PinStore;
+use AfroTechnology\Waha\Contracts\SessionRouter;
 
 class PinningRouter implements SessionRouter
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\Waha\Actions;
+namespace AfroTechnology\Waha\Actions;
 
+use AfroTechnology\Waha\OpenApi\OpenApiRouter;
+use AfroTechnology\Waha\OpenApi\OpenApiSpecRepository;
 use Illuminate\Support\Str;
-use Vendor\Waha\OpenApi\OpenApiRouter;
-use Vendor\Waha\OpenApi\OpenApiSpecRepository;
 
 final class GenerateIdeHelperAction
 {
@@ -71,7 +71,7 @@ final class GenerateIdeHelperAction
             $class = Str::studly($method).'Tag';
             $doc = $this->buildTagProxyDoc($router, $tagName);
 
-            $content = "<?php\n\nnamespace Vendor\\Waha\\OpenApi\\Tags;\n\nuse Vendor\\Waha\\OpenApi\\WahaTagProxy;\n\n{$doc}\nfinal class {$class} extends WahaTagProxy\n{\n}\n";
+            $content = "<?php\n\nnamespace AfroTechnology\\Waha\\OpenApi\\Tags;\n\nuse AfroTechnology\\Waha\\OpenApi\\WahaTagProxy;\n\n{$doc}\nfinal class {$class} extends WahaTagProxy\n{\n}\n";
             file_put_contents($tagsDir.DIRECTORY_SEPARATOR."{$class}.php", $content);
         }
     }
@@ -83,11 +83,11 @@ final class GenerateIdeHelperAction
         $lines[] = ' * AUTO-GENERATED IDE HELPER (DO NOT EDIT MANUALLY)';
         $lines[] = ' *';
 
-        $lines[] = ' * @method static \\Vendor\\Waha\\OpenApi\\WahaApiProxy host(string $hostKey)';
-        $lines[] = ' * @method static \\Vendor\\Waha\\OpenApi\\WahaManagerProxy debug()';
-        $lines[] = ' * @method static \\Vendor\\Waha\\OpenApi\\WahaManagerProxy asArray()';
-        $lines[] = ' * @method static \\Vendor\\Waha\\OpenApi\\WahaManagerProxy asJson()';
-        $lines[] = ' * @method static \\Vendor\\Waha\\OpenApi\\WahaManagerProxy asModel()';
+        $lines[] = ' * @method static \\AfroTechnology\\Waha\\OpenApi\\WahaApiProxy host(string $hostKey)';
+        $lines[] = ' * @method static \\AfroTechnology\\Waha\\OpenApi\\WahaManagerProxy debug()';
+        $lines[] = ' * @method static \\AfroTechnology\\Waha\\OpenApi\\WahaManagerProxy asArray()';
+        $lines[] = ' * @method static \\AfroTechnology\\Waha\\OpenApi\\WahaManagerProxy asJson()';
+        $lines[] = ' * @method static \\AfroTechnology\\Waha\\OpenApi\\WahaManagerProxy asModel()';
         $lines[] = ' * @method static ?array lastHttp()';
         $lines[] = ' * @method static ?string lastHttpCurl()';
         $lines[] = ' * @method static mixed withDebug(callable $fn)';
@@ -95,7 +95,7 @@ final class GenerateIdeHelperAction
 
         foreach ($router->tagMethods() as $method => $tagName) {
             $class = Str::studly($method).'Tag';
-            $lines[] = " * @method static \\Vendor\\Waha\\OpenApi\\Tags\\{$class} {$method}()";
+            $lines[] = " * @method static \\AfroTechnology\\Waha\\OpenApi\\Tags\\{$class} {$method}()";
         }
 
         $lines[] = ' *';
@@ -119,7 +119,7 @@ final class GenerateIdeHelperAction
 
         foreach ($router->tagMethods() as $method => $tagName) {
             $class = Str::studly($method).'Tag';
-            $lines[] = " * @method \\Vendor\\Waha\\OpenApi\\Tags\\{$class} {$method}()";
+            $lines[] = " * @method \\AfroTechnology\\Waha\\OpenApi\\Tags\\{$class} {$method}()";
         }
 
         $lines[] = ' *';
@@ -143,7 +143,7 @@ final class GenerateIdeHelperAction
 
         foreach ($router->tagMethods() as $method => $tagName) {
             $class = Str::studly($method).'Tag';
-            $lines[] = " * @method \\Vendor\\Waha\\OpenApi\\Tags\\{$class} {$method}()";
+            $lines[] = " * @method \\AfroTechnology\\Waha\\OpenApi\\Tags\\{$class} {$method}()";
         }
 
         $lines[] = ' *';
@@ -229,7 +229,7 @@ final class GenerateIdeHelperAction
             if (is_string($ref)) {
                 $name = $this->refSchemaName($ref);
 
-                return "\\Vendor\\Waha\\Generated\\Model\\{$name}";
+                return "\\AfroTechnology\\Waha\\Generated\\Model\\{$name}";
             }
 
             $type = $schema['type'] ?? null;
@@ -387,7 +387,7 @@ final class GenerateIdeHelperAction
         if (is_string($ref)) {
             $name = $this->refSchemaName($ref);
 
-            return "\\Vendor\\Waha\\Generated\\Model\\{$name}";
+            return "\\AfroTechnology\\Waha\\Generated\\Model\\{$name}";
         }
 
         $type = $schema['type'] ?? null;

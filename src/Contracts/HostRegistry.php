@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Contracts;
+namespace AfroTechnology\Waha\Contracts;
 
 /**
  * Provides host definitions (base_url, keys, webhook secret, default_session, mode).

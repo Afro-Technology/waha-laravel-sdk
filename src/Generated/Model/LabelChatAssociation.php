@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * LabelChatAssociation Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class LabelChatAssociation implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static $openAPITypes = [
         'label_id' => 'string',
         'chat_id' => 'string',
-        'label' => '\Vendor\Waha\Generated\Model\Label'
+        'label' => '\AfroTechnology\Waha\Generated\Model\Label'
     ];
 
     /**
@@ -369,7 +369,7 @@ class LabelChatAssociation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets label
      *
-     * @return \Vendor\Waha\Generated\Model\Label
+     * @return \AfroTechnology\Waha\Generated\Model\Label
      */
     public function getLabel()
     {
@@ -379,7 +379,7 @@ class LabelChatAssociation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets label
      *
-     * @param \Vendor\Waha\Generated\Model\Label $label label
+     * @param \AfroTechnology\Waha\Generated\Model\Label $label label
      *
      * @return self
      */

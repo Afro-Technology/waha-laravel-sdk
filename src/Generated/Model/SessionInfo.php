@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * SessionInfo Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,13 +58,13 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'apps' => '\Vendor\Waha\Generated\Model\App[]',
-        'me' => '\Vendor\Waha\Generated\Model\MeInfo',
+        'apps' => '\AfroTechnology\Waha\Generated\Model\App[]',
+        'me' => '\AfroTechnology\Waha\Generated\Model\MeInfo',
         'assigned_worker' => 'string',
         'presence' => 'object',
-        'timestamps' => '\Vendor\Waha\Generated\Model\SessionInfoTimestamps',
+        'timestamps' => '\AfroTechnology\Waha\Generated\Model\SessionInfoTimestamps',
         'status' => 'string',
-        'config' => '\Vendor\Waha\Generated\Model\SessionConfig'
+        'config' => '\AfroTechnology\Waha\Generated\Model\SessionConfig'
     ];
 
     /**
@@ -410,7 +410,7 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets apps
      *
-     * @return \Vendor\Waha\Generated\Model\App[]|null
+     * @return \AfroTechnology\Waha\Generated\Model\App[]|null
      */
     public function getApps()
     {
@@ -420,7 +420,7 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets apps
      *
-     * @param \Vendor\Waha\Generated\Model\App[]|null $apps Apps configured for the session.
+     * @param \AfroTechnology\Waha\Generated\Model\App[]|null $apps Apps configured for the session.
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets me
      *
-     * @return \Vendor\Waha\Generated\Model\MeInfo|null
+     * @return \AfroTechnology\Waha\Generated\Model\MeInfo|null
      */
     public function getMe()
     {
@@ -447,7 +447,7 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets me
      *
-     * @param \Vendor\Waha\Generated\Model\MeInfo|null $me me
+     * @param \AfroTechnology\Waha\Generated\Model\MeInfo|null $me me
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets timestamps
      *
-     * @return \Vendor\Waha\Generated\Model\SessionInfoTimestamps
+     * @return \AfroTechnology\Waha\Generated\Model\SessionInfoTimestamps
      */
     public function getTimestamps()
     {
@@ -528,7 +528,7 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets timestamps
      *
-     * @param \Vendor\Waha\Generated\Model\SessionInfoTimestamps $timestamps timestamps
+     * @param \AfroTechnology\Waha\Generated\Model\SessionInfoTimestamps $timestamps timestamps
      *
      * @return self
      */
@@ -582,7 +582,7 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets config
      *
-     * @return \Vendor\Waha\Generated\Model\SessionConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\SessionConfig|null
      */
     public function getConfig()
     {
@@ -592,7 +592,7 @@ class SessionInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets config
      *
-     * @param \Vendor\Waha\Generated\Model\SessionConfig|null $config config
+     * @param \AfroTechnology\Waha\Generated\Model\SessionConfig|null $config config
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Models;
+namespace AfroTechnology\Waha\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

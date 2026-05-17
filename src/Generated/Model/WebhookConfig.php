@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * WebhookConfig Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,9 +59,9 @@ class WebhookConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'url' => 'string',
         'events' => 'object[]',
-        'hmac' => '\Vendor\Waha\Generated\Model\HmacConfiguration',
-        'retries' => '\Vendor\Waha\Generated\Model\RetriesConfiguration',
-        'custom_headers' => '\Vendor\Waha\Generated\Model\CustomHeader[]'
+        'hmac' => '\AfroTechnology\Waha\Generated\Model\HmacConfiguration',
+        'retries' => '\AfroTechnology\Waha\Generated\Model\RetriesConfiguration',
+        'custom_headers' => '\AfroTechnology\Waha\Generated\Model\CustomHeader[]'
     ];
 
     /**
@@ -380,7 +380,7 @@ class WebhookConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets hmac
      *
-     * @return \Vendor\Waha\Generated\Model\HmacConfiguration|null
+     * @return \AfroTechnology\Waha\Generated\Model\HmacConfiguration|null
      */
     public function getHmac()
     {
@@ -390,7 +390,7 @@ class WebhookConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hmac
      *
-     * @param \Vendor\Waha\Generated\Model\HmacConfiguration|null $hmac hmac
+     * @param \AfroTechnology\Waha\Generated\Model\HmacConfiguration|null $hmac hmac
      *
      * @return self
      */
@@ -407,7 +407,7 @@ class WebhookConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets retries
      *
-     * @return \Vendor\Waha\Generated\Model\RetriesConfiguration|null
+     * @return \AfroTechnology\Waha\Generated\Model\RetriesConfiguration|null
      */
     public function getRetries()
     {
@@ -417,7 +417,7 @@ class WebhookConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets retries
      *
-     * @param \Vendor\Waha\Generated\Model\RetriesConfiguration|null $retries retries
+     * @param \AfroTechnology\Waha\Generated\Model\RetriesConfiguration|null $retries retries
      *
      * @return self
      */
@@ -434,7 +434,7 @@ class WebhookConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets custom_headers
      *
-     * @return \Vendor\Waha\Generated\Model\CustomHeader[]|null
+     * @return \AfroTechnology\Waha\Generated\Model\CustomHeader[]|null
      */
     public function getCustomHeaders()
     {
@@ -444,7 +444,7 @@ class WebhookConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets custom_headers
      *
-     * @param \Vendor\Waha\Generated\Model\CustomHeader[]|null $custom_headers custom_headers
+     * @param \AfroTechnology\Waha\Generated\Model\CustomHeader[]|null $custom_headers custom_headers
      *
      * @return self
      */

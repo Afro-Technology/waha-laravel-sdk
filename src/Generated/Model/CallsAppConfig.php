@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * CallsAppConfig Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class CallsAppConfig implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'dm' => '\Vendor\Waha\Generated\Model\CallsAppChannelConfig',
-        'group' => '\Vendor\Waha\Generated\Model\CallsAppChannelConfig'
+        'dm' => '\AfroTechnology\Waha\Generated\Model\CallsAppChannelConfig',
+        'group' => '\AfroTechnology\Waha\Generated\Model\CallsAppChannelConfig'
     ];
 
     /**
@@ -305,7 +305,7 @@ class CallsAppConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets dm
      *
-     * @return \Vendor\Waha\Generated\Model\CallsAppChannelConfig
+     * @return \AfroTechnology\Waha\Generated\Model\CallsAppChannelConfig
      */
     public function getDm()
     {
@@ -315,7 +315,7 @@ class CallsAppConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets dm
      *
-     * @param \Vendor\Waha\Generated\Model\CallsAppChannelConfig $dm Rules applied to direct messages (non-group calls)
+     * @param \AfroTechnology\Waha\Generated\Model\CallsAppChannelConfig $dm Rules applied to direct messages (non-group calls)
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class CallsAppConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets group
      *
-     * @return \Vendor\Waha\Generated\Model\CallsAppChannelConfig
+     * @return \AfroTechnology\Waha\Generated\Model\CallsAppChannelConfig
      */
     public function getGroup()
     {
@@ -342,7 +342,7 @@ class CallsAppConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets group
      *
-     * @param \Vendor\Waha\Generated\Model\CallsAppChannelConfig $group Rules applied to group calls
+     * @param \AfroTechnology\Waha\Generated\Model\CallsAppChannelConfig $group Rules applied to group calls
      *
      * @return self
      */

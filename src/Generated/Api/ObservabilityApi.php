@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * ObservabilityApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -156,9 +156,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['healthControllerCheck'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\HealthControllerCheck200Response|\Vendor\Waha\Generated\Model\HealthControllerCheck503Response
+     * @return \AfroTechnology\Waha\Generated\Model\HealthControllerCheck200Response|\AfroTechnology\Waha\Generated\Model\HealthControllerCheck503Response
      */
     public function healthControllerCheck(string $contentType = self::contentTypes['healthControllerCheck'][0])
     {
@@ -173,9 +173,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['healthControllerCheck'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\HealthControllerCheck200Response|\Vendor\Waha\Generated\Model\HealthControllerCheck503Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\HealthControllerCheck200Response|\AfroTechnology\Waha\Generated\Model\HealthControllerCheck503Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function healthControllerCheckWithHttpInfo(string $contentType = self::contentTypes['healthControllerCheck'][0])
     {
@@ -218,11 +218,11 @@ class ObservabilityApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\HealthControllerCheck200Response' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\HealthControllerCheck200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\HealthControllerCheck200Response' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\HealthControllerCheck200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -240,16 +240,16 @@ class ObservabilityApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\HealthControllerCheck200Response', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\HealthControllerCheck200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 503:
-                    if ('\Vendor\Waha\Generated\Model\HealthControllerCheck503Response' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\HealthControllerCheck503Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\HealthControllerCheck503Response' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\HealthControllerCheck503Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -267,13 +267,13 @@ class ObservabilityApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\HealthControllerCheck503Response', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\HealthControllerCheck503Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\HealthControllerCheck200Response';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\HealthControllerCheck200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -306,7 +306,7 @@ class ObservabilityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\HealthControllerCheck200Response',
+                        '\AfroTechnology\Waha\Generated\Model\HealthControllerCheck200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -314,7 +314,7 @@ class ObservabilityApi
                 case 503:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\HealthControllerCheck503Response',
+                        '\AfroTechnology\Waha\Generated\Model\HealthControllerCheck503Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -356,7 +356,7 @@ class ObservabilityApi
      */
     public function healthControllerCheckAsyncWithHttpInfo(string $contentType = self::contentTypes['healthControllerCheck'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\HealthControllerCheck200Response';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\HealthControllerCheck200Response';
         $request = $this->healthControllerCheckRequest($contentType);
 
         return $this->client
@@ -483,9 +483,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pingControllerPing'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\PingResponse
+     * @return \AfroTechnology\Waha\Generated\Model\PingResponse
      */
     public function pingControllerPing(string $contentType = self::contentTypes['pingControllerPing'][0])
     {
@@ -500,9 +500,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pingControllerPing'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\PingResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\PingResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function pingControllerPingWithHttpInfo(string $contentType = self::contentTypes['pingControllerPing'][0])
     {
@@ -545,11 +545,11 @@ class ObservabilityApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\PingResponse' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\PingResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\PingResponse' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\PingResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -567,13 +567,13 @@ class ObservabilityApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\PingResponse', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\PingResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\PingResponse';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\PingResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -606,7 +606,7 @@ class ObservabilityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\PingResponse',
+                        '\AfroTechnology\Waha\Generated\Model\PingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -648,7 +648,7 @@ class ObservabilityApi
      */
     public function pingControllerPingAsyncWithHttpInfo(string $contentType = self::contentTypes['pingControllerPing'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\PingResponse';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\PingResponse';
         $request = $this->pingControllerPingRequest($contentType);
 
         return $this->client
@@ -771,7 +771,7 @@ class ObservabilityApi
      * @param  bool $all Include all environment variables (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerEnvironment'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -789,7 +789,7 @@ class ObservabilityApi
      * @param  bool $all Include all environment variables (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerEnvironment'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1077,9 +1077,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WAHAEnvironment
+     * @return \AfroTechnology\Waha\Generated\Model\WAHAEnvironment
      */
     public function serverControllerGet(string $contentType = self::contentTypes['serverControllerGet'][0])
     {
@@ -1094,9 +1094,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WAHAEnvironment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WAHAEnvironment, HTTP status code, HTTP response headers (array of strings)
      */
     public function serverControllerGetWithHttpInfo(string $contentType = self::contentTypes['serverControllerGet'][0])
     {
@@ -1139,11 +1139,11 @@ class ObservabilityApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\WAHAEnvironment' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WAHAEnvironment' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WAHAEnvironment' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WAHAEnvironment' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1161,13 +1161,13 @@ class ObservabilityApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WAHAEnvironment', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WAHAEnvironment';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1200,7 +1200,7 @@ class ObservabilityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WAHAEnvironment',
+                        '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1242,7 +1242,7 @@ class ObservabilityApi
      */
     public function serverControllerGetAsyncWithHttpInfo(string $contentType = self::contentTypes['serverControllerGet'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WAHAEnvironment';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment';
         $request = $this->serverControllerGetRequest($contentType);
 
         return $this->client
@@ -1369,9 +1369,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ServerStatusResponse
+     * @return \AfroTechnology\Waha\Generated\Model\ServerStatusResponse
      */
     public function serverControllerStatus(string $contentType = self::contentTypes['serverControllerStatus'][0])
     {
@@ -1386,9 +1386,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ServerStatusResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ServerStatusResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function serverControllerStatusWithHttpInfo(string $contentType = self::contentTypes['serverControllerStatus'][0])
     {
@@ -1431,11 +1431,11 @@ class ObservabilityApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ServerStatusResponse' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ServerStatusResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ServerStatusResponse' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ServerStatusResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1453,13 +1453,13 @@ class ObservabilityApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ServerStatusResponse', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ServerStatusResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ServerStatusResponse';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ServerStatusResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1492,7 +1492,7 @@ class ObservabilityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ServerStatusResponse',
+                        '\AfroTechnology\Waha\Generated\Model\ServerStatusResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1534,7 +1534,7 @@ class ObservabilityApi
      */
     public function serverControllerStatusAsyncWithHttpInfo(string $contentType = self::contentTypes['serverControllerStatus'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ServerStatusResponse';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ServerStatusResponse';
         $request = $this->serverControllerStatusRequest($contentType);
 
         return $this->client
@@ -1659,12 +1659,12 @@ class ObservabilityApi
      *
      * Stop (and restart) the server
      *
-     * @param  \Vendor\Waha\Generated\Model\StopRequest $stop_request stop_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\StopRequest $stop_request stop_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerStop'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\StopResponse
+     * @return \AfroTechnology\Waha\Generated\Model\StopResponse
      */
     public function serverControllerStop($stop_request, string $contentType = self::contentTypes['serverControllerStop'][0])
     {
@@ -1677,12 +1677,12 @@ class ObservabilityApi
      *
      * Stop (and restart) the server
      *
-     * @param  \Vendor\Waha\Generated\Model\StopRequest $stop_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\StopRequest $stop_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerStop'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\StopResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\StopResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function serverControllerStopWithHttpInfo($stop_request, string $contentType = self::contentTypes['serverControllerStop'][0])
     {
@@ -1725,11 +1725,11 @@ class ObservabilityApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\StopResponse' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\StopResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\StopResponse' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\StopResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1747,13 +1747,13 @@ class ObservabilityApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\StopResponse', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\StopResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\StopResponse';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\StopResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1786,7 +1786,7 @@ class ObservabilityApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\StopResponse',
+                        '\AfroTechnology\Waha\Generated\Model\StopResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1801,7 +1801,7 @@ class ObservabilityApi
      *
      * Stop (and restart) the server
      *
-     * @param  \Vendor\Waha\Generated\Model\StopRequest $stop_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\StopRequest $stop_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerStop'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1822,7 +1822,7 @@ class ObservabilityApi
      *
      * Stop (and restart) the server
      *
-     * @param  \Vendor\Waha\Generated\Model\StopRequest $stop_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\StopRequest $stop_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerStop'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1830,7 +1830,7 @@ class ObservabilityApi
      */
     public function serverControllerStopAsyncWithHttpInfo($stop_request, string $contentType = self::contentTypes['serverControllerStop'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\StopResponse';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\StopResponse';
         $request = $this->serverControllerStopRequest($stop_request, $contentType);
 
         return $this->client
@@ -1872,7 +1872,7 @@ class ObservabilityApi
     /**
      * Create request for operation 'serverControllerStop'
      *
-     * @param  \Vendor\Waha\Generated\Model\StopRequest $stop_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\StopRequest $stop_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverControllerStop'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1975,7 +1975,7 @@ class ObservabilityApi
      * @param  string[] $categories Categories to trace (all by default) (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverDebugControllerBrowserTrace'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1994,7 +1994,7 @@ class ObservabilityApi
      * @param  string[] $categories Categories to trace (all by default) (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverDebugControllerBrowserTrace'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2249,7 +2249,7 @@ class ObservabilityApi
      * @param  float $seconds How many seconds to sample CPU (optional, default to 30)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverDebugControllerCpuProfile'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2266,7 +2266,7 @@ class ObservabilityApi
      * @param  float $seconds How many seconds to sample CPU (optional, default to 30)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverDebugControllerCpuProfile'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2480,7 +2480,7 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverDebugControllerHeapsnapshot'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2496,7 +2496,7 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['serverDebugControllerHeapsnapshot'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2694,9 +2694,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['versionControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WAHAEnvironment
+     * @return \AfroTechnology\Waha\Generated\Model\WAHAEnvironment
      * @deprecated
      */
     public function versionControllerGet(string $contentType = self::contentTypes['versionControllerGet'][0])
@@ -2712,9 +2712,9 @@ class ObservabilityApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['versionControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WAHAEnvironment, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WAHAEnvironment, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
     public function versionControllerGetWithHttpInfo(string $contentType = self::contentTypes['versionControllerGet'][0])
@@ -2758,11 +2758,11 @@ class ObservabilityApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\WAHAEnvironment' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WAHAEnvironment' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WAHAEnvironment' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WAHAEnvironment' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2780,13 +2780,13 @@ class ObservabilityApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WAHAEnvironment', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WAHAEnvironment';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2819,7 +2819,7 @@ class ObservabilityApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WAHAEnvironment',
+                        '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2863,7 +2863,7 @@ class ObservabilityApi
      */
     public function versionControllerGetAsyncWithHttpInfo(string $contentType = self::contentTypes['versionControllerGet'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WAHAEnvironment';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment';
         $request = $this->versionControllerGetRequest($contentType);
 
         return $this->client
