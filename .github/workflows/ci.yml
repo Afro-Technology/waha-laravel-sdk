@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   runtime-compat:
-    name: Runtime install (Laravel 10, PHP 8.1)
+    name: Install / Laravel 10 / PHP 8.1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,7 +40,7 @@ jobs:
           composer update --no-dev --no-interaction --prefer-dist --with-all-dependencies --with "illuminate/support:^10.48"
 
   pint:
-    name: Pint
+    name: Style / PHP 8.4
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -70,7 +70,7 @@ jobs:
         run: composer pint:test
 
   phpstan:
-    name: PHPStan
+    name: Static analysis / PHP 8.4
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -100,7 +100,7 @@ jobs:
         run: composer stan
 
   phpunit:
-    name: PHPUnit (Laravel ${{ matrix.laravel }}, PHP ${{ matrix.php }})
+    name: Test / Laravel ${{ matrix.laravel }} / PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -119,13 +119,19 @@ jobs:
             larastan: "^3.9"
             phpstan: "^2.1"
           - laravel: "12"
-            php: "8.3"
+            php: "8.2"
             illuminate: "^12.4"
             testbench: "^10.0"
             larastan: "^3.9"
             phpstan: "^2.1"
           - laravel: "13"
             php: "8.3"
+            illuminate: "^13.0"
+            testbench: "^11.0"
+            larastan: "^3.9"
+            phpstan: "^2.1"
+          - laravel: "13"
+            php: "8.4"
             illuminate: "^13.0"
             testbench: "^11.0"
             larastan: "^3.9"
