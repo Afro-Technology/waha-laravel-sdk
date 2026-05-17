@@ -3,6 +3,7 @@
 namespace AfroTechnology\Waha\Tests\Feature;
 
 use AfroTechnology\Waha\Facades\Waha as WahaFacade;
+use AfroTechnology\Waha\OpenApi\WahaApiProxy;
 use AfroTechnology\Waha\Tests\TestCase;
 use AfroTechnology\Waha\WahaManager;
 use Illuminate\Contracts\Container\BindingResolutionException;
@@ -27,6 +28,6 @@ final class ServiceProviderTest extends TestCase
     public function test_facade_resolves_client(): void
     {
         $client = WahaFacade::host('primary');
-        $this->assertInstanceOf(\AfroTechnology\Waha\OpenApi\WahaApiProxy::class, $client);
+        $this->assertInstanceOf(WahaApiProxy::class, $client);
     }
 }
