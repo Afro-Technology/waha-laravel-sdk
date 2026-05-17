@@ -164,10 +164,3 @@ jobs:
             src/OpenApi/WahaApiProxy.php
             src/OpenApi/WahaManagerProxy.php
             src/Facades/Waha.php
-
-      - name: Enable auto-merge
-        if: steps.cpr.outputs.pull-request-number != ''
-        env:
-          GH_TOKEN: ${{ secrets.OPENAPI_SYNC_TOKEN || github.token }}
-          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
-        run: gh pr merge "$PR_URL" --auto --squash --delete-branch
