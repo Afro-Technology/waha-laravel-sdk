@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * ProfileApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -142,9 +142,9 @@ class ProfileApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerDeleteProfilePicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Result
+     * @return \AfroTechnology\Waha\Generated\Model\Result
      */
     public function profileControllerDeleteProfilePicture($session, string $contentType = self::contentTypes['profileControllerDeleteProfilePicture'][0])
     {
@@ -160,9 +160,9 @@ class ProfileApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerDeleteProfilePicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
      */
     public function profileControllerDeleteProfilePictureWithHttpInfo($session, string $contentType = self::contentTypes['profileControllerDeleteProfilePicture'][0])
     {
@@ -205,11 +205,11 @@ class ProfileApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Result' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Result' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Result' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Result' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -227,13 +227,13 @@ class ProfileApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Result', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Result', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Result';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -266,7 +266,7 @@ class ProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Result',
+                        '\AfroTechnology\Waha\Generated\Model\Result',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -310,7 +310,7 @@ class ProfileApi
      */
     public function profileControllerDeleteProfilePictureAsyncWithHttpInfo($session, string $contentType = self::contentTypes['profileControllerDeleteProfilePicture'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Result';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
         $request = $this->profileControllerDeleteProfilePictureRequest($session, $contentType);
 
         return $this->client
@@ -454,9 +454,9 @@ class ProfileApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerGetMyProfile'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\MyProfile
+     * @return \AfroTechnology\Waha\Generated\Model\MyProfile
      */
     public function profileControllerGetMyProfile($session, string $contentType = self::contentTypes['profileControllerGetMyProfile'][0])
     {
@@ -472,9 +472,9 @@ class ProfileApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerGetMyProfile'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\MyProfile, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\MyProfile, HTTP status code, HTTP response headers (array of strings)
      */
     public function profileControllerGetMyProfileWithHttpInfo($session, string $contentType = self::contentTypes['profileControllerGetMyProfile'][0])
     {
@@ -517,11 +517,11 @@ class ProfileApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\MyProfile' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\MyProfile' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\MyProfile' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\MyProfile' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -539,13 +539,13 @@ class ProfileApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\MyProfile', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\MyProfile', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\MyProfile';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\MyProfile';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -578,7 +578,7 @@ class ProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\MyProfile',
+                        '\AfroTechnology\Waha\Generated\Model\MyProfile',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -622,7 +622,7 @@ class ProfileApi
      */
     public function profileControllerGetMyProfileAsyncWithHttpInfo($session, string $contentType = self::contentTypes['profileControllerGetMyProfile'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\MyProfile';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\MyProfile';
         $request = $this->profileControllerGetMyProfileRequest($session, $contentType);
 
         return $this->client
@@ -764,12 +764,12 @@ class ProfileApi
      * Set my profile name
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileNameRequest $profile_name_request profile_name_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileNameRequest $profile_name_request profile_name_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileName'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Result
+     * @return \AfroTechnology\Waha\Generated\Model\Result
      */
     public function profileControllerSetProfileName($session, $profile_name_request, string $contentType = self::contentTypes['profileControllerSetProfileName'][0])
     {
@@ -783,12 +783,12 @@ class ProfileApi
      * Set my profile name
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileNameRequest $profile_name_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileNameRequest $profile_name_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileName'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
      */
     public function profileControllerSetProfileNameWithHttpInfo($session, $profile_name_request, string $contentType = self::contentTypes['profileControllerSetProfileName'][0])
     {
@@ -831,11 +831,11 @@ class ProfileApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Result' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Result' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Result' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Result' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -853,13 +853,13 @@ class ProfileApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Result', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Result', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Result';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -892,7 +892,7 @@ class ProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Result',
+                        '\AfroTechnology\Waha\Generated\Model\Result',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -908,7 +908,7 @@ class ProfileApi
      * Set my profile name
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileNameRequest $profile_name_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileNameRequest $profile_name_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileName'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -930,7 +930,7 @@ class ProfileApi
      * Set my profile name
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileNameRequest $profile_name_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileNameRequest $profile_name_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileName'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -938,7 +938,7 @@ class ProfileApi
      */
     public function profileControllerSetProfileNameAsyncWithHttpInfo($session, $profile_name_request, string $contentType = self::contentTypes['profileControllerSetProfileName'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Result';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
         $request = $this->profileControllerSetProfileNameRequest($session, $profile_name_request, $contentType);
 
         return $this->client
@@ -981,7 +981,7 @@ class ProfileApi
      * Create request for operation 'profileControllerSetProfileName'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileNameRequest $profile_name_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileNameRequest $profile_name_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileName'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1095,12 +1095,12 @@ class ProfileApi
      * Set profile picture
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfilePicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Result
+     * @return \AfroTechnology\Waha\Generated\Model\Result
      */
     public function profileControllerSetProfilePicture($session, $profile_picture_request, string $contentType = self::contentTypes['profileControllerSetProfilePicture'][0])
     {
@@ -1114,12 +1114,12 @@ class ProfileApi
      * Set profile picture
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfilePicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
      */
     public function profileControllerSetProfilePictureWithHttpInfo($session, $profile_picture_request, string $contentType = self::contentTypes['profileControllerSetProfilePicture'][0])
     {
@@ -1162,11 +1162,11 @@ class ProfileApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Result' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Result' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Result' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Result' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1184,13 +1184,13 @@ class ProfileApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Result', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Result', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Result';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1223,7 +1223,7 @@ class ProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Result',
+                        '\AfroTechnology\Waha\Generated\Model\Result',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1239,7 +1239,7 @@ class ProfileApi
      * Set profile picture
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfilePicture'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1261,7 +1261,7 @@ class ProfileApi
      * Set profile picture
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfilePicture'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1269,7 +1269,7 @@ class ProfileApi
      */
     public function profileControllerSetProfilePictureAsyncWithHttpInfo($session, $profile_picture_request, string $contentType = self::contentTypes['profileControllerSetProfilePicture'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Result';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
         $request = $this->profileControllerSetProfilePictureRequest($session, $profile_picture_request, $contentType);
 
         return $this->client
@@ -1312,7 +1312,7 @@ class ProfileApi
      * Create request for operation 'profileControllerSetProfilePicture'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfilePicture'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1426,12 +1426,12 @@ class ProfileApi
      * Set profile status (About)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileStatusRequest $profile_status_request profile_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileStatusRequest $profile_status_request profile_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Result
+     * @return \AfroTechnology\Waha\Generated\Model\Result
      */
     public function profileControllerSetProfileStatus($session, $profile_status_request, string $contentType = self::contentTypes['profileControllerSetProfileStatus'][0])
     {
@@ -1445,12 +1445,12 @@ class ProfileApi
      * Set profile status (About)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileStatusRequest $profile_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileStatusRequest $profile_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
      */
     public function profileControllerSetProfileStatusWithHttpInfo($session, $profile_status_request, string $contentType = self::contentTypes['profileControllerSetProfileStatus'][0])
     {
@@ -1493,11 +1493,11 @@ class ProfileApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Result' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Result' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Result' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Result' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1515,13 +1515,13 @@ class ProfileApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Result', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Result', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Result';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1554,7 +1554,7 @@ class ProfileApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Result',
+                        '\AfroTechnology\Waha\Generated\Model\Result',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1570,7 +1570,7 @@ class ProfileApi
      * Set profile status (About)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileStatusRequest $profile_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileStatusRequest $profile_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1592,7 +1592,7 @@ class ProfileApi
      * Set profile status (About)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileStatusRequest $profile_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileStatusRequest $profile_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1600,7 +1600,7 @@ class ProfileApi
      */
     public function profileControllerSetProfileStatusAsyncWithHttpInfo($session, $profile_status_request, string $contentType = self::contentTypes['profileControllerSetProfileStatus'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Result';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
         $request = $this->profileControllerSetProfileStatusRequest($session, $profile_status_request, $contentType);
 
         return $this->client
@@ -1643,7 +1643,7 @@ class ProfileApi
      * Create request for operation 'profileControllerSetProfileStatus'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfileStatusRequest $profile_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfileStatusRequest $profile_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['profileControllerSetProfileStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

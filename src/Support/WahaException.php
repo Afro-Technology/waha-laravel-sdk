@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Support;
+namespace AfroTechnology\Waha\Support;
 
 use RuntimeException;
 

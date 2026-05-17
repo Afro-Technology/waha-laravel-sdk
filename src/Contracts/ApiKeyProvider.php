@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Contracts;
+namespace AfroTechnology\Waha\Contracts;
 
 interface ApiKeyProvider
 {

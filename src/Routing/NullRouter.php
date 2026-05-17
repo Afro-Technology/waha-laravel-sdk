@@ -1,8 +1,8 @@
 <?php
 
-namespace Vendor\Waha\Routing;
+namespace AfroTechnology\Waha\Routing;
 
-use Vendor\Waha\Contracts\SessionRouter;
+use AfroTechnology\Waha\Contracts\SessionRouter;
 
 class NullRouter implements SessionRouter
 {

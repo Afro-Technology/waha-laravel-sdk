@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * EventsApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -128,12 +128,12 @@ class EventsApi
      * Send an event message
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\EventMessageRequest $event_message_request event_message_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\EventMessageRequest $event_message_request event_message_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['eventsControllerSendEvent'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WAMessage
+     * @return \AfroTechnology\Waha\Generated\Model\WAMessage
      */
     public function eventsControllerSendEvent($session, $event_message_request, string $contentType = self::contentTypes['eventsControllerSendEvent'][0])
     {
@@ -147,12 +147,12 @@ class EventsApi
      * Send an event message
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\EventMessageRequest $event_message_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\EventMessageRequest $event_message_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['eventsControllerSendEvent'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WAMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WAMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function eventsControllerSendEventWithHttpInfo($session, $event_message_request, string $contentType = self::contentTypes['eventsControllerSendEvent'][0])
     {
@@ -195,11 +195,11 @@ class EventsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\WAMessage' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WAMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WAMessage' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WAMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -217,13 +217,13 @@ class EventsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WAMessage', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WAMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WAMessage';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WAMessage';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -256,7 +256,7 @@ class EventsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WAMessage',
+                        '\AfroTechnology\Waha\Generated\Model\WAMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -272,7 +272,7 @@ class EventsApi
      * Send an event message
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\EventMessageRequest $event_message_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\EventMessageRequest $event_message_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['eventsControllerSendEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -294,7 +294,7 @@ class EventsApi
      * Send an event message
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\EventMessageRequest $event_message_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\EventMessageRequest $event_message_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['eventsControllerSendEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -302,7 +302,7 @@ class EventsApi
      */
     public function eventsControllerSendEventAsyncWithHttpInfo($session, $event_message_request, string $contentType = self::contentTypes['eventsControllerSendEvent'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WAMessage';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WAMessage';
         $request = $this->eventsControllerSendEventRequest($session, $event_message_request, $contentType);
 
         return $this->client
@@ -345,7 +345,7 @@ class EventsApi
      * Create request for operation 'eventsControllerSendEvent'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\EventMessageRequest $event_message_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\EventMessageRequest $event_message_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['eventsControllerSendEvent'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

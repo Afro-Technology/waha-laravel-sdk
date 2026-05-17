@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * WAHAChatPresences Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class WAHAChatPresences implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'presences' => '\Vendor\Waha\Generated\Model\WAHAPresenceData[]'
+        'presences' => '\AfroTechnology\Waha\Generated\Model\WAHAPresenceData[]'
     ];
 
     /**
@@ -332,7 +332,7 @@ class WAHAChatPresences implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets presences
      *
-     * @return \Vendor\Waha\Generated\Model\WAHAPresenceData[]
+     * @return \AfroTechnology\Waha\Generated\Model\WAHAPresenceData[]
      */
     public function getPresences()
     {
@@ -342,7 +342,7 @@ class WAHAChatPresences implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets presences
      *
-     * @param \Vendor\Waha\Generated\Model\WAHAPresenceData[] $presences presences
+     * @param \AfroTechnology\Waha\Generated\Model\WAHAPresenceData[] $presences presences
      *
      * @return self
      */

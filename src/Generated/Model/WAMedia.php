@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * WAMedia Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class WAMedia implements ModelInterface, ArrayAccess, \JsonSerializable
         'url' => 'string',
         'mimetype' => 'string',
         'filename' => 'string',
-        's3' => '\Vendor\Waha\Generated\Model\S3MediaData',
+        's3' => '\AfroTechnology\Waha\Generated\Model\S3MediaData',
         'error' => 'object'
     ];
 
@@ -401,7 +401,7 @@ class WAMedia implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets s3
      *
-     * @return \Vendor\Waha\Generated\Model\S3MediaData|null
+     * @return \AfroTechnology\Waha\Generated\Model\S3MediaData|null
      */
     public function getS3()
     {
@@ -411,7 +411,7 @@ class WAMedia implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets s3
      *
-     * @param \Vendor\Waha\Generated\Model\S3MediaData|null $s3 S3 attributes for the media in the message if you are using S3 media storage
+     * @param \AfroTechnology\Waha\Generated\Model\S3MediaData|null $s3 S3 attributes for the media in the message if you are using S3 media storage
      *
      * @return self
      */

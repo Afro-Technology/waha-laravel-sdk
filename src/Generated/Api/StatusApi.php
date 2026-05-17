@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * StatusApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -143,10 +143,10 @@ class StatusApi
      * DELETE sent status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\DeleteStatusRequest $delete_status_request delete_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DeleteStatusRequest $delete_status_request delete_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerDeleteStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -161,10 +161,10 @@ class StatusApi
      * DELETE sent status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\DeleteStatusRequest $delete_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DeleteStatusRequest $delete_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerDeleteStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -222,7 +222,7 @@ class StatusApi
      * DELETE sent status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\DeleteStatusRequest $delete_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DeleteStatusRequest $delete_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerDeleteStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -244,7 +244,7 @@ class StatusApi
      * DELETE sent status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\DeleteStatusRequest $delete_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DeleteStatusRequest $delete_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerDeleteStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -282,7 +282,7 @@ class StatusApi
      * Create request for operation 'statusControllerDeleteStatus'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\DeleteStatusRequest $delete_status_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DeleteStatusRequest $delete_status_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerDeleteStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -398,9 +398,9 @@ class StatusApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerGetNewMessageId'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\NewMessageIDResponse
+     * @return \AfroTechnology\Waha\Generated\Model\NewMessageIDResponse
      */
     public function statusControllerGetNewMessageId($session, string $contentType = self::contentTypes['statusControllerGetNewMessageId'][0])
     {
@@ -416,9 +416,9 @@ class StatusApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerGetNewMessageId'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\NewMessageIDResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\NewMessageIDResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function statusControllerGetNewMessageIdWithHttpInfo($session, string $contentType = self::contentTypes['statusControllerGetNewMessageId'][0])
     {
@@ -461,11 +461,11 @@ class StatusApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\NewMessageIDResponse' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\NewMessageIDResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\NewMessageIDResponse' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\NewMessageIDResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -483,13 +483,13 @@ class StatusApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\NewMessageIDResponse', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\NewMessageIDResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\NewMessageIDResponse';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\NewMessageIDResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -522,7 +522,7 @@ class StatusApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\NewMessageIDResponse',
+                        '\AfroTechnology\Waha\Generated\Model\NewMessageIDResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -566,7 +566,7 @@ class StatusApi
      */
     public function statusControllerGetNewMessageIdAsyncWithHttpInfo($session, string $contentType = self::contentTypes['statusControllerGetNewMessageId'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\NewMessageIDResponse';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\NewMessageIDResponse';
         $request = $this->statusControllerGetNewMessageIdRequest($session, $contentType);
 
         return $this->client
@@ -708,10 +708,10 @@ class StatusApi
      * Send image status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ImageStatus $image_status image_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ImageStatus $image_status image_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendImageStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -726,10 +726,10 @@ class StatusApi
      * Send image status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ImageStatus $image_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ImageStatus $image_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendImageStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -787,7 +787,7 @@ class StatusApi
      * Send image status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ImageStatus $image_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ImageStatus $image_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendImageStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -809,7 +809,7 @@ class StatusApi
      * Send image status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ImageStatus $image_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ImageStatus $image_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendImageStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -847,7 +847,7 @@ class StatusApi
      * Create request for operation 'statusControllerSendImageStatus'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ImageStatus $image_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ImageStatus $image_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendImageStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -961,10 +961,10 @@ class StatusApi
      * Send text status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\TextStatus $text_status text_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\TextStatus $text_status text_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendTextStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -979,10 +979,10 @@ class StatusApi
      * Send text status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\TextStatus $text_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\TextStatus $text_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendTextStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1040,7 +1040,7 @@ class StatusApi
      * Send text status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\TextStatus $text_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\TextStatus $text_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendTextStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1062,7 +1062,7 @@ class StatusApi
      * Send text status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\TextStatus $text_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\TextStatus $text_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendTextStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1100,7 +1100,7 @@ class StatusApi
      * Create request for operation 'statusControllerSendTextStatus'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\TextStatus $text_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\TextStatus $text_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendTextStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1214,10 +1214,10 @@ class StatusApi
      * Send video status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoStatus $video_status video_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoStatus $video_status video_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVideoStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1232,10 +1232,10 @@ class StatusApi
      * Send video status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoStatus $video_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoStatus $video_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVideoStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1293,7 +1293,7 @@ class StatusApi
      * Send video status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoStatus $video_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoStatus $video_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVideoStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1315,7 +1315,7 @@ class StatusApi
      * Send video status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoStatus $video_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoStatus $video_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVideoStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1353,7 +1353,7 @@ class StatusApi
      * Create request for operation 'statusControllerSendVideoStatus'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoStatus $video_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoStatus $video_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVideoStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1467,10 +1467,10 @@ class StatusApi
      * Send voice status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceStatus $voice_status voice_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceStatus $voice_status voice_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVoiceStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1485,10 +1485,10 @@ class StatusApi
      * Send voice status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceStatus $voice_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceStatus $voice_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVoiceStatus'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1546,7 +1546,7 @@ class StatusApi
      * Send voice status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceStatus $voice_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceStatus $voice_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVoiceStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1568,7 +1568,7 @@ class StatusApi
      * Send voice status
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceStatus $voice_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceStatus $voice_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVoiceStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1606,7 +1606,7 @@ class StatusApi
      * Create request for operation 'statusControllerSendVoiceStatus'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceStatus $voice_status (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceStatus $voice_status (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['statusControllerSendVoiceStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

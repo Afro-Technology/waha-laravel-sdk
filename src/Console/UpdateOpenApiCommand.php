@@ -1,13 +1,13 @@
 <?php
 
-namespace Vendor\Waha\Console;
+namespace AfroTechnology\Waha\Console;
 
+use AfroTechnology\Waha\Actions\FetchOpenApiSpecAction;
+use AfroTechnology\Waha\Actions\GenerateIdeHelperAction;
+use AfroTechnology\Waha\Actions\GenerateOpenApiClientAction;
+use AfroTechnology\Waha\Actions\UpdateOpenApiAction;
+use AfroTechnology\Waha\Support\PackagePath;
 use Illuminate\Console\Command;
-use Vendor\Waha\Actions\FetchOpenApiSpecAction;
-use Vendor\Waha\Actions\GenerateIdeHelperAction;
-use Vendor\Waha\Actions\GenerateOpenApiClientAction;
-use Vendor\Waha\Actions\UpdateOpenApiAction;
-use Vendor\Waha\Support\PackagePath;
 
 final class UpdateOpenApiCommand extends Command
 {

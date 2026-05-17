@@ -1,9 +1,9 @@
 <?php
 
-namespace Vendor\Waha\Pin;
+namespace AfroTechnology\Waha\Pin;
 
-use Vendor\Waha\Contracts\PinStore;
-use Vendor\Waha\Models\WahaSessionPin;
+use AfroTechnology\Waha\Contracts\PinStore;
+use AfroTechnology\Waha\Models\WahaSessionPin;
 
 class DbPinStore implements PinStore
 {

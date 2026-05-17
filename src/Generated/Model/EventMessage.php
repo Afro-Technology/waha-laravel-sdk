@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * EventMessage Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class EventMessage implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => 'string',
         'start_time' => 'float',
         'end_time' => 'float',
-        'location' => '\Vendor\Waha\Generated\Model\EventLocation',
+        'location' => '\AfroTechnology\Waha\Generated\Model\EventLocation',
         'extra_guests_allowed' => 'bool'
     ];
 
@@ -441,7 +441,7 @@ class EventMessage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets location
      *
-     * @return \Vendor\Waha\Generated\Model\EventLocation|null
+     * @return \AfroTechnology\Waha\Generated\Model\EventLocation|null
      */
     public function getLocation()
     {
@@ -451,7 +451,7 @@ class EventMessage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets location
      *
-     * @param \Vendor\Waha\Generated\Model\EventLocation|null $location Location of the event
+     * @param \AfroTechnology\Waha\Generated\Model\EventLocation|null $location Location of the event
      *
      * @return self
      */

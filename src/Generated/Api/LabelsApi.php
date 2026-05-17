@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * LabelsApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -146,12 +146,12 @@ class LabelsApi
      * Create a new label
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerCreate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Label
+     * @return \AfroTechnology\Waha\Generated\Model\Label
      */
     public function labelsControllerCreate($session, $label_body, string $contentType = self::contentTypes['labelsControllerCreate'][0])
     {
@@ -165,12 +165,12 @@ class LabelsApi
      * Create a new label
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerCreate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Label, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Label, HTTP status code, HTTP response headers (array of strings)
      */
     public function labelsControllerCreateWithHttpInfo($session, $label_body, string $contentType = self::contentTypes['labelsControllerCreate'][0])
     {
@@ -213,11 +213,11 @@ class LabelsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\Label' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Label' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Label' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Label' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -235,13 +235,13 @@ class LabelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Label', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Label', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Label';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Label';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -274,7 +274,7 @@ class LabelsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Label',
+                        '\AfroTechnology\Waha\Generated\Model\Label',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -290,7 +290,7 @@ class LabelsApi
      * Create a new label
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -312,7 +312,7 @@ class LabelsApi
      * Create a new label
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -320,7 +320,7 @@ class LabelsApi
      */
     public function labelsControllerCreateAsyncWithHttpInfo($session, $label_body, string $contentType = self::contentTypes['labelsControllerCreate'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Label';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Label';
         $request = $this->labelsControllerCreateRequest($session, $label_body, $contentType);
 
         return $this->client
@@ -363,7 +363,7 @@ class LabelsApi
      * Create request for operation 'labelsControllerCreate'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -480,7 +480,7 @@ class LabelsApi
      * @param  string $label_id label_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerDelete'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -499,7 +499,7 @@ class LabelsApi
      * @param  string $label_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerDelete'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -811,9 +811,9 @@ class LabelsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerGetAll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Label[]
+     * @return \AfroTechnology\Waha\Generated\Model\Label[]
      */
     public function labelsControllerGetAll($session, string $contentType = self::contentTypes['labelsControllerGetAll'][0])
     {
@@ -829,9 +829,9 @@ class LabelsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerGetAll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Label[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Label[], HTTP status code, HTTP response headers (array of strings)
      */
     public function labelsControllerGetAllWithHttpInfo($session, string $contentType = self::contentTypes['labelsControllerGetAll'][0])
     {
@@ -874,11 +874,11 @@ class LabelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Label[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Label[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Label[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Label[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -896,13 +896,13 @@ class LabelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Label[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Label[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Label[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Label[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -935,7 +935,7 @@ class LabelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Label[]',
+                        '\AfroTechnology\Waha\Generated\Model\Label[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,7 +979,7 @@ class LabelsApi
      */
     public function labelsControllerGetAllAsyncWithHttpInfo($session, string $contentType = self::contentTypes['labelsControllerGetAll'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Label[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Label[]';
         $request = $this->labelsControllerGetAllRequest($session, $contentType);
 
         return $this->client
@@ -1124,9 +1124,9 @@ class LabelsApi
      * @param  string $chat_id Chat ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerGetChatLabels'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Label[]
+     * @return \AfroTechnology\Waha\Generated\Model\Label[]
      */
     public function labelsControllerGetChatLabels($session, $chat_id, string $contentType = self::contentTypes['labelsControllerGetChatLabels'][0])
     {
@@ -1143,9 +1143,9 @@ class LabelsApi
      * @param  string $chat_id Chat ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerGetChatLabels'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Label[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Label[], HTTP status code, HTTP response headers (array of strings)
      */
     public function labelsControllerGetChatLabelsWithHttpInfo($session, $chat_id, string $contentType = self::contentTypes['labelsControllerGetChatLabels'][0])
     {
@@ -1188,11 +1188,11 @@ class LabelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Label[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Label[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Label[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Label[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1210,13 +1210,13 @@ class LabelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Label[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Label[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Label[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Label[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1249,7 +1249,7 @@ class LabelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Label[]',
+                        '\AfroTechnology\Waha\Generated\Model\Label[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1295,7 +1295,7 @@ class LabelsApi
      */
     public function labelsControllerGetChatLabelsAsyncWithHttpInfo($session, $chat_id, string $contentType = self::contentTypes['labelsControllerGetChatLabels'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Label[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Label[]';
         $request = $this->labelsControllerGetChatLabelsRequest($session, $chat_id, $contentType);
 
         return $this->client
@@ -1456,7 +1456,7 @@ class LabelsApi
      * @param  string $label_id label_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerGetChatsByLabel'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1474,7 +1474,7 @@ class LabelsApi
      * @param  string $label_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerGetChatsByLabel'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1708,10 +1708,10 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SetLabelsRequest $set_labels_request set_labels_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SetLabelsRequest $set_labels_request set_labels_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerPutChatLabels'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1727,10 +1727,10 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SetLabelsRequest $set_labels_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SetLabelsRequest $set_labels_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerPutChatLabels'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1789,7 +1789,7 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SetLabelsRequest $set_labels_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SetLabelsRequest $set_labels_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerPutChatLabels'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1812,7 +1812,7 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SetLabelsRequest $set_labels_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SetLabelsRequest $set_labels_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerPutChatLabels'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1851,7 +1851,7 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SetLabelsRequest $set_labels_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SetLabelsRequest $set_labels_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerPutChatLabels'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1981,12 +1981,12 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $label_id label_id (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerUpdate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Label
+     * @return \AfroTechnology\Waha\Generated\Model\Label
      */
     public function labelsControllerUpdate($session, $label_id, $label_body, string $contentType = self::contentTypes['labelsControllerUpdate'][0])
     {
@@ -2001,12 +2001,12 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $label_id (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerUpdate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Label, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Label, HTTP status code, HTTP response headers (array of strings)
      */
     public function labelsControllerUpdateWithHttpInfo($session, $label_id, $label_body, string $contentType = self::contentTypes['labelsControllerUpdate'][0])
     {
@@ -2049,11 +2049,11 @@ class LabelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Label' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Label' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Label' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Label' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2071,13 +2071,13 @@ class LabelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Label', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Label', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Label';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Label';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2110,7 +2110,7 @@ class LabelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Label',
+                        '\AfroTechnology\Waha\Generated\Model\Label',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2127,7 +2127,7 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $label_id (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2150,7 +2150,7 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $label_id (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2158,7 +2158,7 @@ class LabelsApi
      */
     public function labelsControllerUpdateAsyncWithHttpInfo($session, $label_id, $label_body, string $contentType = self::contentTypes['labelsControllerUpdate'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Label';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Label';
         $request = $this->labelsControllerUpdateRequest($session, $label_id, $label_body, $contentType);
 
         return $this->client
@@ -2202,7 +2202,7 @@ class LabelsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $label_id (required)
-     * @param  \Vendor\Waha\Generated\Model\LabelBody $label_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\LabelBody $label_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['labelsControllerUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * PresenceApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -140,9 +140,9 @@ class PresenceApi
      * @param  string $chat_id Chat ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerGetPresence'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WAHAChatPresences
+     * @return \AfroTechnology\Waha\Generated\Model\WAHAChatPresences
      */
     public function presenceControllerGetPresence($session, $chat_id, string $contentType = self::contentTypes['presenceControllerGetPresence'][0])
     {
@@ -159,9 +159,9 @@ class PresenceApi
      * @param  string $chat_id Chat ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerGetPresence'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WAHAChatPresences, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WAHAChatPresences, HTTP status code, HTTP response headers (array of strings)
      */
     public function presenceControllerGetPresenceWithHttpInfo($session, $chat_id, string $contentType = self::contentTypes['presenceControllerGetPresence'][0])
     {
@@ -204,11 +204,11 @@ class PresenceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\WAHAChatPresences' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WAHAChatPresences' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WAHAChatPresences' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WAHAChatPresences' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -226,13 +226,13 @@ class PresenceApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WAHAChatPresences', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WAHAChatPresences', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WAHAChatPresences';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WAHAChatPresences';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -265,7 +265,7 @@ class PresenceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WAHAChatPresences',
+                        '\AfroTechnology\Waha\Generated\Model\WAHAChatPresences',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -311,7 +311,7 @@ class PresenceApi
      */
     public function presenceControllerGetPresenceAsyncWithHttpInfo($session, $chat_id, string $contentType = self::contentTypes['presenceControllerGetPresence'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WAHAChatPresences';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WAHAChatPresences';
         $request = $this->presenceControllerGetPresenceRequest($session, $chat_id, $contentType);
 
         return $this->client
@@ -471,9 +471,9 @@ class PresenceApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerGetPresenceAll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WAHAChatPresences[]
+     * @return \AfroTechnology\Waha\Generated\Model\WAHAChatPresences[]
      */
     public function presenceControllerGetPresenceAll($session, string $contentType = self::contentTypes['presenceControllerGetPresenceAll'][0])
     {
@@ -489,9 +489,9 @@ class PresenceApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerGetPresenceAll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WAHAChatPresences[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WAHAChatPresences[], HTTP status code, HTTP response headers (array of strings)
      */
     public function presenceControllerGetPresenceAllWithHttpInfo($session, string $contentType = self::contentTypes['presenceControllerGetPresenceAll'][0])
     {
@@ -534,11 +534,11 @@ class PresenceApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\WAHAChatPresences[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WAHAChatPresences[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WAHAChatPresences[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WAHAChatPresences[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -556,13 +556,13 @@ class PresenceApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WAHAChatPresences[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WAHAChatPresences[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WAHAChatPresences[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WAHAChatPresences[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -595,7 +595,7 @@ class PresenceApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WAHAChatPresences[]',
+                        '\AfroTechnology\Waha\Generated\Model\WAHAChatPresences[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -639,7 +639,7 @@ class PresenceApi
      */
     public function presenceControllerGetPresenceAllAsyncWithHttpInfo($session, string $contentType = self::contentTypes['presenceControllerGetPresenceAll'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WAHAChatPresences[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WAHAChatPresences[]';
         $request = $this->presenceControllerGetPresenceAllRequest($session, $contentType);
 
         return $this->client
@@ -781,10 +781,10 @@ class PresenceApi
      * Set session presence
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\WAHASessionPresence $waha_session_presence waha_session_presence (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\WAHASessionPresence $waha_session_presence waha_session_presence (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerSetPresence'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -799,10 +799,10 @@ class PresenceApi
      * Set session presence
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\WAHASessionPresence $waha_session_presence (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\WAHASessionPresence $waha_session_presence (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerSetPresence'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -860,7 +860,7 @@ class PresenceApi
      * Set session presence
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\WAHASessionPresence $waha_session_presence (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\WAHASessionPresence $waha_session_presence (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerSetPresence'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -882,7 +882,7 @@ class PresenceApi
      * Set session presence
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\WAHASessionPresence $waha_session_presence (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\WAHASessionPresence $waha_session_presence (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerSetPresence'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -920,7 +920,7 @@ class PresenceApi
      * Create request for operation 'presenceControllerSetPresence'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\WAHASessionPresence $waha_session_presence (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\WAHASessionPresence $waha_session_presence (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerSetPresence'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1037,7 +1037,7 @@ class PresenceApi
      * @param  string $chat_id Chat ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerSubscribe'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1055,7 +1055,7 @@ class PresenceApi
      * @param  string $chat_id Chat ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['presenceControllerSubscribe'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

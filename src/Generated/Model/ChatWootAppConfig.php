@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * ChatWootAppConfig Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,8 +65,8 @@ class ChatWootAppConfig implements ModelInterface, ArrayAccess, \JsonSerializabl
         'link_preview' => 'string',
         'locale' => 'string',
         'templates' => 'object',
-        'commands' => '\Vendor\Waha\Generated\Model\ChatWootCommandsConfig',
-        'conversations' => '\Vendor\Waha\Generated\Model\ChatWootConversationsConfig'
+        'commands' => '\AfroTechnology\Waha\Generated\Model\ChatWootCommandsConfig',
+        'conversations' => '\AfroTechnology\Waha\Generated\Model\ChatWootConversationsConfig'
     ];
 
     /**
@@ -625,7 +625,7 @@ class ChatWootAppConfig implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets commands
      *
-     * @return \Vendor\Waha\Generated\Model\ChatWootCommandsConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\ChatWootCommandsConfig|null
      */
     public function getCommands()
     {
@@ -635,7 +635,7 @@ class ChatWootAppConfig implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets commands
      *
-     * @param \Vendor\Waha\Generated\Model\ChatWootCommandsConfig|null $commands commands
+     * @param \AfroTechnology\Waha\Generated\Model\ChatWootCommandsConfig|null $commands commands
      *
      * @return self
      */
@@ -652,7 +652,7 @@ class ChatWootAppConfig implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets conversations
      *
-     * @return \Vendor\Waha\Generated\Model\ChatWootConversationsConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\ChatWootConversationsConfig|null
      */
     public function getConversations()
     {
@@ -662,7 +662,7 @@ class ChatWootAppConfig implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets conversations
      *
-     * @param \Vendor\Waha\Generated\Model\ChatWootConversationsConfig|null $conversations conversations
+     * @param \AfroTechnology\Waha\Generated\Model\ChatWootConversationsConfig|null $conversations conversations
      *
      * @return self
      */

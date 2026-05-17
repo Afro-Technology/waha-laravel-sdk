@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * PollVotePayload Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,8 +57,8 @@ class PollVotePayload implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'vote' => '\Vendor\Waha\Generated\Model\PollVote',
-        'poll' => '\Vendor\Waha\Generated\Model\MessageDestination',
+        'vote' => '\AfroTechnology\Waha\Generated\Model\PollVote',
+        'poll' => '\AfroTechnology\Waha\Generated\Model\MessageDestination',
         '_data' => 'object'
     ];
 
@@ -312,7 +312,7 @@ class PollVotePayload implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets vote
      *
-     * @return \Vendor\Waha\Generated\Model\PollVote
+     * @return \AfroTechnology\Waha\Generated\Model\PollVote
      */
     public function getVote()
     {
@@ -322,7 +322,7 @@ class PollVotePayload implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vote
      *
-     * @param \Vendor\Waha\Generated\Model\PollVote $vote vote
+     * @param \AfroTechnology\Waha\Generated\Model\PollVote $vote vote
      *
      * @return self
      */
@@ -339,7 +339,7 @@ class PollVotePayload implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets poll
      *
-     * @return \Vendor\Waha\Generated\Model\MessageDestination
+     * @return \AfroTechnology\Waha\Generated\Model\MessageDestination
      */
     public function getPoll()
     {
@@ -349,7 +349,7 @@ class PollVotePayload implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets poll
      *
-     * @param \Vendor\Waha\Generated\Model\MessageDestination $poll poll
+     * @param \AfroTechnology\Waha\Generated\Model\MessageDestination $poll poll
      *
      * @return self
      */

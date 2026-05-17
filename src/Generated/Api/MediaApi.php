@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * MediaApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -131,10 +131,10 @@ class MediaApi
      * Convert video to WhatsApp format (mp4)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoFileDTO $video_file_dto video_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoFileDTO $video_file_dto video_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVideo'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
@@ -150,10 +150,10 @@ class MediaApi
      * Convert video to WhatsApp format (mp4)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoFileDTO $video_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoFileDTO $video_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVideo'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
@@ -275,7 +275,7 @@ class MediaApi
      * Convert video to WhatsApp format (mp4)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoFileDTO $video_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoFileDTO $video_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVideo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -297,7 +297,7 @@ class MediaApi
      * Convert video to WhatsApp format (mp4)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoFileDTO $video_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoFileDTO $video_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVideo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -348,7 +348,7 @@ class MediaApi
      * Create request for operation 'mediaControllerConvertVideo'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VideoFileDTO $video_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VideoFileDTO $video_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVideo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -462,10 +462,10 @@ class MediaApi
      * Convert voice to WhatsApp format (opus)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceFileDTO $voice_file_dto voice_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceFileDTO $voice_file_dto voice_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVoice'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
@@ -481,10 +481,10 @@ class MediaApi
      * Convert voice to WhatsApp format (opus)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceFileDTO $voice_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceFileDTO $voice_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVoice'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
@@ -606,7 +606,7 @@ class MediaApi
      * Convert voice to WhatsApp format (opus)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceFileDTO $voice_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceFileDTO $voice_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -628,7 +628,7 @@ class MediaApi
      * Convert voice to WhatsApp format (opus)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceFileDTO $voice_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceFileDTO $voice_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -679,7 +679,7 @@ class MediaApi
      * Create request for operation 'mediaControllerConvertVoice'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\VoiceFileDTO $voice_file_dto (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\VoiceFileDTO $voice_file_dto (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['mediaControllerConvertVoice'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

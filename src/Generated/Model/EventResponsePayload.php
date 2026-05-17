@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * EventResponsePayload Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -65,8 +65,8 @@ class EventResponsePayload implements ModelInterface, ArrayAccess, \JsonSerializ
         'to' => 'string',
         'participant' => 'string',
         '_data' => 'object',
-        'event_creation_key' => '\Vendor\Waha\Generated\Model\MessageDestination',
-        'event_response' => '\Vendor\Waha\Generated\Model\EventResponse'
+        'event_creation_key' => '\AfroTechnology\Waha\Generated\Model\MessageDestination',
+        'event_response' => '\AfroTechnology\Waha\Generated\Model\EventResponse'
     ];
 
     /**
@@ -629,7 +629,7 @@ class EventResponsePayload implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets event_creation_key
      *
-     * @return \Vendor\Waha\Generated\Model\MessageDestination
+     * @return \AfroTechnology\Waha\Generated\Model\MessageDestination
      */
     public function getEventCreationKey()
     {
@@ -639,7 +639,7 @@ class EventResponsePayload implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets event_creation_key
      *
-     * @param \Vendor\Waha\Generated\Model\MessageDestination $event_creation_key event_creation_key
+     * @param \AfroTechnology\Waha\Generated\Model\MessageDestination $event_creation_key event_creation_key
      *
      * @return self
      */
@@ -656,7 +656,7 @@ class EventResponsePayload implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets event_response
      *
-     * @return \Vendor\Waha\Generated\Model\EventResponse|null
+     * @return \AfroTechnology\Waha\Generated\Model\EventResponse|null
      */
     public function getEventResponse()
     {
@@ -666,7 +666,7 @@ class EventResponsePayload implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets event_response
      *
-     * @param \Vendor\Waha\Generated\Model\EventResponse|null $event_response event_response
+     * @param \AfroTechnology\Waha\Generated\Model\EventResponse|null $event_response event_response
      *
      * @return self
      */

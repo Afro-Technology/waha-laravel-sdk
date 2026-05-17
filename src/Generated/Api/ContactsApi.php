@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * ContactsApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -160,10 +160,10 @@ class ContactsApi
      *
      * Block contact
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerBlock'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -177,10 +177,10 @@ class ContactsApi
      *
      * Block contact
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerBlock'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -237,7 +237,7 @@ class ContactsApi
      *
      * Block contact
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerBlock'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -258,7 +258,7 @@ class ContactsApi
      *
      * Block contact
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerBlock'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -295,7 +295,7 @@ class ContactsApi
     /**
      * Create request for operation 'contactsControllerBlock'
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerBlock'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -397,9 +397,9 @@ class ContactsApi
      * @param  string $session session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerCheckExists'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\WANumberExistResult
+     * @return \AfroTechnology\Waha\Generated\Model\WANumberExistResult
      */
     public function contactsControllerCheckExists($phone, $session, string $contentType = self::contentTypes['contactsControllerCheckExists'][0])
     {
@@ -416,9 +416,9 @@ class ContactsApi
      * @param  string $session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerCheckExists'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\WANumberExistResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\WANumberExistResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function contactsControllerCheckExistsWithHttpInfo($phone, $session, string $contentType = self::contentTypes['contactsControllerCheckExists'][0])
     {
@@ -461,11 +461,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\WANumberExistResult' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\WANumberExistResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\WANumberExistResult' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\WANumberExistResult' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -483,13 +483,13 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\WANumberExistResult', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\WANumberExistResult', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\WANumberExistResult';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\WANumberExistResult';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -522,7 +522,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\WANumberExistResult',
+                        '\AfroTechnology\Waha\Generated\Model\WANumberExistResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class ContactsApi
      */
     public function contactsControllerCheckExistsAsyncWithHttpInfo($phone, $session, string $contentType = self::contentTypes['contactsControllerCheckExists'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\WANumberExistResult';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\WANumberExistResult';
         $request = $this->contactsControllerCheckExistsRequest($phone, $session, $contentType);
 
         return $this->client
@@ -731,7 +731,7 @@ class ContactsApi
      * @param  string $session session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -749,7 +749,7 @@ class ContactsApi
      * @param  string $session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -987,7 +987,7 @@ class ContactsApi
      * @param  string $session session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerGetAbout'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1005,7 +1005,7 @@ class ContactsApi
      * @param  string $session (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerGetAbout'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1246,7 +1246,7 @@ class ContactsApi
      * @param  float $offset offset (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerGetAll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1267,7 +1267,7 @@ class ContactsApi
      * @param  float $offset (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerGetAll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1539,7 +1539,7 @@ class ContactsApi
      * @param  bool $refresh Refresh the picture from the server (24h cache by default). Do not refresh if not needed, you can get rate limit error (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerGetProfilePicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1558,7 +1558,7 @@ class ContactsApi
      * @param  bool $refresh Refresh the picture from the server (24h cache by default). Do not refresh if not needed, you can get rate limit error (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerGetProfilePicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1805,10 +1805,10 @@ class ContactsApi
      *
      * Unblock contact
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerUnblock'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1822,10 +1822,10 @@ class ContactsApi
      *
      * Unblock contact
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerUnblock'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1882,7 +1882,7 @@ class ContactsApi
      *
      * Unblock contact
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerUnblock'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1903,7 +1903,7 @@ class ContactsApi
      *
      * Unblock contact
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerUnblock'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1940,7 +1940,7 @@ class ContactsApi
     /**
      * Create request for operation 'contactsControllerUnblock'
      *
-     * @param  \Vendor\Waha\Generated\Model\ContactRequest $contact_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactRequest $contact_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsControllerUnblock'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2040,12 +2040,12 @@ class ContactsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ContactUpdateBody $contact_update_body contact_update_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactUpdateBody $contact_update_body contact_update_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsSessionControllerPut'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Result
+     * @return \AfroTechnology\Waha\Generated\Model\Result
      */
     public function contactsSessionControllerPut($session, $chat_id, $contact_update_body, string $contentType = self::contentTypes['contactsSessionControllerPut'][0])
     {
@@ -2060,12 +2060,12 @@ class ContactsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ContactUpdateBody $contact_update_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactUpdateBody $contact_update_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsSessionControllerPut'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
      */
     public function contactsSessionControllerPutWithHttpInfo($session, $chat_id, $contact_update_body, string $contentType = self::contentTypes['contactsSessionControllerPut'][0])
     {
@@ -2108,11 +2108,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Result' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Result' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Result' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Result' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2130,13 +2130,13 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Result', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Result', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Result';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2169,7 +2169,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Result',
+                        '\AfroTechnology\Waha\Generated\Model\Result',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2186,7 +2186,7 @@ class ContactsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ContactUpdateBody $contact_update_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactUpdateBody $contact_update_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsSessionControllerPut'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2209,7 +2209,7 @@ class ContactsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ContactUpdateBody $contact_update_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactUpdateBody $contact_update_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsSessionControllerPut'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2217,7 +2217,7 @@ class ContactsApi
      */
     public function contactsSessionControllerPutAsyncWithHttpInfo($session, $chat_id, $contact_update_body, string $contentType = self::contentTypes['contactsSessionControllerPut'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Result';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
         $request = $this->contactsSessionControllerPutRequest($session, $chat_id, $contact_update_body, $contentType);
 
         return $this->client
@@ -2261,7 +2261,7 @@ class ContactsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $chat_id Chat ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ContactUpdateBody $contact_update_body (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ContactUpdateBody $contact_update_body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['contactsSessionControllerPut'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2393,9 +2393,9 @@ class ContactsApi
      * @param  string $phone_number phone_number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lidsControllerFindLIDByPhoneNumber'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\LidToPhoneNumber
+     * @return \AfroTechnology\Waha\Generated\Model\LidToPhoneNumber
      */
     public function lidsControllerFindLIDByPhoneNumber($session, $phone_number, string $contentType = self::contentTypes['lidsControllerFindLIDByPhoneNumber'][0])
     {
@@ -2412,9 +2412,9 @@ class ContactsApi
      * @param  string $phone_number (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lidsControllerFindLIDByPhoneNumber'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\LidToPhoneNumber, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\LidToPhoneNumber, HTTP status code, HTTP response headers (array of strings)
      */
     public function lidsControllerFindLIDByPhoneNumberWithHttpInfo($session, $phone_number, string $contentType = self::contentTypes['lidsControllerFindLIDByPhoneNumber'][0])
     {
@@ -2457,11 +2457,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\LidToPhoneNumber' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\LidToPhoneNumber' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2479,13 +2479,13 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\LidToPhoneNumber', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\LidToPhoneNumber';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2518,7 +2518,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\LidToPhoneNumber',
+                        '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2564,7 +2564,7 @@ class ContactsApi
      */
     public function lidsControllerFindLIDByPhoneNumberAsyncWithHttpInfo($session, $phone_number, string $contentType = self::contentTypes['lidsControllerFindLIDByPhoneNumber'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\LidToPhoneNumber';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber';
         $request = $this->lidsControllerFindLIDByPhoneNumberRequest($session, $phone_number, $contentType);
 
         return $this->client
@@ -2725,9 +2725,9 @@ class ContactsApi
      * @param  string $lid lid (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lidsControllerFindPNByLid'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\LidToPhoneNumber
+     * @return \AfroTechnology\Waha\Generated\Model\LidToPhoneNumber
      */
     public function lidsControllerFindPNByLid($session, $lid, string $contentType = self::contentTypes['lidsControllerFindPNByLid'][0])
     {
@@ -2744,9 +2744,9 @@ class ContactsApi
      * @param  string $lid (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lidsControllerFindPNByLid'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\LidToPhoneNumber, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\LidToPhoneNumber, HTTP status code, HTTP response headers (array of strings)
      */
     public function lidsControllerFindPNByLidWithHttpInfo($session, $lid, string $contentType = self::contentTypes['lidsControllerFindPNByLid'][0])
     {
@@ -2789,11 +2789,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\LidToPhoneNumber' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\LidToPhoneNumber' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2811,13 +2811,13 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\LidToPhoneNumber', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\LidToPhoneNumber';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2850,7 +2850,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\LidToPhoneNumber',
+                        '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2896,7 +2896,7 @@ class ContactsApi
      */
     public function lidsControllerFindPNByLidAsyncWithHttpInfo($session, $lid, string $contentType = self::contentTypes['lidsControllerFindPNByLid'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\LidToPhoneNumber';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber';
         $request = $this->lidsControllerFindPNByLidRequest($session, $lid, $contentType);
 
         return $this->client
@@ -3058,9 +3058,9 @@ class ContactsApi
      * @param  float $offset offset (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lidsControllerGetAll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\LidToPhoneNumber[]
+     * @return \AfroTechnology\Waha\Generated\Model\LidToPhoneNumber[]
      */
     public function lidsControllerGetAll($session, $limit = 100, $offset = 0, string $contentType = self::contentTypes['lidsControllerGetAll'][0])
     {
@@ -3078,9 +3078,9 @@ class ContactsApi
      * @param  float $offset (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lidsControllerGetAll'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\LidToPhoneNumber[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\LidToPhoneNumber[], HTTP status code, HTTP response headers (array of strings)
      */
     public function lidsControllerGetAllWithHttpInfo($session, $limit = 100, $offset = 0, string $contentType = self::contentTypes['lidsControllerGetAll'][0])
     {
@@ -3123,11 +3123,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\LidToPhoneNumber[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\LidToPhoneNumber[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3145,13 +3145,13 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\LidToPhoneNumber[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\LidToPhoneNumber[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3184,7 +3184,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\LidToPhoneNumber[]',
+                        '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3232,7 +3232,7 @@ class ContactsApi
      */
     public function lidsControllerGetAllAsyncWithHttpInfo($session, $limit = 100, $offset = 0, string $contentType = self::contentTypes['lidsControllerGetAll'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\LidToPhoneNumber[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\LidToPhoneNumber[]';
         $request = $this->lidsControllerGetAllRequest($session, $limit, $offset, $contentType);
 
         return $this->client
@@ -3398,9 +3398,9 @@ class ContactsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lidsControllerGetLidsCount'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\CountResponse
+     * @return \AfroTechnology\Waha\Generated\Model\CountResponse
      */
     public function lidsControllerGetLidsCount($session, string $contentType = self::contentTypes['lidsControllerGetLidsCount'][0])
     {
@@ -3416,9 +3416,9 @@ class ContactsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['lidsControllerGetLidsCount'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\CountResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\CountResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function lidsControllerGetLidsCountWithHttpInfo($session, string $contentType = self::contentTypes['lidsControllerGetLidsCount'][0])
     {
@@ -3461,11 +3461,11 @@ class ContactsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\CountResponse' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\CountResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\CountResponse' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\CountResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3483,13 +3483,13 @@ class ContactsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\CountResponse', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\CountResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\CountResponse';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\CountResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3522,7 +3522,7 @@ class ContactsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\CountResponse',
+                        '\AfroTechnology\Waha\Generated\Model\CountResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3566,7 +3566,7 @@ class ContactsApi
      */
     public function lidsControllerGetLidsCountAsyncWithHttpInfo($session, string $contentType = self::contentTypes['lidsControllerGetLidsCount'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\CountResponse';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\CountResponse';
         $request = $this->lidsControllerGetLidsCountRequest($session, $contentType);
 
         return $this->client

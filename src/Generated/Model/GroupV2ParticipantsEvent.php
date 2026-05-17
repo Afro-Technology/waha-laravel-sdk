@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * GroupV2ParticipantsEvent Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class GroupV2ParticipantsEvent implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'type' => 'string',
         'timestamp' => 'float',
-        'group' => '\Vendor\Waha\Generated\Model\GroupId',
-        'participants' => '\Vendor\Waha\Generated\Model\GroupParticipant[]',
+        'group' => '\AfroTechnology\Waha\Generated\Model\GroupId',
+        'participants' => '\AfroTechnology\Waha\Generated\Model\GroupParticipant[]',
         '_data' => 'object'
     ];
 
@@ -427,7 +427,7 @@ class GroupV2ParticipantsEvent implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets group
      *
-     * @return \Vendor\Waha\Generated\Model\GroupId
+     * @return \AfroTechnology\Waha\Generated\Model\GroupId
      */
     public function getGroup()
     {
@@ -437,7 +437,7 @@ class GroupV2ParticipantsEvent implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets group
      *
-     * @param \Vendor\Waha\Generated\Model\GroupId $group group
+     * @param \AfroTechnology\Waha\Generated\Model\GroupId $group group
      *
      * @return self
      */
@@ -454,7 +454,7 @@ class GroupV2ParticipantsEvent implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets participants
      *
-     * @return \Vendor\Waha\Generated\Model\GroupParticipant[]
+     * @return \AfroTechnology\Waha\Generated\Model\GroupParticipant[]
      */
     public function getParticipants()
     {
@@ -464,7 +464,7 @@ class GroupV2ParticipantsEvent implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets participants
      *
-     * @param \Vendor\Waha\Generated\Model\GroupParticipant[] $participants participants
+     * @param \AfroTechnology\Waha\Generated\Model\GroupParticipant[] $participants participants
      *
      * @return self
      */

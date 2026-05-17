@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * MessageVideoRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class MessageVideoRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'chat_id' => 'string',
-        'file' => '\Vendor\Waha\Generated\Model\MessageVideoRequestFile',
+        'file' => '\AfroTechnology\Waha\Generated\Model\MessageVideoRequestFile',
         'reply_to' => 'string',
         'as_note' => 'bool',
         'convert' => 'bool',
@@ -373,7 +373,7 @@ class MessageVideoRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets file
      *
-     * @return \Vendor\Waha\Generated\Model\MessageVideoRequestFile
+     * @return \AfroTechnology\Waha\Generated\Model\MessageVideoRequestFile
      */
     public function getFile()
     {
@@ -383,7 +383,7 @@ class MessageVideoRequest implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets file
      *
-     * @param \Vendor\Waha\Generated\Model\MessageVideoRequestFile $file file
+     * @param \AfroTechnology\Waha\Generated\Model\MessageVideoRequestFile $file file
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * WAMessageEditedBody Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,16 +66,16 @@ class WAMessageEditedBody implements ModelInterface, ArrayAccess, \JsonSerializa
         'participant' => 'string',
         'body' => 'string',
         'has_media' => 'bool',
-        'media' => '\Vendor\Waha\Generated\Model\WAMedia',
+        'media' => '\AfroTechnology\Waha\Generated\Model\WAMedia',
         'media_url' => 'string',
         'ack' => 'float',
         'ack_name' => 'string',
         'author' => 'string',
-        'location' => '\Vendor\Waha\Generated\Model\WALocation',
+        'location' => '\AfroTechnology\Waha\Generated\Model\WALocation',
         'v_cards' => 'string[]',
         '_data' => 'object',
         'edited_message_id' => 'string',
-        'reply_to' => '\Vendor\Waha\Generated\Model\ReplyToMessage'
+        'reply_to' => '\AfroTechnology\Waha\Generated\Model\ReplyToMessage'
     ];
 
     /**
@@ -763,7 +763,7 @@ class WAMessageEditedBody implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets media
      *
-     * @return \Vendor\Waha\Generated\Model\WAMedia|null
+     * @return \AfroTechnology\Waha\Generated\Model\WAMedia|null
      */
     public function getMedia()
     {
@@ -773,7 +773,7 @@ class WAMessageEditedBody implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets media
      *
-     * @param \Vendor\Waha\Generated\Model\WAMedia|null $media Media object for the message if any and downloaded
+     * @param \AfroTechnology\Waha\Generated\Model\WAMedia|null $media Media object for the message if any and downloaded
      *
      * @return self
      */
@@ -910,7 +910,7 @@ class WAMessageEditedBody implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets location
      *
-     * @return \Vendor\Waha\Generated\Model\WALocation|null
+     * @return \AfroTechnology\Waha\Generated\Model\WALocation|null
      */
     public function getLocation()
     {
@@ -920,7 +920,7 @@ class WAMessageEditedBody implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets location
      *
-     * @param \Vendor\Waha\Generated\Model\WALocation|null $location Location information contained in the message, if the message is type \"location\"
+     * @param \AfroTechnology\Waha\Generated\Model\WALocation|null $location Location information contained in the message, if the message is type \"location\"
      *
      * @return self
      */
@@ -1018,7 +1018,7 @@ class WAMessageEditedBody implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets reply_to
      *
-     * @return \Vendor\Waha\Generated\Model\ReplyToMessage|null
+     * @return \AfroTechnology\Waha\Generated\Model\ReplyToMessage|null
      */
     public function getReplyTo()
     {
@@ -1028,7 +1028,7 @@ class WAMessageEditedBody implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets reply_to
      *
-     * @param \Vendor\Waha\Generated\Model\ReplyToMessage|null $reply_to reply_to
+     * @param \AfroTechnology\Waha\Generated\Model\ReplyToMessage|null $reply_to reply_to
      *
      * @return self
      */

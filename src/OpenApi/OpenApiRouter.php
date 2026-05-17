@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\OpenApi;
+namespace AfroTechnology\Waha\OpenApi;
 
 final class OpenApiRouter
 {

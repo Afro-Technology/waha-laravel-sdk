@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\Waha\Console;
+namespace AfroTechnology\Waha\Console;
 
+use AfroTechnology\Waha\Actions\FetchOpenApiSpecAction;
+use AfroTechnology\Waha\Support\PackagePath;
 use Illuminate\Console\Command;
-use Vendor\Waha\Actions\FetchOpenApiSpecAction;
-use Vendor\Waha\Support\PackagePath;
 
 final class FetchOpenApiSpecCommand extends Command
 {

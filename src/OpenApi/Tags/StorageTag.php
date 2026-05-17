@@ -1,8 +1,8 @@
 <?php
 
-namespace Vendor\Waha\OpenApi\Tags;
+namespace AfroTechnology\Waha\OpenApi\Tags;
 
-use Vendor\Waha\OpenApi\WahaTagProxy;
+use AfroTechnology\Waha\OpenApi\WahaTagProxy;
 
 /**
  * AUTO-GENERATED IDE HELPER (DO NOT EDIT MANUALLY)

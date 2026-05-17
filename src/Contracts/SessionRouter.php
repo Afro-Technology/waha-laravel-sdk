@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Waha\Contracts;
+namespace AfroTechnology\Waha\Contracts;
 
 /**
  * Resolves which host should be used for a given WAHA session.

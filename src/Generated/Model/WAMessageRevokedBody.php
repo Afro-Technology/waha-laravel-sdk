@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * WAMessageRevokedBody Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class WAMessageRevokedBody implements ModelInterface, ArrayAccess, \JsonSerializ
       */
     protected static $openAPITypes = [
         'revoked_message_id' => 'string',
-        'after' => '\Vendor\Waha\Generated\Model\WAMessage',
-        'before' => '\Vendor\Waha\Generated\Model\WAMessage',
+        'after' => '\AfroTechnology\Waha\Generated\Model\WAMessage',
+        'before' => '\AfroTechnology\Waha\Generated\Model\WAMessage',
         '_data' => 'object'
     ];
 
@@ -340,7 +340,7 @@ class WAMessageRevokedBody implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets after
      *
-     * @return \Vendor\Waha\Generated\Model\WAMessage|null
+     * @return \AfroTechnology\Waha\Generated\Model\WAMessage|null
      */
     public function getAfter()
     {
@@ -350,7 +350,7 @@ class WAMessageRevokedBody implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets after
      *
-     * @param \Vendor\Waha\Generated\Model\WAMessage|null $after after
+     * @param \AfroTechnology\Waha\Generated\Model\WAMessage|null $after after
      *
      * @return self
      */
@@ -367,7 +367,7 @@ class WAMessageRevokedBody implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets before
      *
-     * @return \Vendor\Waha\Generated\Model\WAMessage|null
+     * @return \AfroTechnology\Waha\Generated\Model\WAMessage|null
      */
     public function getBefore()
     {
@@ -377,7 +377,7 @@ class WAMessageRevokedBody implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets before
      *
-     * @param \Vendor\Waha\Generated\Model\WAMessage|null $before before
+     * @param \AfroTechnology\Waha\Generated\Model\WAMessage|null $before before
      *
      * @return self
      */

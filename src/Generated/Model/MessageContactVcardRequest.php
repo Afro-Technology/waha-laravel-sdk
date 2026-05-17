@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * MessageContactVcardRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class MessageContactVcardRequest implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'chat_id' => 'string',
-        'contacts' => '\Vendor\Waha\Generated\Model\MessageContactVcardRequestContactsInner[]',
+        'contacts' => '\AfroTechnology\Waha\Generated\Model\MessageContactVcardRequestContactsInner[]',
         'reply_to' => 'string',
         'session' => 'string'
     ];
@@ -349,7 +349,7 @@ class MessageContactVcardRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets contacts
      *
-     * @return \Vendor\Waha\Generated\Model\MessageContactVcardRequestContactsInner[]
+     * @return \AfroTechnology\Waha\Generated\Model\MessageContactVcardRequestContactsInner[]
      */
     public function getContacts()
     {
@@ -359,7 +359,7 @@ class MessageContactVcardRequest implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets contacts
      *
-     * @param \Vendor\Waha\Generated\Model\MessageContactVcardRequestContactsInner[] $contacts contacts
+     * @param \AfroTechnology\Waha\Generated\Model\MessageContactVcardRequestContactsInner[] $contacts contacts
      *
      * @return self
      */

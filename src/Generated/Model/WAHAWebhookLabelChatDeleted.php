@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * WAHAWebhookLabelChatDeleted Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,9 +63,9 @@ class WAHAWebhookLabelChatDeleted implements ModelInterface, ArrayAccess, \JsonS
         'metadata' => 'object',
         'engine' => 'string',
         'event' => 'object',
-        'payload' => '\Vendor\Waha\Generated\Model\LabelChatAssociation',
-        'me' => '\Vendor\Waha\Generated\Model\MeInfo',
-        'environment' => '\Vendor\Waha\Generated\Model\WAHAEnvironment'
+        'payload' => '\AfroTechnology\Waha\Generated\Model\LabelChatAssociation',
+        'me' => '\AfroTechnology\Waha\Generated\Model\MeInfo',
+        'environment' => '\AfroTechnology\Waha\Generated\Model\WAHAEnvironment'
     ];
 
     /**
@@ -657,7 +657,7 @@ class WAHAWebhookLabelChatDeleted implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets payload
      *
-     * @return \Vendor\Waha\Generated\Model\LabelChatAssociation
+     * @return \AfroTechnology\Waha\Generated\Model\LabelChatAssociation
      */
     public function getPayload()
     {
@@ -667,7 +667,7 @@ class WAHAWebhookLabelChatDeleted implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets payload
      *
-     * @param \Vendor\Waha\Generated\Model\LabelChatAssociation $payload payload
+     * @param \AfroTechnology\Waha\Generated\Model\LabelChatAssociation $payload payload
      *
      * @return self
      */
@@ -684,7 +684,7 @@ class WAHAWebhookLabelChatDeleted implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets me
      *
-     * @return \Vendor\Waha\Generated\Model\MeInfo|null
+     * @return \AfroTechnology\Waha\Generated\Model\MeInfo|null
      */
     public function getMe()
     {
@@ -694,7 +694,7 @@ class WAHAWebhookLabelChatDeleted implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets me
      *
-     * @param \Vendor\Waha\Generated\Model\MeInfo|null $me me
+     * @param \AfroTechnology\Waha\Generated\Model\MeInfo|null $me me
      *
      * @return self
      */
@@ -711,7 +711,7 @@ class WAHAWebhookLabelChatDeleted implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets environment
      *
-     * @return \Vendor\Waha\Generated\Model\WAHAEnvironment
+     * @return \AfroTechnology\Waha\Generated\Model\WAHAEnvironment
      */
     public function getEnvironment()
     {
@@ -721,7 +721,7 @@ class WAHAWebhookLabelChatDeleted implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets environment
      *
-     * @param \Vendor\Waha\Generated\Model\WAHAEnvironment $environment environment
+     * @param \AfroTechnology\Waha\Generated\Model\WAHAEnvironment $environment environment
      *
      * @return self
      */

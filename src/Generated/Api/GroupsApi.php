@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * GroupsApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -204,10 +204,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerAddParticipants'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -223,10 +223,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerAddParticipants'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -285,7 +285,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerAddParticipants'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -308,7 +308,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerAddParticipants'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -347,7 +347,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerAddParticipants'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -476,10 +476,10 @@ class GroupsApi
      * Create a new group.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateGroupRequest $create_group_request create_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateGroupRequest $create_group_request create_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerCreateGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -494,10 +494,10 @@ class GroupsApi
      * Create a new group.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateGroupRequest $create_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateGroupRequest $create_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerCreateGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -555,7 +555,7 @@ class GroupsApi
      * Create a new group.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateGroupRequest $create_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateGroupRequest $create_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerCreateGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -577,7 +577,7 @@ class GroupsApi
      * Create a new group.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateGroupRequest $create_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateGroupRequest $create_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerCreateGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -615,7 +615,7 @@ class GroupsApi
      * Create request for operation 'groupsControllerCreateGroup'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateGroupRequest $create_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateGroupRequest $create_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerCreateGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -732,7 +732,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDeleteGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -750,7 +750,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDeleteGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -986,9 +986,9 @@ class GroupsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDeletePicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Result
+     * @return \AfroTechnology\Waha\Generated\Model\Result
      */
     public function groupsControllerDeletePicture($id, $session, string $contentType = self::contentTypes['groupsControllerDeletePicture'][0])
     {
@@ -1005,9 +1005,9 @@ class GroupsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDeletePicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsControllerDeletePictureWithHttpInfo($id, $session, string $contentType = self::contentTypes['groupsControllerDeletePicture'][0])
     {
@@ -1050,11 +1050,11 @@ class GroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Result' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Result' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Result' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Result' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1072,13 +1072,13 @@ class GroupsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Result', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Result', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Result';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1111,7 +1111,7 @@ class GroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Result',
+                        '\AfroTechnology\Waha\Generated\Model\Result',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1157,7 +1157,7 @@ class GroupsApi
      */
     public function groupsControllerDeletePictureAsyncWithHttpInfo($id, $session, string $contentType = self::contentTypes['groupsControllerDeletePicture'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Result';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
         $request = $this->groupsControllerDeletePictureRequest($id, $session, $contentType);
 
         return $this->client
@@ -1316,10 +1316,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDemoteToAdmin'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1335,10 +1335,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDemoteToAdmin'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1397,7 +1397,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDemoteToAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1420,7 +1420,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDemoteToAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1459,7 +1459,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerDemoteToAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1592,9 +1592,9 @@ class GroupsApi
      * @param  bool $refresh Refresh the picture from the server (24h cache by default). Do not refresh if not needed, you can get rate limit error (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetChatPicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ChatPictureResponse
+     * @return \AfroTechnology\Waha\Generated\Model\ChatPictureResponse
      */
     public function groupsControllerGetChatPicture($session, $id, $refresh = false, string $contentType = self::contentTypes['groupsControllerGetChatPicture'][0])
     {
@@ -1612,9 +1612,9 @@ class GroupsApi
      * @param  bool $refresh Refresh the picture from the server (24h cache by default). Do not refresh if not needed, you can get rate limit error (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetChatPicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ChatPictureResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ChatPictureResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsControllerGetChatPictureWithHttpInfo($session, $id, $refresh = false, string $contentType = self::contentTypes['groupsControllerGetChatPicture'][0])
     {
@@ -1657,11 +1657,11 @@ class GroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ChatPictureResponse' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ChatPictureResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ChatPictureResponse' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ChatPictureResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1679,13 +1679,13 @@ class GroupsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ChatPictureResponse', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ChatPictureResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ChatPictureResponse';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ChatPictureResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1718,7 +1718,7 @@ class GroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ChatPictureResponse',
+                        '\AfroTechnology\Waha\Generated\Model\ChatPictureResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1766,7 +1766,7 @@ class GroupsApi
      */
     public function groupsControllerGetChatPictureAsyncWithHttpInfo($session, $id, $refresh = false, string $contentType = self::contentTypes['groupsControllerGetChatPicture'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ChatPictureResponse';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ChatPictureResponse';
         $request = $this->groupsControllerGetChatPictureRequest($session, $id, $refresh, $contentType);
 
         return $this->client
@@ -1938,7 +1938,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -1956,7 +1956,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2192,9 +2192,9 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetGroupParticipants'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\GroupParticipant[]
+     * @return \AfroTechnology\Waha\Generated\Model\GroupParticipant[]
      */
     public function groupsControllerGetGroupParticipants($session, $id, string $contentType = self::contentTypes['groupsControllerGetGroupParticipants'][0])
     {
@@ -2211,9 +2211,9 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetGroupParticipants'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\GroupParticipant[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\GroupParticipant[], HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsControllerGetGroupParticipantsWithHttpInfo($session, $id, string $contentType = self::contentTypes['groupsControllerGetGroupParticipants'][0])
     {
@@ -2256,11 +2256,11 @@ class GroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\GroupParticipant[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\GroupParticipant[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\GroupParticipant[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\GroupParticipant[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2278,13 +2278,13 @@ class GroupsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\GroupParticipant[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\GroupParticipant[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\GroupParticipant[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\GroupParticipant[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2317,7 +2317,7 @@ class GroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\GroupParticipant[]',
+                        '\AfroTechnology\Waha\Generated\Model\GroupParticipant[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2363,7 +2363,7 @@ class GroupsApi
      */
     public function groupsControllerGetGroupParticipantsAsyncWithHttpInfo($session, $id, string $contentType = self::contentTypes['groupsControllerGetGroupParticipants'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\GroupParticipant[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\GroupParticipant[]';
         $request = $this->groupsControllerGetGroupParticipantsRequest($session, $id, $contentType);
 
         return $this->client
@@ -2528,7 +2528,7 @@ class GroupsApi
      * @param  string[] $exclude Exclude fields (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetGroups'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -2551,7 +2551,7 @@ class GroupsApi
      * @param  string[] $exclude Exclude fields (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetGroups'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2910,9 +2910,9 @@ class GroupsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetGroupsCount'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\CountResponse
+     * @return \AfroTechnology\Waha\Generated\Model\CountResponse
      */
     public function groupsControllerGetGroupsCount($session, string $contentType = self::contentTypes['groupsControllerGetGroupsCount'][0])
     {
@@ -2928,9 +2928,9 @@ class GroupsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetGroupsCount'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\CountResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\CountResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsControllerGetGroupsCountWithHttpInfo($session, string $contentType = self::contentTypes['groupsControllerGetGroupsCount'][0])
     {
@@ -2973,11 +2973,11 @@ class GroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\CountResponse' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\CountResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\CountResponse' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\CountResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2995,13 +2995,13 @@ class GroupsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\CountResponse', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\CountResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\CountResponse';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\CountResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3034,7 +3034,7 @@ class GroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\CountResponse',
+                        '\AfroTechnology\Waha\Generated\Model\CountResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3078,7 +3078,7 @@ class GroupsApi
      */
     public function groupsControllerGetGroupsCountAsyncWithHttpInfo($session, string $contentType = self::contentTypes['groupsControllerGetGroupsCount'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\CountResponse';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\CountResponse';
         $request = $this->groupsControllerGetGroupsCountRequest($session, $contentType);
 
         return $this->client
@@ -3223,9 +3223,9 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetInfoAdminOnly'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo
+     * @return \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo
      */
     public function groupsControllerGetInfoAdminOnly($session, $id, string $contentType = self::contentTypes['groupsControllerGetInfoAdminOnly'][0])
     {
@@ -3242,9 +3242,9 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetInfoAdminOnly'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsControllerGetInfoAdminOnlyWithHttpInfo($session, $id, string $contentType = self::contentTypes['groupsControllerGetInfoAdminOnly'][0])
     {
@@ -3287,11 +3287,11 @@ class GroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3309,13 +3309,13 @@ class GroupsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3348,7 +3348,7 @@ class GroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo',
+                        '\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3394,7 +3394,7 @@ class GroupsApi
      */
     public function groupsControllerGetInfoAdminOnlyAsyncWithHttpInfo($session, $id, string $contentType = self::contentTypes['groupsControllerGetInfoAdminOnly'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo';
         $request = $this->groupsControllerGetInfoAdminOnlyRequest($session, $id, $contentType);
 
         return $this->client
@@ -3555,7 +3555,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetInviteCode'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -3574,7 +3574,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetInviteCode'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -3887,9 +3887,9 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetMessagesAdminOnly'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo
+     * @return \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo
      */
     public function groupsControllerGetMessagesAdminOnly($session, $id, string $contentType = self::contentTypes['groupsControllerGetMessagesAdminOnly'][0])
     {
@@ -3906,9 +3906,9 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetMessagesAdminOnly'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsControllerGetMessagesAdminOnlyWithHttpInfo($session, $id, string $contentType = self::contentTypes['groupsControllerGetMessagesAdminOnly'][0])
     {
@@ -3951,11 +3951,11 @@ class GroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3973,13 +3973,13 @@ class GroupsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4012,7 +4012,7 @@ class GroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo',
+                        '\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4058,7 +4058,7 @@ class GroupsApi
      */
     public function groupsControllerGetMessagesAdminOnlyAsyncWithHttpInfo($session, $id, string $contentType = self::contentTypes['groupsControllerGetMessagesAdminOnly'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo';
         $request = $this->groupsControllerGetMessagesAdminOnlyRequest($session, $id, $contentType);
 
         return $this->client
@@ -4219,7 +4219,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetParticipants'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4237,7 +4237,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerGetParticipants'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4470,12 +4470,12 @@ class GroupsApi
      * Join group via code
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\JoinGroupRequest $join_group_request join_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\JoinGroupRequest $join_group_request join_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerJoinGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\JoinGroupResponse
+     * @return \AfroTechnology\Waha\Generated\Model\JoinGroupResponse
      */
     public function groupsControllerJoinGroup($session, $join_group_request, string $contentType = self::contentTypes['groupsControllerJoinGroup'][0])
     {
@@ -4489,12 +4489,12 @@ class GroupsApi
      * Join group via code
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\JoinGroupRequest $join_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\JoinGroupRequest $join_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerJoinGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\JoinGroupResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\JoinGroupResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsControllerJoinGroupWithHttpInfo($session, $join_group_request, string $contentType = self::contentTypes['groupsControllerJoinGroup'][0])
     {
@@ -4537,11 +4537,11 @@ class GroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\JoinGroupResponse' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\JoinGroupResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\JoinGroupResponse' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\JoinGroupResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4559,13 +4559,13 @@ class GroupsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\JoinGroupResponse', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\JoinGroupResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\JoinGroupResponse';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\JoinGroupResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4598,7 +4598,7 @@ class GroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\JoinGroupResponse',
+                        '\AfroTechnology\Waha\Generated\Model\JoinGroupResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4614,7 +4614,7 @@ class GroupsApi
      * Join group via code
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\JoinGroupRequest $join_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\JoinGroupRequest $join_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerJoinGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4636,7 +4636,7 @@ class GroupsApi
      * Join group via code
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\JoinGroupRequest $join_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\JoinGroupRequest $join_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerJoinGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4644,7 +4644,7 @@ class GroupsApi
      */
     public function groupsControllerJoinGroupAsyncWithHttpInfo($session, $join_group_request, string $contentType = self::contentTypes['groupsControllerJoinGroup'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\JoinGroupResponse';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\JoinGroupResponse';
         $request = $this->groupsControllerJoinGroupRequest($session, $join_group_request, $contentType);
 
         return $this->client
@@ -4687,7 +4687,7 @@ class GroupsApi
      * Create request for operation 'groupsControllerJoinGroup'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\JoinGroupRequest $join_group_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\JoinGroupRequest $join_group_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerJoinGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4804,7 +4804,7 @@ class GroupsApi
      * @param  string $code Group code (123) or url (https://chat.whatsapp.com/123) (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerJoinInfoGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object
      */
@@ -4823,7 +4823,7 @@ class GroupsApi
      * @param  string $code Group code (123) or url (https://chat.whatsapp.com/123) (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerJoinInfoGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5137,7 +5137,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerLeaveGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5155,7 +5155,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerLeaveGroup'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5389,10 +5389,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerPromoteToAdmin'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5408,10 +5408,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerPromoteToAdmin'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5470,7 +5470,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerPromoteToAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5493,7 +5493,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerPromoteToAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5532,7 +5532,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerPromoteToAdmin'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5663,7 +5663,7 @@ class GroupsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRefreshGroups'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5680,7 +5680,7 @@ class GroupsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRefreshGroups'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5896,10 +5896,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRemoveParticipants'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -5915,10 +5915,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRemoveParticipants'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -5977,7 +5977,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRemoveParticipants'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6000,7 +6000,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRemoveParticipants'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6039,7 +6039,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ParticipantsRequest $participants_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRemoveParticipants'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6171,7 +6171,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRevokeInviteCode'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -6190,7 +6190,7 @@ class GroupsApi
      * @param  string $id Group ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerRevokeInviteCode'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6501,10 +6501,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\DescriptionRequest $description_request description_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DescriptionRequest $description_request description_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetDescription'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6520,10 +6520,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\DescriptionRequest $description_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DescriptionRequest $description_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetDescription'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6582,7 +6582,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\DescriptionRequest $description_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DescriptionRequest $description_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetDescription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6605,7 +6605,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\DescriptionRequest $description_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DescriptionRequest $description_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetDescription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6644,7 +6644,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\DescriptionRequest $description_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\DescriptionRequest $description_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetDescription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6774,10 +6774,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetInfoAdminOnly'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -6793,10 +6793,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetInfoAdminOnly'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -6855,7 +6855,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetInfoAdminOnly'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6878,7 +6878,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetInfoAdminOnly'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6917,7 +6917,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetInfoAdminOnly'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7047,10 +7047,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetMessagesAdminOnly'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -7066,10 +7066,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetMessagesAdminOnly'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -7128,7 +7128,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetMessagesAdminOnly'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7151,7 +7151,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetMessagesAdminOnly'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7190,7 +7190,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SettingsSecurityChangeInfo $settings_security_change_info (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetMessagesAdminOnly'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7320,12 +7320,12 @@ class GroupsApi
      *
      * @param  string $id Group ID (required)
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetPicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Result
+     * @return \AfroTechnology\Waha\Generated\Model\Result
      */
     public function groupsControllerSetPicture($id, $session, $profile_picture_request, string $contentType = self::contentTypes['groupsControllerSetPicture'][0])
     {
@@ -7340,12 +7340,12 @@ class GroupsApi
      *
      * @param  string $id Group ID (required)
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetPicture'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Result, HTTP status code, HTTP response headers (array of strings)
      */
     public function groupsControllerSetPictureWithHttpInfo($id, $session, $profile_picture_request, string $contentType = self::contentTypes['groupsControllerSetPicture'][0])
     {
@@ -7388,11 +7388,11 @@ class GroupsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Result' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Result' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Result' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Result' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -7410,13 +7410,13 @@ class GroupsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Result', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Result', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Result';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -7449,7 +7449,7 @@ class GroupsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Result',
+                        '\AfroTechnology\Waha\Generated\Model\Result',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7466,7 +7466,7 @@ class GroupsApi
      *
      * @param  string $id Group ID (required)
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetPicture'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7489,7 +7489,7 @@ class GroupsApi
      *
      * @param  string $id Group ID (required)
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetPicture'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7497,7 +7497,7 @@ class GroupsApi
      */
     public function groupsControllerSetPictureAsyncWithHttpInfo($id, $session, $profile_picture_request, string $contentType = self::contentTypes['groupsControllerSetPicture'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Result';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Result';
         $request = $this->groupsControllerSetPictureRequest($id, $session, $profile_picture_request, $contentType);
 
         return $this->client
@@ -7541,7 +7541,7 @@ class GroupsApi
      *
      * @param  string $id Group ID (required)
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ProfilePictureRequest $profile_picture_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetPicture'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7671,10 +7671,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SubjectRequest $subject_request subject_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SubjectRequest $subject_request subject_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetSubject'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -7690,10 +7690,10 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SubjectRequest $subject_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SubjectRequest $subject_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetSubject'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -7752,7 +7752,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SubjectRequest $subject_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SubjectRequest $subject_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetSubject'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7775,7 +7775,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SubjectRequest $subject_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SubjectRequest $subject_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetSubject'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7814,7 +7814,7 @@ class GroupsApi
      *
      * @param  mixed $session Session name (required)
      * @param  string $id Group ID (required)
-     * @param  \Vendor\Waha\Generated\Model\SubjectRequest $subject_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\SubjectRequest $subject_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['groupsControllerSetSubject'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

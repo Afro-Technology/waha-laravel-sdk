@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\Waha\Registry;
+namespace AfroTechnology\Waha\Registry;
 
-use Vendor\Waha\Contracts\HostRegistry;
-use Vendor\Waha\Models\WahaHost;
-use Vendor\Waha\Support\UnknownHostException;
+use AfroTechnology\Waha\Contracts\HostRegistry;
+use AfroTechnology\Waha\Models\WahaHost;
+use AfroTechnology\Waha\Support\UnknownHostException;
 
 class DbHostRegistry implements HostRegistry
 {

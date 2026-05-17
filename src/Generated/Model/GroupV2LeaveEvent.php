@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * GroupV2LeaveEvent Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class GroupV2LeaveEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'timestamp' => 'float',
-        'group' => '\Vendor\Waha\Generated\Model\GroupId',
+        'group' => '\AfroTechnology\Waha\Generated\Model\GroupId',
         '_data' => 'object'
     ];
 
@@ -342,7 +342,7 @@ class GroupV2LeaveEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets group
      *
-     * @return \Vendor\Waha\Generated\Model\GroupId
+     * @return \AfroTechnology\Waha\Generated\Model\GroupId
      */
     public function getGroup()
     {
@@ -352,7 +352,7 @@ class GroupV2LeaveEvent implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets group
      *
-     * @param \Vendor\Waha\Generated\Model\GroupId $group group
+     * @param \AfroTechnology\Waha\Generated\Model\GroupId $group group
      *
      * @return self
      */

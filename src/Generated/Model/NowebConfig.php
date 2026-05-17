@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * NowebConfig Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class NowebConfig implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'mark_online' => 'bool',
-        'store' => '\Vendor\Waha\Generated\Model\NowebStoreConfig'
+        'store' => '\AfroTechnology\Waha\Generated\Model\NowebStoreConfig'
     ];
 
     /**
@@ -329,7 +329,7 @@ class NowebConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets store
      *
-     * @return \Vendor\Waha\Generated\Model\NowebStoreConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\NowebStoreConfig|null
      */
     public function getStore()
     {
@@ -339,7 +339,7 @@ class NowebConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets store
      *
-     * @param \Vendor\Waha\Generated\Model\NowebStoreConfig|null $store store
+     * @param \AfroTechnology\Waha\Generated\Model\NowebStoreConfig|null $store store
      *
      * @return self
      */

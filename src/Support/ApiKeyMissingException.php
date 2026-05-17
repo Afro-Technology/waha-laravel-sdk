@@ -1,5 +1,5 @@
 <?php
 
-namespace Vendor\Waha\Support;
+namespace AfroTechnology\Waha\Support;
 
 class ApiKeyMissingException extends WahaException {}

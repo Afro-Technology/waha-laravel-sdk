@@ -1,9 +1,9 @@
 <?php
 
-namespace Vendor\Waha\OpenApi;
+namespace AfroTechnology\Waha\OpenApi;
 
+use AfroTechnology\Waha\Debug\WahaDebugManager;
 use GuzzleHttp\Client;
-use Vendor\Waha\Debug\WahaDebugManager;
 
 class WahaTagProxy
 {
@@ -312,14 +312,14 @@ class WahaTagProxy
 
     private function modelClassFromRef(string $ref): ?string
     {
-        // "#/components/schemas/CreateGroupRequest" => Vendor\Waha\Generated\Model\CreateGroupRequest
+        // "#/components/schemas/CreateGroupRequest" => AfroTechnology\Waha\Generated\Model\CreateGroupRequest
         $parts = explode('/', $ref);
         $name = end($parts);
         if (! is_string($name) || $name === '') {
             return null;
         }
 
-        return 'Vendor\\Waha\\Generated\\Model\\'.$name;
+        return 'AfroTechnology\\Waha\\Generated\\Model\\'.$name;
     }
 
     /**

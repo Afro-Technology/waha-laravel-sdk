@@ -1,9 +1,9 @@
 <?php
 
-namespace Vendor\Waha\Pin;
+namespace AfroTechnology\Waha\Pin;
 
+use AfroTechnology\Waha\Contracts\PinStore;
 use Illuminate\Contracts\Redis\Factory as RedisFactory;
-use Vendor\Waha\Contracts\PinStore;
 
 class RedisPinStore implements PinStore
 {

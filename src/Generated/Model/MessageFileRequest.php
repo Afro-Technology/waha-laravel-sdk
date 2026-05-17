@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * MessageFileRequest Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class MessageFileRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'chat_id' => 'string',
-        'file' => '\Vendor\Waha\Generated\Model\ProfilePictureRequestFile',
+        'file' => '\AfroTechnology\Waha\Generated\Model\ProfilePictureRequestFile',
         'reply_to' => 'string',
         'caption' => 'string',
         'session' => 'string'
@@ -356,7 +356,7 @@ class MessageFileRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets file
      *
-     * @return \Vendor\Waha\Generated\Model\ProfilePictureRequestFile
+     * @return \AfroTechnology\Waha\Generated\Model\ProfilePictureRequestFile
      */
     public function getFile()
     {
@@ -366,7 +366,7 @@ class MessageFileRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets file
      *
-     * @param \Vendor\Waha\Generated\Model\ProfilePictureRequestFile $file file
+     * @param \AfroTechnology\Waha\Generated\Model\ProfilePictureRequestFile $file file
      *
      * @return self
      */

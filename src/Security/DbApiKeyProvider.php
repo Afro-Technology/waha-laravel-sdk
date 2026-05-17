@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\Waha\Security;
+namespace AfroTechnology\Waha\Security;
 
-use Vendor\Waha\Contracts\ApiKeyProvider;
-use Vendor\Waha\Contracts\HostRegistry;
-use Vendor\Waha\Models\WahaSessionKey;
+use AfroTechnology\Waha\Contracts\ApiKeyProvider;
+use AfroTechnology\Waha\Contracts\HostRegistry;
+use AfroTechnology\Waha\Models\WahaSessionKey;
 
 class DbApiKeyProvider implements ApiKeyProvider
 {

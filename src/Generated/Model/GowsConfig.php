@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Model;
+namespace AfroTechnology\Waha\Generated\Model;
 
 use \ArrayAccess;
-use \Vendor\Waha\Generated\ObjectSerializer;
+use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * GowsConfig Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -57,7 +57,7 @@ class GowsConfig implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'storage' => '\Vendor\Waha\Generated\Model\GowsStorageConfig'
+        'storage' => '\AfroTechnology\Waha\Generated\Model\GowsStorageConfig'
     ];
 
     /**
@@ -292,7 +292,7 @@ class GowsConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets storage
      *
-     * @return \Vendor\Waha\Generated\Model\GowsStorageConfig|null
+     * @return \AfroTechnology\Waha\Generated\Model\GowsStorageConfig|null
      */
     public function getStorage()
     {
@@ -302,7 +302,7 @@ class GowsConfig implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets storage
      *
-     * @param \Vendor\Waha\Generated\Model\GowsStorageConfig|null $storage storage
+     * @param \AfroTechnology\Waha\Generated\Model\GowsStorageConfig|null $storage storage
      *
      * @return self
      */

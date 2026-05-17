@@ -7126,6 +7126,39 @@
                 ]
             }
         },
+        "/webhooks/chatwoot/{session}/{id}": {
+            "post": {
+                "operationId": "ChatwootWebhookController_webhook",
+                "summary": "Chatwoot Webhook",
+                "description": "Chatwoot Webhook",
+                "parameters": [
+                    {
+                        "name": "session",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "🧩 Apps"
+                ]
+            }
+        },
         "/api/apps/chatwoot/locales": {
             "get": {
                 "operationId": "ChatwootLocalesController_getLanguages",
@@ -7149,6 +7182,46 @@
                 },
                 "tags": [
                     "🧩 Apps"
+                ],
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/api/s3/{bucket}/*parts": {
+            "get": {
+                "operationId": "S3ProxyController_get",
+                "summary": "Get files from S3",
+                "parameters": [
+                    {
+                        "name": "bucket",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "parts",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "🗄️ Storage"
                 ],
                 "security": [
                     {

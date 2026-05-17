@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Vendor\Waha\Generated\Api;
+namespace AfroTechnology\Waha\Generated\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Vendor\Waha\Generated\ApiException;
-use Vendor\Waha\Generated\Configuration;
-use Vendor\Waha\Generated\HeaderSelector;
-use Vendor\Waha\Generated\ObjectSerializer;
+use AfroTechnology\Waha\Generated\ApiException;
+use AfroTechnology\Waha\Generated\Configuration;
+use AfroTechnology\Waha\Generated\HeaderSelector;
+use AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
  * ChannelsApi Class Doc Comment
  *
  * @category Class
- * @package  Vendor\Waha\Generated
+ * @package  AfroTechnology\Waha\Generated
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -167,12 +167,12 @@ class ChannelsApi
      * Create a new channel.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateChannelRequest $create_channel_request create_channel_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateChannelRequest $create_channel_request create_channel_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerCreate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Channel
+     * @return \AfroTechnology\Waha\Generated\Model\Channel
      */
     public function channelsControllerCreate($session, $create_channel_request, string $contentType = self::contentTypes['channelsControllerCreate'][0])
     {
@@ -186,12 +186,12 @@ class ChannelsApi
      * Create a new channel.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateChannelRequest $create_channel_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateChannelRequest $create_channel_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerCreate'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Channel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Channel, HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerCreateWithHttpInfo($session, $create_channel_request, string $contentType = self::contentTypes['channelsControllerCreate'][0])
     {
@@ -234,11 +234,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\Vendor\Waha\Generated\Model\Channel' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Channel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Channel' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Channel' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -256,13 +256,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Channel', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Channel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Channel';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Channel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -295,7 +295,7 @@ class ChannelsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Channel',
+                        '\AfroTechnology\Waha\Generated\Model\Channel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -311,7 +311,7 @@ class ChannelsApi
      * Create a new channel.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateChannelRequest $create_channel_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateChannelRequest $create_channel_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -333,7 +333,7 @@ class ChannelsApi
      * Create a new channel.
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateChannelRequest $create_channel_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateChannelRequest $create_channel_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -341,7 +341,7 @@ class ChannelsApi
      */
     public function channelsControllerCreateAsyncWithHttpInfo($session, $create_channel_request, string $contentType = self::contentTypes['channelsControllerCreate'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Channel';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Channel';
         $request = $this->channelsControllerCreateRequest($session, $create_channel_request, $contentType);
 
         return $this->client
@@ -384,7 +384,7 @@ class ChannelsApi
      * Create request for operation 'channelsControllerCreate'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\CreateChannelRequest $create_channel_request (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\CreateChannelRequest $create_channel_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -501,7 +501,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerDelete'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -519,7 +519,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerDelete'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -755,7 +755,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerFollow'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -773,7 +773,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerFollow'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1009,9 +1009,9 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID or invite code from invite link https://www.whatsapp.com/channel/11111 (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Channel
+     * @return \AfroTechnology\Waha\Generated\Model\Channel
      */
     public function channelsControllerGet($session, $id, string $contentType = self::contentTypes['channelsControllerGet'][0])
     {
@@ -1028,9 +1028,9 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID or invite code from invite link https://www.whatsapp.com/channel/11111 (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerGet'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Channel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Channel, HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerGetWithHttpInfo($session, $id, string $contentType = self::contentTypes['channelsControllerGet'][0])
     {
@@ -1073,11 +1073,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Channel' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Channel' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Channel' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Channel' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1095,13 +1095,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Channel', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Channel', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Channel';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Channel';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1134,7 +1134,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Channel',
+                        '\AfroTechnology\Waha\Generated\Model\Channel',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1180,7 +1180,7 @@ class ChannelsApi
      */
     public function channelsControllerGetAsyncWithHttpInfo($session, $id, string $contentType = self::contentTypes['channelsControllerGet'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Channel';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Channel';
         $request = $this->channelsControllerGetRequest($session, $id, $contentType);
 
         return $this->client
@@ -1340,9 +1340,9 @@ class ChannelsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerGetSearchCategories'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ChannelCategory[]
+     * @return \AfroTechnology\Waha\Generated\Model\ChannelCategory[]
      */
     public function channelsControllerGetSearchCategories($session, string $contentType = self::contentTypes['channelsControllerGetSearchCategories'][0])
     {
@@ -1358,9 +1358,9 @@ class ChannelsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerGetSearchCategories'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ChannelCategory[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ChannelCategory[], HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerGetSearchCategoriesWithHttpInfo($session, string $contentType = self::contentTypes['channelsControllerGetSearchCategories'][0])
     {
@@ -1403,11 +1403,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ChannelCategory[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ChannelCategory[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ChannelCategory[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ChannelCategory[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1425,13 +1425,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ChannelCategory[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ChannelCategory[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ChannelCategory[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelCategory[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1464,7 +1464,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ChannelCategory[]',
+                        '\AfroTechnology\Waha\Generated\Model\ChannelCategory[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1508,7 +1508,7 @@ class ChannelsApi
      */
     public function channelsControllerGetSearchCategoriesAsyncWithHttpInfo($session, string $contentType = self::contentTypes['channelsControllerGetSearchCategories'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ChannelCategory[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelCategory[]';
         $request = $this->channelsControllerGetSearchCategoriesRequest($session, $contentType);
 
         return $this->client
@@ -1652,9 +1652,9 @@ class ChannelsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerGetSearchCountries'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ChannelCountry[]
+     * @return \AfroTechnology\Waha\Generated\Model\ChannelCountry[]
      */
     public function channelsControllerGetSearchCountries($session, string $contentType = self::contentTypes['channelsControllerGetSearchCountries'][0])
     {
@@ -1670,9 +1670,9 @@ class ChannelsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerGetSearchCountries'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ChannelCountry[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ChannelCountry[], HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerGetSearchCountriesWithHttpInfo($session, string $contentType = self::contentTypes['channelsControllerGetSearchCountries'][0])
     {
@@ -1715,11 +1715,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ChannelCountry[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ChannelCountry[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ChannelCountry[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ChannelCountry[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1737,13 +1737,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ChannelCountry[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ChannelCountry[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ChannelCountry[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelCountry[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1776,7 +1776,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ChannelCountry[]',
+                        '\AfroTechnology\Waha\Generated\Model\ChannelCountry[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1820,7 +1820,7 @@ class ChannelsApi
      */
     public function channelsControllerGetSearchCountriesAsyncWithHttpInfo($session, string $contentType = self::contentTypes['channelsControllerGetSearchCountries'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ChannelCountry[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelCountry[]';
         $request = $this->channelsControllerGetSearchCountriesRequest($session, $contentType);
 
         return $this->client
@@ -1964,9 +1964,9 @@ class ChannelsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerGetSearchViews'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ChannelView[]
+     * @return \AfroTechnology\Waha\Generated\Model\ChannelView[]
      */
     public function channelsControllerGetSearchViews($session, string $contentType = self::contentTypes['channelsControllerGetSearchViews'][0])
     {
@@ -1982,9 +1982,9 @@ class ChannelsApi
      * @param  mixed $session Session name (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerGetSearchViews'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ChannelView[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ChannelView[], HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerGetSearchViewsWithHttpInfo($session, string $contentType = self::contentTypes['channelsControllerGetSearchViews'][0])
     {
@@ -2027,11 +2027,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ChannelView[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ChannelView[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ChannelView[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ChannelView[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2049,13 +2049,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ChannelView[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ChannelView[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ChannelView[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelView[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2088,7 +2088,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ChannelView[]',
+                        '\AfroTechnology\Waha\Generated\Model\ChannelView[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2132,7 +2132,7 @@ class ChannelsApi
      */
     public function channelsControllerGetSearchViewsAsyncWithHttpInfo($session, string $contentType = self::contentTypes['channelsControllerGetSearchViews'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ChannelView[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelView[]';
         $request = $this->channelsControllerGetSearchViewsRequest($session, $contentType);
 
         return $this->client
@@ -2277,9 +2277,9 @@ class ChannelsApi
      * @param  string $role role (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerList'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\Channel[]
+     * @return \AfroTechnology\Waha\Generated\Model\Channel[]
      */
     public function channelsControllerList($session, $role = null, string $contentType = self::contentTypes['channelsControllerList'][0])
     {
@@ -2296,9 +2296,9 @@ class ChannelsApi
      * @param  string $role (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerList'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\Channel[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\Channel[], HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerListWithHttpInfo($session, $role = null, string $contentType = self::contentTypes['channelsControllerList'][0])
     {
@@ -2341,11 +2341,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\Channel[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\Channel[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\Channel[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\Channel[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2363,13 +2363,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\Channel[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\Channel[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\Channel[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\Channel[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2402,7 +2402,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\Channel[]',
+                        '\AfroTechnology\Waha\Generated\Model\Channel[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2448,7 +2448,7 @@ class ChannelsApi
      */
     public function channelsControllerListAsyncWithHttpInfo($session, $role = null, string $contentType = self::contentTypes['channelsControllerList'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\Channel[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\Channel[]';
         $request = $this->channelsControllerListRequest($session, $role, $contentType);
 
         return $this->client
@@ -2604,7 +2604,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerMute'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -2622,7 +2622,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerMute'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2860,9 +2860,9 @@ class ChannelsApi
      * @param  float $limit limit (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerPreviewChannelMessages'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ChannelMessage[]
+     * @return \AfroTechnology\Waha\Generated\Model\ChannelMessage[]
      */
     public function channelsControllerPreviewChannelMessages($session, $id, $download_media, $limit, string $contentType = self::contentTypes['channelsControllerPreviewChannelMessages'][0])
     {
@@ -2881,9 +2881,9 @@ class ChannelsApi
      * @param  float $limit (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerPreviewChannelMessages'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ChannelMessage[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ChannelMessage[], HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerPreviewChannelMessagesWithHttpInfo($session, $id, $download_media, $limit, string $contentType = self::contentTypes['channelsControllerPreviewChannelMessages'][0])
     {
@@ -2926,11 +2926,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ChannelMessage[]' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ChannelMessage[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ChannelMessage[]' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ChannelMessage[]' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2948,13 +2948,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ChannelMessage[]', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ChannelMessage[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ChannelMessage[]';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelMessage[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2987,7 +2987,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ChannelMessage[]',
+                        '\AfroTechnology\Waha\Generated\Model\ChannelMessage[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3037,7 +3037,7 @@ class ChannelsApi
      */
     public function channelsControllerPreviewChannelMessagesAsyncWithHttpInfo($session, $id, $download_media, $limit, string $contentType = self::contentTypes['channelsControllerPreviewChannelMessages'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ChannelMessage[]';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelMessage[]';
         $request = $this->channelsControllerPreviewChannelMessagesRequest($session, $id, $download_media, $limit, $contentType);
 
         return $this->client
@@ -3229,12 +3229,12 @@ class ChannelsApi
      * Search for channels (by text)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text channel_search_by_text (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text channel_search_by_text (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByText'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ChannelListResult
+     * @return \AfroTechnology\Waha\Generated\Model\ChannelListResult
      */
     public function channelsControllerSearchByText($session, $channel_search_by_text, string $contentType = self::contentTypes['channelsControllerSearchByText'][0])
     {
@@ -3248,12 +3248,12 @@ class ChannelsApi
      * Search for channels (by text)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByText'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ChannelListResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ChannelListResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerSearchByTextWithHttpInfo($session, $channel_search_by_text, string $contentType = self::contentTypes['channelsControllerSearchByText'][0])
     {
@@ -3296,11 +3296,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ChannelListResult' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ChannelListResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ChannelListResult' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ChannelListResult' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3318,13 +3318,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ChannelListResult', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ChannelListResult', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ChannelListResult';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelListResult';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3357,7 +3357,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ChannelListResult',
+                        '\AfroTechnology\Waha\Generated\Model\ChannelListResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3373,7 +3373,7 @@ class ChannelsApi
      * Search for channels (by text)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByText'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3395,7 +3395,7 @@ class ChannelsApi
      * Search for channels (by text)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByText'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3403,7 +3403,7 @@ class ChannelsApi
      */
     public function channelsControllerSearchByTextAsyncWithHttpInfo($session, $channel_search_by_text, string $contentType = self::contentTypes['channelsControllerSearchByText'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ChannelListResult';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelListResult';
         $request = $this->channelsControllerSearchByTextRequest($session, $channel_search_by_text, $contentType);
 
         return $this->client
@@ -3446,7 +3446,7 @@ class ChannelsApi
      * Create request for operation 'channelsControllerSearchByText'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByText $channel_search_by_text (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByText'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3560,12 +3560,12 @@ class ChannelsApi
      * Search for channels (by view)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view channel_search_by_view (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view channel_search_by_view (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByView'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Vendor\Waha\Generated\Model\ChannelListResult
+     * @return \AfroTechnology\Waha\Generated\Model\ChannelListResult
      */
     public function channelsControllerSearchByView($session, $channel_search_by_view, string $contentType = self::contentTypes['channelsControllerSearchByView'][0])
     {
@@ -3579,12 +3579,12 @@ class ChannelsApi
      * Search for channels (by view)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByView'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Vendor\Waha\Generated\Model\ChannelListResult, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AfroTechnology\Waha\Generated\Model\ChannelListResult, HTTP status code, HTTP response headers (array of strings)
      */
     public function channelsControllerSearchByViewWithHttpInfo($session, $channel_search_by_view, string $contentType = self::contentTypes['channelsControllerSearchByView'][0])
     {
@@ -3627,11 +3627,11 @@ class ChannelsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Vendor\Waha\Generated\Model\ChannelListResult' === '\SplFileObject') {
+                    if ('\AfroTechnology\Waha\Generated\Model\ChannelListResult' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Vendor\Waha\Generated\Model\ChannelListResult' !== 'string') {
+                        if ('\AfroTechnology\Waha\Generated\Model\ChannelListResult' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3649,13 +3649,13 @@ class ChannelsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Vendor\Waha\Generated\Model\ChannelListResult', []),
+                        ObjectSerializer::deserialize($content, '\AfroTechnology\Waha\Generated\Model\ChannelListResult', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Vendor\Waha\Generated\Model\ChannelListResult';
+            $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelListResult';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3688,7 +3688,7 @@ class ChannelsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Vendor\Waha\Generated\Model\ChannelListResult',
+                        '\AfroTechnology\Waha\Generated\Model\ChannelListResult',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3704,7 +3704,7 @@ class ChannelsApi
      * Search for channels (by view)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3726,7 +3726,7 @@ class ChannelsApi
      * Search for channels (by view)
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3734,7 +3734,7 @@ class ChannelsApi
      */
     public function channelsControllerSearchByViewAsyncWithHttpInfo($session, $channel_search_by_view, string $contentType = self::contentTypes['channelsControllerSearchByView'][0])
     {
-        $returnType = '\Vendor\Waha\Generated\Model\ChannelListResult';
+        $returnType = '\AfroTechnology\Waha\Generated\Model\ChannelListResult';
         $request = $this->channelsControllerSearchByViewRequest($session, $channel_search_by_view, $contentType);
 
         return $this->client
@@ -3777,7 +3777,7 @@ class ChannelsApi
      * Create request for operation 'channelsControllerSearchByView'
      *
      * @param  mixed $session Session name (required)
-     * @param  \Vendor\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view (required)
+     * @param  \AfroTechnology\Waha\Generated\Model\ChannelSearchByView $channel_search_by_view (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerSearchByView'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3894,7 +3894,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerUnfollow'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -3912,7 +3912,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerUnfollow'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -4148,7 +4148,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerUnmute'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -4166,7 +4166,7 @@ class ChannelsApi
      * @param  mixed $id WhatsApp Channel ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['channelsControllerUnmute'] to see the possible values for this operation
      *
-     * @throws \Vendor\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \AfroTechnology\Waha\Generated\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
