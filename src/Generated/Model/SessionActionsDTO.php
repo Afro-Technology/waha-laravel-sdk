@@ -1,6 +1,6 @@
 <?php
 /**
- * LidToPhoneNumber
+ * SessionActionsDTO
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
- * LidToPhoneNumber Class Doc Comment
+ * SessionActionsDTO Class Doc Comment
  *
  * @category Class
  * @package  AfroTechnology\Waha\Generated
@@ -40,7 +40,7 @@ use \AfroTechnology\Waha\Generated\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
+class SessionActionsDTO implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'LidToPhoneNumber';
+    protected static $openAPIModelName = 'SessionActionsDTO';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,12 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'lid' => 'string',
-        'pn' => 'string'
+        'read' => 'bool',
+        'send' => 'bool',
+        'control' => 'bool',
+        'setting' => 'bool',
+        'app' => 'bool',
+        'delete' => 'bool'
     ];
 
     /**
@@ -69,8 +73,12 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'lid' => null,
-        'pn' => null
+        'read' => null,
+        'send' => null,
+        'control' => null,
+        'setting' => null,
+        'app' => null,
+        'delete' => null
     ];
 
     /**
@@ -79,8 +87,12 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'lid' => false,
-        'pn' => false
+        'read' => false,
+        'send' => false,
+        'control' => false,
+        'setting' => false,
+        'app' => false,
+        'delete' => false
     ];
 
     /**
@@ -169,8 +181,12 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'lid' => 'lid',
-        'pn' => 'pn'
+        'read' => 'read',
+        'send' => 'send',
+        'control' => 'control',
+        'setting' => 'setting',
+        'app' => 'app',
+        'delete' => 'delete'
     ];
 
     /**
@@ -179,8 +195,12 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'lid' => 'setLid',
-        'pn' => 'setPn'
+        'read' => 'setRead',
+        'send' => 'setSend',
+        'control' => 'setControl',
+        'setting' => 'setSetting',
+        'app' => 'setApp',
+        'delete' => 'setDelete'
     ];
 
     /**
@@ -189,8 +209,12 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'lid' => 'getLid',
-        'pn' => 'getPn'
+        'read' => 'getRead',
+        'send' => 'getSend',
+        'control' => 'getControl',
+        'setting' => 'getSetting',
+        'app' => 'getApp',
+        'delete' => 'getDelete'
     ];
 
     /**
@@ -250,8 +274,12 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('lid', $data ?? [], null);
-        $this->setIfExists('pn', $data ?? [], null);
+        $this->setIfExists('read', $data ?? [], null);
+        $this->setIfExists('send', $data ?? [], null);
+        $this->setIfExists('control', $data ?? [], null);
+        $this->setIfExists('setting', $data ?? [], null);
+        $this->setIfExists('app', $data ?? [], null);
+        $this->setIfExists('delete', $data ?? [], null);
     }
 
     /**
@@ -297,55 +325,163 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets lid
+     * Gets read
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getLid()
+    public function getRead()
     {
-        return $this->container['lid'];
+        return $this->container['read'];
     }
 
     /**
-     * Sets lid
+     * Sets read
      *
-     * @param string|null $lid Linked ID for the user
+     * @param bool|null $read Read session data (messages, contacts, chats, groups, etc.)
      *
      * @return self
      */
-    public function setLid($lid)
+    public function setRead($read)
     {
-        if (is_null($lid)) {
-            throw new \InvalidArgumentException('non-nullable lid cannot be null');
+        if (is_null($read)) {
+            throw new \InvalidArgumentException('non-nullable read cannot be null');
         }
-        $this->container['lid'] = $lid;
+        $this->container['read'] = $read;
 
         return $this;
     }
 
     /**
-     * Gets pn
+     * Gets send
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getPn()
+    public function getSend()
     {
-        return $this->container['pn'];
+        return $this->container['send'];
     }
 
     /**
-     * Sets pn
+     * Sets send
      *
-     * @param string|null $pn Phone number (chat id) for the user
+     * @param bool|null $send Send messages and manage session entities (groups, labels, channels, contacts, profile)
      *
      * @return self
      */
-    public function setPn($pn)
+    public function setSend($send)
     {
-        if (is_null($pn)) {
-            throw new \InvalidArgumentException('non-nullable pn cannot be null');
+        if (is_null($send)) {
+            throw new \InvalidArgumentException('non-nullable send cannot be null');
         }
-        $this->container['pn'] = $pn;
+        $this->container['send'] = $send;
+
+        return $this;
+    }
+
+    /**
+     * Gets control
+     *
+     * @return bool|null
+     */
+    public function getControl()
+    {
+        return $this->container['control'];
+    }
+
+    /**
+     * Sets control
+     *
+     * @param bool|null $control Session lifecycle: start, stop, restart, logout, authenticate
+     *
+     * @return self
+     */
+    public function setControl($control)
+    {
+        if (is_null($control)) {
+            throw new \InvalidArgumentException('non-nullable control cannot be null');
+        }
+        $this->container['control'] = $control;
+
+        return $this;
+    }
+
+    /**
+     * Gets setting
+     *
+     * @return bool|null
+     */
+    public function getSetting()
+    {
+        return $this->container['setting'];
+    }
+
+    /**
+     * Sets setting
+     *
+     * @param bool|null $setting Session config: update session settings
+     *
+     * @return self
+     */
+    public function setSetting($setting)
+    {
+        if (is_null($setting)) {
+            throw new \InvalidArgumentException('non-nullable setting cannot be null');
+        }
+        $this->container['setting'] = $setting;
+
+        return $this;
+    }
+
+    /**
+     * Gets app
+     *
+     * @return bool|null
+     */
+    public function getApp()
+    {
+        return $this->container['app'];
+    }
+
+    /**
+     * Sets app
+     *
+     * @param bool|null $app Manage apps
+     *
+     * @return self
+     */
+    public function setApp($app)
+    {
+        if (is_null($app)) {
+            throw new \InvalidArgumentException('non-nullable app cannot be null');
+        }
+        $this->container['app'] = $app;
+
+        return $this;
+    }
+
+    /**
+     * Gets delete
+     *
+     * @return bool|null
+     */
+    public function getDelete()
+    {
+        return $this->container['delete'];
+    }
+
+    /**
+     * Sets delete
+     *
+     * @param bool|null $delete Delete the session
+     *
+     * @return self
+     */
+    public function setDelete($delete)
+    {
+        if (is_null($delete)) {
+            throw new \InvalidArgumentException('non-nullable delete cannot be null');
+        }
+        $this->container['delete'] = $delete;
 
         return $this;
     }
