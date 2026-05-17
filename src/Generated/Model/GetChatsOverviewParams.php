@@ -1,6 +1,6 @@
 <?php
 /**
- * LidToPhoneNumber
+ * GetChatsOverviewParams
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
- * LidToPhoneNumber Class Doc Comment
+ * GetChatsOverviewParams Class Doc Comment
  *
  * @category Class
  * @package  AfroTechnology\Waha\Generated
@@ -40,7 +40,7 @@ use \AfroTechnology\Waha\Generated\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetChatsOverviewParams implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'LidToPhoneNumber';
+    protected static $openAPIModelName = 'GetChatsOverviewParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'lid' => 'string',
-        'pn' => 'string'
+        'merge' => 'bool',
+        'limit' => 'float',
+        'offset' => 'float'
     ];
 
     /**
@@ -69,8 +70,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'lid' => null,
-        'pn' => null
+        'merge' => null,
+        'limit' => null,
+        'offset' => null
     ];
 
     /**
@@ -79,8 +81,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'lid' => false,
-        'pn' => false
+        'merge' => false,
+        'limit' => false,
+        'offset' => false
     ];
 
     /**
@@ -169,8 +172,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'lid' => 'lid',
-        'pn' => 'pn'
+        'merge' => 'merge',
+        'limit' => 'limit',
+        'offset' => 'offset'
     ];
 
     /**
@@ -179,8 +183,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'lid' => 'setLid',
-        'pn' => 'setPn'
+        'merge' => 'setMerge',
+        'limit' => 'setLimit',
+        'offset' => 'setOffset'
     ];
 
     /**
@@ -189,8 +194,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'lid' => 'getLid',
-        'pn' => 'getPn'
+        'merge' => 'getMerge',
+        'limit' => 'getLimit',
+        'offset' => 'getOffset'
     ];
 
     /**
@@ -250,8 +256,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('lid', $data ?? [], null);
-        $this->setIfExists('pn', $data ?? [], null);
+        $this->setIfExists('merge', $data ?? [], true);
+        $this->setIfExists('limit', $data ?? [], 20);
+        $this->setIfExists('offset', $data ?? [], null);
     }
 
     /**
@@ -297,55 +304,82 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets lid
+     * Gets merge
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getLid()
+    public function getMerge()
     {
-        return $this->container['lid'];
+        return $this->container['merge'];
     }
 
     /**
-     * Sets lid
+     * Sets merge
      *
-     * @param string|null $lid Linked ID for the user
+     * @param bool|null $merge Merge LID (@lid) and phone-number (@c.us) chats referencing the same contact
      *
      * @return self
      */
-    public function setLid($lid)
+    public function setMerge($merge)
     {
-        if (is_null($lid)) {
-            throw new \InvalidArgumentException('non-nullable lid cannot be null');
+        if (is_null($merge)) {
+            throw new \InvalidArgumentException('non-nullable merge cannot be null');
         }
-        $this->container['lid'] = $lid;
+        $this->container['merge'] = $merge;
 
         return $this;
     }
 
     /**
-     * Gets pn
+     * Gets limit
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getPn()
+    public function getLimit()
     {
-        return $this->container['pn'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets pn
+     * Sets limit
      *
-     * @param string|null $pn Phone number (chat id) for the user
+     * @param float|null $limit limit
      *
      * @return self
      */
-    public function setPn($pn)
+    public function setLimit($limit)
     {
-        if (is_null($pn)) {
-            throw new \InvalidArgumentException('non-nullable pn cannot be null');
+        if (is_null($limit)) {
+            throw new \InvalidArgumentException('non-nullable limit cannot be null');
         }
-        $this->container['pn'] = $pn;
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     *
+     * @return float|null
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     *
+     * @param float|null $offset offset
+     *
+     * @return self
+     */
+    public function setOffset($offset)
+    {
+        if (is_null($offset)) {
+            throw new \InvalidArgumentException('non-nullable offset cannot be null');
+        }
+        $this->container['offset'] = $offset;
 
         return $this;
     }

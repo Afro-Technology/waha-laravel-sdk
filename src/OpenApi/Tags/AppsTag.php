@@ -13,6 +13,6 @@ use AfroTechnology\Waha\OpenApi\WahaTagProxy;
  * @method mixed get(string $id)
  * @method mixed update(string $id, string $id2, string $app, array $config, ?bool $enabled = true, ?string $session = null)
  * @method mixed delete(string $id)
- * @method array getLanguages()
+ * @method mixed post()
  */
 final class AppsTag extends WahaTagProxy {}
