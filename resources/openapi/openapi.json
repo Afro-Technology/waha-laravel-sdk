@@ -496,7 +496,6 @@
             "put": {
                 "operationId": "SessionsController_update",
                 "summary": "Update a session",
-                "description": "",
                 "parameters": [
                     {
                         "name": "session",
@@ -1919,6 +1918,17 @@
                         }
                     },
                     {
+                        "name": "merge",
+                        "required": false,
+                        "in": "query",
+                        "description": "Merge LID (@lid) and phone-number (@c.us) chats referencing the same contact",
+                        "schema": {
+                            "default": true,
+                            "example": true,
+                            "type": "boolean"
+                        }
+                    },
+                    {
                         "name": "chatId",
                         "required": true,
                         "in": "query",
@@ -2141,6 +2151,43 @@
                 ]
             }
         },
+        "/api/{session}/new-message-id": {
+            "get": {
+                "operationId": "ChattingController_getNewMessageId",
+                "summary": "Generate a new message ID",
+                "parameters": [
+                    {
+                        "name": "session",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "default": "default"
+                        },
+                        "description": "Session name"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NewMessageIDResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "📤 Chatting"
+                ],
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/api/{session}/chats": {
             "get": {
                 "operationId": "ChatsController_getChats",
@@ -2180,6 +2227,17 @@
                                 "asc"
                             ],
                             "type": "string"
+                        }
+                    },
+                    {
+                        "name": "merge",
+                        "required": false,
+                        "in": "query",
+                        "description": "Merge LID (@lid) and phone-number (@c.us) chats referencing the same contact",
+                        "schema": {
+                            "default": true,
+                            "example": true,
+                            "type": "boolean"
                         }
                     },
                     {
@@ -2227,6 +2285,17 @@
                             "default": "default"
                         },
                         "description": "Session name"
+                    },
+                    {
+                        "name": "merge",
+                        "required": false,
+                        "in": "query",
+                        "description": "Merge LID (@lid) and phone-number (@c.us) chats referencing the same contact",
+                        "schema": {
+                            "default": true,
+                            "example": true,
+                            "type": "boolean"
+                        }
                     },
                     {
                         "name": "limit",
@@ -2474,6 +2543,17 @@
                         }
                     },
                     {
+                        "name": "merge",
+                        "required": false,
+                        "in": "query",
+                        "description": "Merge LID (@lid) and phone-number (@c.us) chats referencing the same contact",
+                        "schema": {
+                            "default": true,
+                            "example": true,
+                            "type": "boolean"
+                        }
+                    },
+                    {
                         "name": "limit",
                         "required": true,
                         "in": "query",
@@ -2694,6 +2774,17 @@
                         "required": false,
                         "in": "query",
                         "description": "Download media for messages",
+                        "schema": {
+                            "default": true,
+                            "example": true,
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "merge",
+                        "required": false,
+                        "in": "query",
+                        "description": "Merge LID (@lid) and phone-number (@c.us) chats referencing the same contact",
                         "schema": {
                             "default": true,
                             "example": true,
@@ -4629,6 +4720,47 @@
                 ]
             }
         },
+        "/api/{session}/contacts/{id}": {
+            "get": {
+                "operationId": "ContactsSessionController_get",
+                "summary": "Get contact basic info",
+                "description": "The method always return result, even if the phone number is not registered in WhatsApp. For that - use /contacts/check-exists endpoint below.",
+                "parameters": [
+                    {
+                        "name": "session",
+                        "required": true,
+                        "in": "path",
+                        "schema": {
+                            "default": "default"
+                        },
+                        "description": "Session name"
+                    },
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "description": "Contact ID",
+                        "schema": {
+                            "example": "123456789@c.us",
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "👤 Contacts"
+                ],
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
         "/api/{session}/contacts/{chatId}": {
             "put": {
                 "operationId": "ContactsSessionController_put",
@@ -6290,7 +6422,7 @@
         "/api/screenshot": {
             "get": {
                 "operationId": "ScreenshotController_screenshot",
-                "summary": "Get a screenshot of the current WhatsApp session (**WEBJS** only)",
+                "summary": "Get a screenshot of the current WhatsApp session (**WEBJS/WPP** only)",
                 "parameters": [
                     {
                         "name": "session",
@@ -7126,29 +7258,10 @@
                 ]
             }
         },
-        "/webhooks/chatwoot/{session}/{id}": {
+        "/mcp": {
             "post": {
-                "operationId": "ChatwootWebhookController_webhook",
-                "summary": "Chatwoot Webhook",
-                "description": "Chatwoot Webhook",
-                "parameters": [
-                    {
-                        "name": "session",
-                        "required": true,
-                        "in": "path",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "id",
-                        "required": true,
-                        "in": "path",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
+                "operationId": "McpController_post",
+                "parameters": [],
                 "responses": {
                     "201": {
                         "description": ""
@@ -7158,83 +7271,12 @@
                     "🧩 Apps"
                 ]
             }
-        },
-        "/api/apps/chatwoot/locales": {
-            "get": {
-                "operationId": "ChatwootLocalesController_getLanguages",
-                "summary": "Get available languages for Chatwoot app",
-                "description": "Get available languages for Chatwoot app",
-                "parameters": [],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "tags": [
-                    "🧩 Apps"
-                ],
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
-        },
-        "/api/s3/{bucket}/*parts": {
-            "get": {
-                "operationId": "S3ProxyController_get",
-                "summary": "Get files from S3",
-                "parameters": [
-                    {
-                        "name": "bucket",
-                        "required": true,
-                        "in": "path",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "parts",
-                        "required": true,
-                        "in": "path",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
-                    }
-                },
-                "tags": [
-                    "🗄️ Storage"
-                ],
-                "security": [
-                    {
-                        "api_key": []
-                    }
-                ]
-            }
         }
     },
     "info": {
         "title": "WAHA - WhatsApp HTTP API",
         "description": "<b>WhatsApp HTTP API</b> that you can run in a click!<br/><a href=\"/dashboard\"><b>📊 Dashboard</b></a><br/><br/>Learn more:<ul><li><a href=\"https://waha.devlike.pro/\" target=\"_blank\">Documentation</a></li><li><a href=\"https://waha.devlike.pro/docs/how-to/engines/#features\" target=\"_blank\">Supported features in engines</a></li><li><a href=\"https://github.com/devlikeapro/waha\" target=\"_blank\">GitHub - WAHA Core</a></li><li><a href=\"https://github.com/devlikeapro/waha-plus\" target=\"_blank\">GitHub - WAHA Plus</a></li></ul><p>Support the project and get WAHA Plus version!</p><ul><li><a href=\"https://waha.devlike.pro/docs/how-to/plus-version/\" target=\"_blank\">WAHA Plus</a></li><li><a href=\"https://patreon.com/wa_http_api/\" target=\"_blank\">Patreon</a></li><li><a href=\"https://boosty.to/wa-http-api/\" target=\"_blank\">Boosty</a></li><li><a href=\"https://portal.devlike.pro/\" target=\"_blank\">Patron Portal</a></li></ul>",
-        "version": "2026.2.2",
+        "version": "2026.4.3",
         "contact": []
     },
     "tags": [
@@ -7366,6 +7408,35 @@
                     "phoneNumber"
                 ]
             },
+            "SessionActionsDTO": {
+                "type": "object",
+                "properties": {
+                    "read": {
+                        "type": "boolean",
+                        "description": "Read session data (messages, contacts, chats, groups, etc.)"
+                    },
+                    "send": {
+                        "type": "boolean",
+                        "description": "Send messages and manage session entities (groups, labels, channels, contacts, profile)"
+                    },
+                    "control": {
+                        "type": "boolean",
+                        "description": "Session lifecycle: start, stop, restart, logout, authenticate"
+                    },
+                    "setting": {
+                        "type": "boolean",
+                        "description": "Session config: update session settings"
+                    },
+                    "app": {
+                        "type": "boolean",
+                        "description": "Manage apps"
+                    },
+                    "delete": {
+                        "type": "boolean",
+                        "description": "Delete the session"
+                    }
+                }
+            },
             "ApiKeyRequest": {
                 "type": "object",
                 "properties": {
@@ -7384,6 +7455,15 @@
                         "type": "boolean",
                         "default": true,
                         "example": true
+                    },
+                    "actions": {
+                        "nullable": true,
+                        "default": null,
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/SessionActionsDTO"
+                            }
+                        ]
                     }
                 },
                 "required": [
@@ -7415,6 +7495,14 @@
                         "type": "string",
                         "nullable": true,
                         "example": "default"
+                    },
+                    "actions": {
+                        "nullable": true,
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/SessionActionsDTO"
+                            }
+                        ]
                     }
                 },
                 "required": [
@@ -7537,6 +7625,16 @@
                     "message": {
                         "type": "string",
                         "description": "Optional auto-reply message sent after the call is rejected. If empty, no message is sent."
+                    },
+                    "waitBeforeDecline": {
+                        "type": "number",
+                        "minimum": 0,
+                        "description": "Seconds to wait before declining the call. If not set or undefined, the call is declined immediately (0 seconds)."
+                    },
+                    "waitBeforeResponse": {
+                        "type": "number",
+                        "minimum": 0,
+                        "description": "Seconds to wait before sending the auto-reply message. If not set or undefined, the message is sent immediately (0 seconds)."
                     }
                 },
                 "required": [
@@ -7574,6 +7672,36 @@
                     "group"
                 ]
             },
+            "McpAppConfig": {
+                "type": "object",
+                "properties": {
+                    "actions": {
+                        "description": "Permission scopes for the generated API key.",
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/SessionActionsDTO"
+                            }
+                        ]
+                    },
+                    "key_id": {
+                        "type": "string",
+                        "example": "key_id_00000000000000000000000000",
+                        "nullable": true,
+                        "readOnly": true,
+                        "description": "ID of the API key created for this app. Read-only."
+                    },
+                    "key": {
+                        "type": "string",
+                        "example": "key_11111111111AAAAAAAAAAAAAAAAAAAAA",
+                        "nullable": true,
+                        "readOnly": true,
+                        "description": "The API key value. Populated on read; not persisted in this record."
+                    }
+                },
+                "required": [
+                    "actions"
+                ]
+            },
             "App": {
                 "type": "object",
                 "properties": {
@@ -7591,7 +7719,8 @@
                     "app": {
                         "enum": [
                             "chatwoot",
-                            "calls"
+                            "calls",
+                            "mcp"
                         ],
                         "type": "string"
                     },
@@ -8257,6 +8386,12 @@
                         "type": "string",
                         "example": "11111111111@c.us"
                     },
+                    "id": {
+                        "type": "string",
+                        "description": "Pre-generated message id",
+                        "example": "BBBBBBBBBBBBBBBBB",
+                        "default": null
+                    },
                     "reply_to": {
                         "type": "string",
                         "description": "The ID of the message to reply to - false_11111111111@c.us_AAAAAAAAAAAAAAAAAAAA",
@@ -8387,13 +8522,26 @@
                         "type": "string",
                         "example": "Hello!"
                     },
+                    "hasMedia": {
+                        "type": "boolean",
+                        "description": "Indicates if the message has media available for download"
+                    },
+                    "media": {
+                        "description": "Media object for the message if any and downloaded",
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/WAMedia"
+                            }
+                        ]
+                    },
                     "_data": {
                         "type": "object",
                         "description": "Raw data from reply's message"
                     }
                 },
                 "required": [
-                    "id"
+                    "id",
+                    "hasMedia"
                 ]
             },
             "WAMessage": {
@@ -9132,6 +9280,12 @@
                         "type": "string",
                         "example": "11111111111@c.us"
                     },
+                    "id": {
+                        "type": "string",
+                        "description": "Pre-generated message id",
+                        "example": "BBBBBBBBBBBBBBBBB",
+                        "default": null
+                    },
                     "messageId": {
                         "type": "string",
                         "example": "false_11111111111@c.us_AAAAAAAAAAAAAAAAAAAA"
@@ -9286,6 +9440,12 @@
                         "type": "string",
                         "example": "11111111111@c.us"
                     },
+                    "id": {
+                        "type": "string",
+                        "description": "Pre-generated message id",
+                        "example": "BBBBBBBBBBBBBBBBB",
+                        "default": null
+                    },
                     "reply_to": {
                         "type": "string",
                         "description": "The ID of the message to reply to - false_11111111111@c.us_AAAAAAAAAAAAAAAAAAAA",
@@ -9352,6 +9512,12 @@
                     "chatId": {
                         "type": "string",
                         "example": "11111111111@c.us"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "Pre-generated message id",
+                        "example": "BBBBBBBBBBBBBBBBB",
+                        "default": null
                     },
                     "latitude": {
                         "type": "number",
@@ -9437,6 +9603,12 @@
                         "type": "string",
                         "example": "11111111111@c.us"
                     },
+                    "id": {
+                        "type": "string",
+                        "description": "Pre-generated message id",
+                        "example": "BBBBBBBBBBBBBBBBB",
+                        "default": null
+                    },
                     "contacts": {
                         "type": "array",
                         "items": {
@@ -9518,6 +9690,12 @@
                         "type": "string",
                         "example": "11111111111@c.us"
                     },
+                    "id": {
+                        "type": "string",
+                        "description": "Pre-generated message id",
+                        "example": "BBBBBBBBBBBBBBBBB",
+                        "default": null
+                    },
                     "reply_to": {
                         "type": "string",
                         "description": "The ID of the message to reply to - false_11111111111@c.us_AAAAAAAAAAAAAAAAAAAA",
@@ -9553,22 +9731,41 @@
                         "type": "string",
                         "example": "11111111111@c.us"
                     },
-                    "session": {
+                    "id": {
                         "type": "string",
-                        "default": "default"
+                        "description": "Pre-generated message id",
+                        "example": "BBBBBBBBBBBBBBBBB",
+                        "default": null
                     },
                     "url": {
                         "type": "string"
                     },
                     "title": {
                         "type": "string"
+                    },
+                    "session": {
+                        "type": "string",
+                        "default": "default"
                     }
                 },
                 "required": [
                     "chatId",
-                    "session",
                     "url",
-                    "title"
+                    "title",
+                    "session"
+                ]
+            },
+            "NewMessageIDResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Pre-generated message id",
+                        "example": "BBBBBBBBBBBBBBBBB"
+                    }
+                },
+                "required": [
+                    "id"
                 ]
             },
             "ChatSummary": {
@@ -9600,9 +9797,15 @@
                     "_chat"
                 ]
             },
-            "OverviewPaginationParams": {
+            "GetChatsOverviewParams": {
                 "type": "object",
                 "properties": {
+                    "merge": {
+                        "type": "boolean",
+                        "default": true,
+                        "example": true,
+                        "description": "Merge LID (@lid) and phone-number (@c.us) chats referencing the same contact"
+                    },
                     "limit": {
                         "type": "number",
                         "default": 20
@@ -9631,7 +9834,7 @@
                 "type": "object",
                 "properties": {
                     "pagination": {
-                        "$ref": "#/components/schemas/OverviewPaginationParams"
+                        "$ref": "#/components/schemas/GetChatsOverviewParams"
                     },
                     "filter": {
                         "$ref": "#/components/schemas/OverviewFilter"
@@ -10209,19 +10412,6 @@
                         }
                     }
                 }
-            },
-            "NewMessageIDResponse": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Pre-generated message id",
-                        "example": "BBBBBBBBBBBBBBBBB"
-                    }
-                },
-                "required": [
-                    "id"
-                ]
             },
             "Label": {
                 "type": "object",
@@ -10875,6 +11065,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -10966,6 +11157,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -11135,6 +11327,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -11226,6 +11419,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -11368,6 +11562,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -11459,6 +11654,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -11569,6 +11765,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -11785,6 +11982,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -11946,6 +12144,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -12070,6 +12269,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -12182,6 +12382,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -12312,6 +12513,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -12403,6 +12605,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -12585,6 +12788,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -12676,6 +12880,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -12787,6 +12992,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -12911,6 +13117,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13002,6 +13209,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13093,6 +13301,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13184,6 +13393,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13275,6 +13485,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13394,6 +13605,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13485,6 +13697,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13663,6 +13876,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13754,6 +13968,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13860,6 +14075,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -13951,6 +14167,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -14043,6 +14260,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],
@@ -14135,6 +14353,7 @@
                     "engine": {
                         "enum": [
                             "WEBJS",
+                            "WPP",
                             "NOWEB",
                             "GOWS"
                         ],

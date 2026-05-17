@@ -1,6 +1,6 @@
 <?php
 /**
- * LidToPhoneNumber
+ * McpAppConfig
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AfroTechnology\Waha\Generated\ObjectSerializer;
 
 /**
- * LidToPhoneNumber Class Doc Comment
+ * McpAppConfig Class Doc Comment
  *
  * @category Class
  * @package  AfroTechnology\Waha\Generated
@@ -40,7 +40,7 @@ use \AfroTechnology\Waha\Generated\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
+class McpAppConfig implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'LidToPhoneNumber';
+    protected static $openAPIModelName = 'McpAppConfig';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'lid' => 'string',
-        'pn' => 'string'
+        'actions' => '\AfroTechnology\Waha\Generated\Model\SessionActionsDTO',
+        'key_id' => 'string',
+        'key' => 'string'
     ];
 
     /**
@@ -69,8 +70,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'lid' => null,
-        'pn' => null
+        'actions' => null,
+        'key_id' => null,
+        'key' => null
     ];
 
     /**
@@ -79,8 +81,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'lid' => false,
-        'pn' => false
+        'actions' => false,
+        'key_id' => false,
+        'key' => false
     ];
 
     /**
@@ -169,8 +172,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'lid' => 'lid',
-        'pn' => 'pn'
+        'actions' => 'actions',
+        'key_id' => 'key_id',
+        'key' => 'key'
     ];
 
     /**
@@ -179,8 +183,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'lid' => 'setLid',
-        'pn' => 'setPn'
+        'actions' => 'setActions',
+        'key_id' => 'setKeyId',
+        'key' => 'setKey'
     ];
 
     /**
@@ -189,8 +194,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'lid' => 'getLid',
-        'pn' => 'getPn'
+        'actions' => 'getActions',
+        'key_id' => 'getKeyId',
+        'key' => 'getKey'
     ];
 
     /**
@@ -250,8 +256,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('lid', $data ?? [], null);
-        $this->setIfExists('pn', $data ?? [], null);
+        $this->setIfExists('actions', $data ?? [], null);
+        $this->setIfExists('key_id', $data ?? [], null);
+        $this->setIfExists('key', $data ?? [], null);
     }
 
     /**
@@ -281,6 +288,9 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['actions'] === null) {
+            $invalidProperties[] = "'actions' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -297,55 +307,82 @@ class LidToPhoneNumber implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets lid
+     * Gets actions
      *
-     * @return string|null
+     * @return \AfroTechnology\Waha\Generated\Model\SessionActionsDTO
      */
-    public function getLid()
+    public function getActions()
     {
-        return $this->container['lid'];
+        return $this->container['actions'];
     }
 
     /**
-     * Sets lid
+     * Sets actions
      *
-     * @param string|null $lid Linked ID for the user
+     * @param \AfroTechnology\Waha\Generated\Model\SessionActionsDTO $actions Permission scopes for the generated API key.
      *
      * @return self
      */
-    public function setLid($lid)
+    public function setActions($actions)
     {
-        if (is_null($lid)) {
-            throw new \InvalidArgumentException('non-nullable lid cannot be null');
+        if (is_null($actions)) {
+            throw new \InvalidArgumentException('non-nullable actions cannot be null');
         }
-        $this->container['lid'] = $lid;
+        $this->container['actions'] = $actions;
 
         return $this;
     }
 
     /**
-     * Gets pn
+     * Gets key_id
      *
      * @return string|null
      */
-    public function getPn()
+    public function getKeyId()
     {
-        return $this->container['pn'];
+        return $this->container['key_id'];
     }
 
     /**
-     * Sets pn
+     * Sets key_id
      *
-     * @param string|null $pn Phone number (chat id) for the user
+     * @param string|null $key_id ID of the API key created for this app. Read-only.
      *
      * @return self
      */
-    public function setPn($pn)
+    public function setKeyId($key_id)
     {
-        if (is_null($pn)) {
-            throw new \InvalidArgumentException('non-nullable pn cannot be null');
+        if (is_null($key_id)) {
+            throw new \InvalidArgumentException('non-nullable key_id cannot be null');
         }
-        $this->container['pn'] = $pn;
+        $this->container['key_id'] = $key_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets key
+     *
+     * @return string|null
+     */
+    public function getKey()
+    {
+        return $this->container['key'];
+    }
+
+    /**
+     * Sets key
+     *
+     * @param string|null $key The API key value. Populated on read; not persisted in this record.
+     *
+     * @return self
+     */
+    public function setKey($key)
+    {
+        if (is_null($key)) {
+            throw new \InvalidArgumentException('non-nullable key cannot be null');
+        }
+        $this->container['key'] = $key;
 
         return $this;
     }
