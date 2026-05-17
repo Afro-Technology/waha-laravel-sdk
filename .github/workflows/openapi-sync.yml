@@ -7,7 +7,10 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+
+concurrency:
+  group: openapi-sync-main
+  cancel-in-progress: false
 
 jobs:
   sync:
@@ -25,11 +28,6 @@ jobs:
           php-version: "8.4"
           tools: composer
           coverage: none
-
-      - name: Setup Node (optional; keep if you ever switch driver to npx)
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist
@@ -114,31 +112,68 @@ jobs:
         run: |
           docker rm -f waha || true
 
-      - name: Check git diff
+      - name: Validate changed paths
         id: diff
         run: |
-          if git diff --quiet; then
+          set -e
+
+          changed_files="$(git status --porcelain=v1 --untracked-files=all | sed -E 's/^...//')"
+
+          if [ -z "$changed_files" ]; then
             echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "No changes detected."
+            exit 0
           fi
 
-      - name: Create Pull Request
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Changed files:"
+          printf '%s\n' "$changed_files"
+
+          unexpected=0
+          while IFS= read -r path; do
+            case "$path" in
+              resources/openapi/openapi.json|\
+              src/Generated/*|\
+              src/OpenApi/Tags/*|\
+              src/OpenApi/WahaApiProxy.php|\
+              src/OpenApi/WahaManagerProxy.php|\
+              src/Facades/Waha.php)
+                ;;
+              *)
+                echo "::error file=${path}::OpenAPI sync modified an unexpected file. Review this change manually."
+                unexpected=1
+                ;;
+            esac
+          done <<< "$changed_files"
+
+          if [ "$unexpected" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Run validation
         if: steps.diff.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(openapi): sync spec + regenerate client"
-          branch: "bot/openapi-sync"
-          delete-branch: true
-          title: "chore(openapi): sync spec + regenerate client"
-          body: |
-            Automated update:
-            - fetched OpenAPI spec from running WAHA instance (/ -json)
-            - regenerated client
-            - regenerated IDE helper
-            - applied Pint fixes (if any)
-          labels: |
-            openapi
-            automation
-          base: main
+        run: composer ci:all
+
+      - name: Commit OpenAPI sync to main
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          set -e
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A -- \
+            resources/openapi/openapi.json \
+            src/Generated \
+            src/OpenApi/Tags \
+            src/OpenApi/WahaApiProxy.php \
+            src/OpenApi/WahaManagerProxy.php \
+            src/Facades/Waha.php
+
+          if git diff --cached --quiet; then
+            echo "No staged changes after allowlist; skipping commit."
+            exit 0
+          fi
+
+          git commit -m "chore(openapi): sync spec + regenerate client"
+          git push origin HEAD:main
