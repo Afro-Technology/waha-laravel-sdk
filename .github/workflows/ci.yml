@@ -35,7 +35,9 @@ jobs:
             composer-${{ runner.os }}-php81-runtime-
 
       - name: Install runtime dependencies
-        run: composer update --no-dev --no-interaction --prefer-dist --with-all-dependencies --with "illuminate/support:^10.48"
+        run: |
+          composer remove --dev --no-update --no-interaction laravel/pint larastan/larastan orchestra/testbench phpstan/phpstan phpunit/phpunit
+          composer update --no-dev --no-interaction --prefer-dist --with-all-dependencies --with "illuminate/support:^10.48"
 
   pint:
     name: Pint
