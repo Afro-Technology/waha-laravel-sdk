@@ -10,8 +10,37 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  runtime-compat:
+    name: Install / Laravel 10 / PHP 8.1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          tools: composer
+          coverage: none
+
+      - name: Cache Composer
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.composer/cache/files
+            ~/.cache/composer
+          key: composer-${{ runner.os }}-php81-runtime-${{ hashFiles('composer.json') }}
+          restore-keys: |
+            composer-${{ runner.os }}-php81-runtime-
+
+      - name: Install runtime dependencies
+        run: |
+          composer remove --dev --no-update --no-interaction laravel/pint larastan/larastan orchestra/testbench phpstan/phpstan phpunit/phpunit
+          composer update --no-dev --no-interaction --prefer-dist --with-all-dependencies --with "illuminate/support:^10.48"
+
   pint:
-    name: Pint
+    name: Style / PHP 8.4
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,9 +59,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             ~/.cache/composer
-          key: composer-${{ runner.os }}-php84-${{ hashFiles('composer.lock') }}
+          key: composer-${{ runner.os }}-php84-tools-${{ hashFiles('composer.json') }}
           restore-keys: |
-            composer-${{ runner.os }}-php84-
+            composer-${{ runner.os }}-php84-tools-
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist
@@ -41,7 +70,7 @@ jobs:
         run: composer pint:test
 
   phpstan:
-    name: PHPStan
+    name: Static analysis / PHP 8.4
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -60,9 +89,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             ~/.cache/composer
-          key: composer-${{ runner.os }}-php84-${{ hashFiles('composer.lock') }}
+          key: composer-${{ runner.os }}-php84-tools-${{ hashFiles('composer.json') }}
           restore-keys: |
-            composer-${{ runner.os }}-php84-
+            composer-${{ runner.os }}-php84-tools-
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist
@@ -71,8 +100,42 @@ jobs:
         run: composer stan
 
   phpunit:
-    name: PHPUnit
+    name: Test / Laravel ${{ matrix.laravel }} / PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - laravel: "10"
+            php: "8.2"
+            illuminate: "^10.48"
+            testbench: "^8.0"
+            larastan: "^2.11"
+            phpstan: "^1.12"
+          - laravel: "11"
+            php: "8.2"
+            illuminate: "^11.44"
+            testbench: "^9.0"
+            larastan: "^3.9"
+            phpstan: "^2.1"
+          - laravel: "12"
+            php: "8.2"
+            illuminate: "^12.4"
+            testbench: "^10.0"
+            larastan: "^3.9"
+            phpstan: "^2.1"
+          - laravel: "13"
+            php: "8.3"
+            illuminate: "^13.0"
+            testbench: "^11.0"
+            larastan: "^3.9"
+            phpstan: "^2.1"
+          - laravel: "13"
+            php: "8.4"
+            illuminate: "^13.0"
+            testbench: "^11.0"
+            larastan: "^3.9"
+            phpstan: "^2.1"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -80,7 +143,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.4"
+          php-version: ${{ matrix.php }}
           tools: composer
           coverage: none
 
@@ -90,12 +153,12 @@ jobs:
           path: |
             ~/.composer/cache/files
             ~/.cache/composer
-          key: composer-${{ runner.os }}-php84-${{ hashFiles('composer.lock') }}
+          key: composer-${{ runner.os }}-php${{ matrix.php }}-laravel${{ matrix.laravel }}-${{ hashFiles('composer.json') }}
           restore-keys: |
-            composer-${{ runner.os }}-php84-
+            composer-${{ runner.os }}-php${{ matrix.php }}-laravel${{ matrix.laravel }}-
 
       - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist
+        run: composer update --no-interaction --prefer-dist --with-all-dependencies --with "illuminate/support:${{ matrix.illuminate }}" --with "orchestra/testbench:${{ matrix.testbench }}" --with "larastan/larastan:${{ matrix.larastan }}" --with "phpstan/phpstan:${{ matrix.phpstan }}"
 
       - name: PHPUnit
         run: composer test

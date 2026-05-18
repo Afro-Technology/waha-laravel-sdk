@@ -42,8 +42,8 @@ WAHA (WhatsApp HTTP API / Web WhatsApp gateway) için Laravel odaklı bir SDK.
 
 ### Gereksinimler
 
-- PHP **8.1+**
-- Laravel **10 / 11 / 12**
+- PHP **8.1+** (Laravel 13 için PHP **8.3+** gerekir)
+- Laravel **10 / 11 / 12 / 13**
 - Guzzle **7.5+**
 
 ### Composer ile kurulum
