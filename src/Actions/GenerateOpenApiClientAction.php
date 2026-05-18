@@ -60,6 +60,8 @@ final class GenerateOpenApiClientAction
             throw new \RuntimeException('OpenAPI generation failed.');
         }
 
+        $this->patchPhp84NullableSignatures($outAbs, $logger);
+
         $logger && $logger("Generated client into: {$outAbs}\n");
     }
 
@@ -177,6 +179,66 @@ final class GenerateOpenApiClientAction
         $process->run();
 
         return $process->isSuccessful();
+    }
+
+    /**
+     * OpenAPI Generator's PHP templates can emit PHP 8.4 deprecated implicit nullable defaults.
+     * Keep this post-process narrow so regenerated clients stay runtime-clean without forking templates.
+     */
+    private function patchPhp84NullableSignatures(string $outAbs, ?callable $logger): void
+    {
+        $generatedDir = rtrim($outAbs, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.'Generated';
+        $root = is_dir($generatedDir) ? $generatedDir : $outAbs;
+
+        if (! is_dir($root)) {
+            return;
+        }
+
+        $patchedFiles = 0;
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($root, \FilesystemIterator::SKIP_DOTS)
+        );
+
+        foreach ($iterator as $file) {
+            if (! $file instanceof \SplFileInfo || $file->getExtension() !== 'php') {
+                continue;
+            }
+
+            $path = $file->getPathname();
+            $contents = file_get_contents($path);
+            if (! is_string($contents)) {
+                continue;
+            }
+
+            $patched = str_replace(
+                [
+                    'ClientInterface $client = null',
+                    'Configuration $config = null',
+                    'HeaderSelector $selector = null',
+                    'public function __construct(array $data = null)',
+                    'array $variables = null',
+                ],
+                [
+                    '?ClientInterface $client = null',
+                    '?Configuration $config = null',
+                    '?HeaderSelector $selector = null',
+                    'public function __construct(?array $data = null)',
+                    '?array $variables = null',
+                ],
+                $contents,
+            );
+
+            if ($patched === $contents) {
+                continue;
+            }
+
+            file_put_contents($path, $patched);
+            $patchedFiles++;
+        }
+
+        if ($patchedFiles > 0) {
+            $logger && $logger("Patched PHP 8.4 nullable signatures in {$patchedFiles} generated files.\n");
+        }
     }
 
     private function toAbsolutePath(string $path): string

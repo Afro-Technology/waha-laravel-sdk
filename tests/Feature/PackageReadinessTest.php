@@ -63,6 +63,57 @@ final class PackageReadinessTest extends TestCase
         $this->assertTrue($this->hasPostRoute('webhooks/waha/{hostKey}'));
     }
 
+    public function test_generated_client_has_no_php84_implicit_nullable_defaults(): void
+    {
+        $generatedRoot = dirname(__DIR__, 2).'/src/Generated';
+        $offenders = [];
+
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($generatedRoot, \FilesystemIterator::SKIP_DOTS)
+        );
+
+        foreach ($iterator as $file) {
+            if (! $file instanceof \SplFileInfo || $file->getExtension() !== 'php') {
+                continue;
+            }
+
+            $contents = file_get_contents($file->getPathname());
+            if (! is_string($contents)) {
+                continue;
+            }
+
+            $relativePath = str_replace(dirname(__DIR__, 2).'/', '', $file->getPathname());
+            foreach (explode("\n", $contents) as $index => $line) {
+                if (! str_contains($line, '= null')) {
+                    continue;
+                }
+
+                $hasImplicitClassNullable = (
+                    (str_contains($line, 'ClientInterface $') && ! str_contains($line, '?ClientInterface $'))
+                    || (str_contains($line, 'Configuration $') && ! str_contains($line, '?Configuration $'))
+                    || (str_contains($line, 'HeaderSelector $') && ! str_contains($line, '?HeaderSelector $'))
+                );
+
+                if (
+                    $hasImplicitClassNullable
+                    || (
+                        str_contains($line, 'public function __construct(array $data = null)')
+                        && ! str_contains($line, 'public function __construct(?array $data = null)')
+                    )
+                    || (
+                        str_contains($line, 'array $variables = null')
+                        && ! str_contains($line, '?array $variables = null')
+                    )
+                ) {
+                    $offenders[] = $relativePath.':'.($index + 1);
+                    break;
+                }
+            }
+        }
+
+        $this->assertSame([], $offenders);
+    }
+
     private function hasPostRoute(string $uri): bool
     {
         foreach (RouteFacade::getRoutes()->getRoutes() as $route) {
