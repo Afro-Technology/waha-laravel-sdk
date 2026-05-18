@@ -10,9 +10,19 @@ return [
     | Where hosts and credentials come from:
     | - config: use this config file
     | - db: use package tables (published migrations)
+    | - custom: resolve HostRegistry / ApiKeyProvider from the Laravel container
     */
     'registry' => [
-        'driver' => env('WAHA_REGISTRY_DRIVER', 'config'), // config|db
+        'driver' => env('WAHA_REGISTRY_DRIVER', 'config'), // config|db|custom
+
+        'custom' => [
+            // FQCN implementing AfroTechnology\Waha\Contracts\HostRegistry.
+            'host_registry' => env('WAHA_HOST_REGISTRY'),
+
+            // Optional FQCN implementing AfroTechnology\Waha\Contracts\ApiKeyProvider.
+            // When omitted, ConfigApiKeyProvider reads keys from the custom HostRegistry.
+            'api_key_provider' => env('WAHA_API_KEY_PROVIDER'),
+        ],
     ],
 
     /*

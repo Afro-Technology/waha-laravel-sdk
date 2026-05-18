@@ -149,6 +149,15 @@ Where host definitions come from.
 
 - `registry.driver=config` (default): hosts are read from `config/waha.php` (`waha.hosts.*`).
 - `registry.driver=db`: hosts are stored in package tables (publish + run migrations). Use this if you want to manage hosts from an admin UI or the database.
+- `registry.driver=custom`: hosts and keys are resolved through your own Laravel services implementing `HostRegistry` and, optionally, `ApiKeyProvider`. Use this when the host registry lives in your app, for example encrypted tenant or admin-panel storage.
+
+```env
+WAHA_REGISTRY_DRIVER=custom
+WAHA_HOST_REGISTRY=App\\Waha\\EncryptedHostRegistry
+WAHA_API_KEY_PROVIDER=App\\Waha\\EncryptedApiKeyProvider
+```
+
+If `WAHA_API_KEY_PROVIDER` is omitted, the SDK reads admin and session keys from the host arrays returned by your custom `HostRegistry`.
 
 #### `routing`
 How the SDK chooses a host when you call methods *without* explicitly selecting one.

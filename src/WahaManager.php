@@ -2,6 +2,8 @@
 
 namespace AfroTechnology\Waha;
 
+use AfroTechnology\Waha\Contracts\ApiKeyProvider;
+use AfroTechnology\Waha\Contracts\HostRegistry;
 use AfroTechnology\Waha\Debug\WahaDebugManager;
 use AfroTechnology\Waha\OpenApi\GeneratedClientFactory;
 use AfroTechnology\Waha\OpenApi\OpenApiRouter;
@@ -18,7 +20,12 @@ final class WahaManager
     /**
      * @param  array<string, mixed>  $config
      */
-    public function __construct(private readonly array $config, private readonly WahaDebugManager $debug) {}
+    public function __construct(
+        private readonly array $config,
+        private readonly WahaDebugManager $debug,
+        private readonly ?HostRegistry $hosts = null,
+        private readonly ?ApiKeyProvider $keys = null,
+    ) {}
 
     public function host(string $hostKey): WahaApiProxy
     {
@@ -130,6 +137,8 @@ final class WahaManager
             hostsConfig: is_array($hosts) ? $hosts : [],
             responsesConfig: $this->config['responses'] ?? [],
             debug: $this->debug,
+            hosts: $this->hosts,
+            keys: $this->keys,
         );
     }
 

@@ -498,13 +498,10 @@ class WahaTagProxy
         $baseUrl = rtrim((string) ($host['base_url'] ?? $host['url'] ?? ''), '/');
         $timeout = (int) ($host['timeout_seconds'] ?? $host['timeout'] ?? 30);
 
-        $apiKey = $host['admin_api_key'] ?? $host['token'] ?? null;
-        $headerName = $host['api_key_header'] ?? 'X-Api-Key';
-
-        $headers = ['Accept' => 'application/json'];
-        if (! empty($apiKey)) {
-            $headers[$headerName] = $apiKey;
-        }
+        $headers = [
+            'Accept' => 'application/json',
+            ...$this->clientFactory->authHeaders($this->hostKey),
+        ];
 
         $path = (string) ($op['path'] ?? '');
         $method = strtoupper((string) ($op['httpMethod'] ?? 'get'));
