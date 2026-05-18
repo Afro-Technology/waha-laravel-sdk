@@ -2,8 +2,12 @@
 
 namespace AfroTechnology\Waha\Webhooks\Config;
 
+use AfroTechnology\Waha\Contracts\HostRegistry;
+
 final class WebhookConfigResolver
 {
+    public function __construct(private readonly ?HostRegistry $hosts = null) {}
+
     /**
      * Resolve webhook config for a host by merging global defaults + host overrides.
      *
@@ -23,7 +27,7 @@ final class WebhookConfigResolver
         $global = (array) config('waha.webhooks', []);
 
         /** @var array<string,mixed> $host */
-        $host = (array) config("waha.hosts.{$hostKey}", []);
+        $host = $this->hostConfig($hostKey);
 
         /** @var array<string,mixed> $hostOverrides */
         $hostOverrides = (array) ($host['webhooks'] ?? []);
@@ -76,5 +80,17 @@ final class WebhookConfigResolver
             ],
             'webhook_secret' => $secret,
         ];
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    private function hostConfig(string $hostKey): array
+    {
+        if ($this->hosts && $this->hosts->exists($hostKey)) {
+            return $this->hosts->get($hostKey);
+        }
+
+        return (array) config("waha.hosts.{$hostKey}", []);
     }
 }

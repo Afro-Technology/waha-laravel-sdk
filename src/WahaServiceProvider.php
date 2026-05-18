@@ -27,9 +27,11 @@ use AfroTechnology\Waha\Webhooks\Console\PruneWebhookEventsCommand;
 use AfroTechnology\Waha\Webhooks\EventStore\WebhookEventStoreFactory;
 use AfroTechnology\Waha\Webhooks\Http\WahaWebhookController;
 use AfroTechnology\Waha\Webhooks\WahaWebhookRouter;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Redis\RedisManager;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use RuntimeException;
 
 class WahaServiceProvider extends ServiceProvider
 {
@@ -37,16 +39,40 @@ class WahaServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/waha.php', 'waha');
 
-        $this->app->bind(HostRegistry::class, function () {
-            return config('waha.registry.driver', 'config') === 'db'
+        $this->app->bind(HostRegistry::class, function (Container $app) {
+            $driver = (string) config('waha.registry.driver', 'config');
+
+            if ($driver === 'custom') {
+                return $this->makeConfiguredContract(
+                    $app,
+                    'waha.registry.custom.host_registry',
+                    HostRegistry::class,
+                );
+            }
+
+            return $driver === 'db'
                 ? new DbHostRegistry
                 : new ConfigHostRegistry;
         });
 
-        $this->app->bind(ApiKeyProvider::class, function ($app) {
+        $this->app->bind(ApiKeyProvider::class, function (Container $app) {
             $hosts = $app->make(HostRegistry::class);
+            $driver = (string) config('waha.registry.driver', 'config');
 
-            return config('waha.registry.driver', 'config') === 'db'
+            if ($driver === 'custom') {
+                $customProvider = config('waha.registry.custom.api_key_provider');
+                if (is_string($customProvider) && $customProvider !== '') {
+                    return $this->makeConfiguredContract(
+                        $app,
+                        'waha.registry.custom.api_key_provider',
+                        ApiKeyProvider::class,
+                    );
+                }
+
+                return new ConfigApiKeyProvider($hosts);
+            }
+
+            return $driver === 'db'
                 ? new DbApiKeyProvider($hosts)
                 : new ConfigApiKeyProvider($hosts);
         });
@@ -131,8 +157,13 @@ class WahaServiceProvider extends ServiceProvider
         });
 
         // Single source of truth: Manager singleton
-        $this->app->singleton(WahaManager::class, function () {
-            return new WahaManager(config('waha'), $this->app->make(WahaDebugManager::class));
+        $this->app->singleton(WahaManager::class, function (Container $app) {
+            return new WahaManager(
+                config('waha'),
+                $app->make(WahaDebugManager::class),
+                $app->make(HostRegistry::class),
+                $app->make(ApiKeyProvider::class),
+            );
         });
 
         // Facade accessor: use alias only (NO separate singleton that calls make() again)
@@ -140,7 +171,10 @@ class WahaServiceProvider extends ServiceProvider
         $this->app->alias(WahaManager::class, 'waha');
 
         // Resolver can be singleton.
-        $this->app->singleton(WebhookConfigResolver::class, fn () => new WebhookConfigResolver);
+        $this->app->singleton(
+            WebhookConfigResolver::class,
+            fn (Container $app) => new WebhookConfigResolver($app->make(HostRegistry::class))
+        );
 
         $this->app->singleton(WahaWebhookRouter::class, fn ($app) => new WahaWebhookRouter($app));
 
@@ -204,5 +238,28 @@ class WahaServiceProvider extends ServiceProvider
         } catch (\Throwable $e) {
             return false;
         }
+    }
+
+    /**
+     * @template T of object
+     *
+     * @param  class-string<T>  $contract
+     * @return T
+     */
+    private function makeConfiguredContract(Container $app, string $configKey, string $contract): object
+    {
+        $class = config($configKey);
+
+        if (! is_string($class) || $class === '') {
+            throw new RuntimeException("WAHA custom registry config '{$configKey}' must be a class name.");
+        }
+
+        $instance = $app->make($class);
+
+        if (! $instance instanceof $contract) {
+            throw new RuntimeException("WAHA custom registry class '{$class}' must implement {$contract}.");
+        }
+
+        return $instance;
     }
 }

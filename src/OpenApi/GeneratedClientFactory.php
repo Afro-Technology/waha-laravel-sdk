@@ -2,6 +2,8 @@
 
 namespace AfroTechnology\Waha\OpenApi;
 
+use AfroTechnology\Waha\Contracts\ApiKeyProvider;
+use AfroTechnology\Waha\Contracts\HostRegistry;
 use AfroTechnology\Waha\Debug\WahaDebugManager;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
@@ -18,7 +20,9 @@ final class GeneratedClientFactory
     public function __construct(
         private readonly array $hostsConfig,
         private readonly array $responsesConfig = [],
-        private readonly ?WahaDebugManager $debug = null
+        private readonly ?WahaDebugManager $debug = null,
+        private readonly ?HostRegistry $hosts = null,
+        private readonly ?ApiKeyProvider $keys = null,
     ) {}
 
     /**
@@ -31,7 +35,7 @@ final class GeneratedClientFactory
 
     public function defaultSession(string $hostKey): string
     {
-        $host = $this->hostsConfig[$hostKey] ?? [];
+        $host = $this->hostConfig($hostKey);
         $def = $host['default_session'] ?? $host['defaultSession'] ?? 'default';
 
         return is_string($def) && $def !== '' ? $def : 'default';
@@ -51,10 +55,7 @@ final class GeneratedClientFactory
             );
         }
 
-        $host = $this->hostsConfig[$hostKey] ?? null;
-        if (! $host) {
-            throw new \RuntimeException("WAHA host '{$hostKey}' not configured.");
-        }
+        $host = $this->hostConfig($hostKey);
 
         $baseUrl = rtrim((string) ($host['base_url'] ?? $host['url'] ?? ''), '/');
         if ($baseUrl === '') {
@@ -66,8 +67,8 @@ final class GeneratedClientFactory
 
         // --- API KEY INJECTION (generator-agnostic) ---
         // openapi-generator PHP uses the *header name* as the apiKey identifier (e.g. 'X-Api-Key').
-        $headerName = (string) ($host['api_key_header'] ?? 'X-Api-Key');
-        $apiKey = $host['admin_api_key'] ?? $host['token'] ?? null;
+        $headerName = $this->headerName($hostKey);
+        $apiKey = $this->adminKey($hostKey);
 
         if (is_string($apiKey) && $apiKey !== '') {
             // Primary path (matches generated code):
@@ -93,10 +94,7 @@ final class GeneratedClientFactory
      */
     public function makeRawHttpClient(string $hostKey): Client
     {
-        $host = $this->hostsConfig[$hostKey] ?? null;
-        if (! is_array($host)) {
-            throw new \RuntimeException("WAHA host '{$hostKey}' not configured.");
-        }
+        $host = $this->hostConfig($hostKey);
 
         $timeout = (int) ($host['timeout_seconds'] ?? $host['timeout'] ?? 30);
 
@@ -292,11 +290,54 @@ final class GeneratedClientFactory
      */
     public function hostConfig(string $hostKey): array
     {
+        if ($this->hosts && $this->hosts->exists($hostKey)) {
+            return $this->hosts->get($hostKey);
+        }
+
         $host = $this->hostsConfig[$hostKey] ?? null;
         if (! is_array($host)) {
             throw new \RuntimeException("WAHA host '{$hostKey}' not configured.");
         }
 
         return $host;
+    }
+
+    public function headerName(string $hostKey): string
+    {
+        if ($this->keys) {
+            return $this->keys->headerName($hostKey);
+        }
+
+        $host = $this->hostConfig($hostKey);
+
+        return (string) ($host['api_key_header'] ?? 'X-Api-Key');
+    }
+
+    public function adminKey(string $hostKey): ?string
+    {
+        if ($this->keys) {
+            return $this->keys->adminKey($hostKey);
+        }
+
+        $host = $this->hostConfig($hostKey);
+        $key = $host['admin_api_key'] ?? $host['token'] ?? null;
+
+        return is_string($key) && $key !== '' ? $key : null;
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public function authHeaders(string $hostKey): array
+    {
+        $apiKey = $this->adminKey($hostKey);
+
+        if (! is_string($apiKey) || $apiKey === '') {
+            return [];
+        }
+
+        return [
+            $this->headerName($hostKey) => $apiKey,
+        ];
     }
 }

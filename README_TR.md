@@ -145,6 +145,15 @@ Host tanımlarının nereden geldiğini belirler.
 
 - `registry.driver=config` (varsayılan): host’lar `config/waha.php` içinden okunur (`waha.hosts.*`).
 - `registry.driver=db`: host’lar paket tablolarında saklanır (migration publish + migrate). Host’ları bir admin panelinden / DB’den yönetmek istiyorsan doğru seçim.
+- `registry.driver=custom`: host ve key bilgileri senin Laravel servislerinden çözülür. Servislerin `HostRegistry` ve opsiyonel olarak `ApiKeyProvider` implement etmesi gerekir. Host registry uygulama tarafında, örneğin encrypted tenant veya admin panel storage içinde yaşıyorsa bunu kullan.
+
+```env
+WAHA_REGISTRY_DRIVER=custom
+WAHA_HOST_REGISTRY=App\\Waha\\EncryptedHostRegistry
+WAHA_API_KEY_PROVIDER=App\\Waha\\EncryptedApiKeyProvider
+```
+
+`WAHA_API_KEY_PROVIDER` verilmezse SDK admin/session key değerlerini custom `HostRegistry` dönen host array’lerinden okur.
 
 #### `routing`
 Host’u **otomatik** seçme mantığı (sen `host()` çağırmadığında).
