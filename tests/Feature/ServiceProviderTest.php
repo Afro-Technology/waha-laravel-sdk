@@ -138,6 +138,61 @@ final class ServiceProviderTest extends TestCase
         $this->assertSame(['X-Custom-Waha-Key' => 'custom-session-secret'], $factory->authHeaders('vault', 'vault-session'));
     }
 
+    public function test_openapi_proxy_maps_php_safe_named_arguments_to_openapi_query_and_generated_parameters(): void
+    {
+        $router = new OpenApiRouter((new OpenApiSpecRepository(dirname(__DIR__, 2).'/resources/openapi/openapi.json'))->load());
+        $operation = collect($router->operationsByTag('💬 Chats'))
+            ->first(fn (array $operation): bool => ($operation['alias'] ?? null) === 'getChatMessages');
+
+        $this->assertIsArray($operation);
+
+        config()->set('waha.registry.driver', 'custom');
+        config()->set('waha.registry.custom.host_registry', CustomHostRegistry::class);
+        config()->set('waha.registry.custom.api_key_provider', CustomApiKeyProvider::class);
+
+        $manager = $this->app->make(WahaManager::class);
+        $factoryMethod = new \ReflectionMethod($manager, 'getClientFactory');
+        $factoryMethod->setAccessible(true);
+        $factory = $factoryMethod->invoke($manager);
+
+        $proxy = new WahaTagProxy($router, $factory, 'vault', '💬 Chats');
+        $buildInputs = new \ReflectionMethod($proxy, 'buildOperationInputs');
+        $buildInputs->setAccessible(true);
+        $buildArgs = new \ReflectionMethod($proxy, 'buildCallArgsByReflection');
+        $buildArgs->setAccessible(true);
+
+        $inputs = $buildInputs->invoke($proxy, $operation, [
+            'chat_id' => '11111111111@c.us',
+            'sort_by' => 'timestamp',
+            'sort_order' => 'desc',
+            'download_media' => true,
+            'merge' => true,
+            'limit' => 50,
+            'offset' => 10,
+            'filter_timestamp_lte' => 1774040340,
+            'filter_timestamp_gte' => 1773994500,
+            'filter_from_me' => false,
+            'session' => 'vault-session',
+        ]);
+
+        $this->assertSame('vault-session', $inputs['path']['session']);
+        $this->assertSame('11111111111@c.us', $inputs['path']['chatId']);
+        $this->assertSame(1774040340, $inputs['query']['filter.timestamp.lte']);
+        $this->assertSame(1773994500, $inputs['query']['filter.timestamp.gte']);
+        $this->assertFalse($inputs['query']['filter.fromMe']);
+
+        $api = $factory->makeTagApi('vault', '💬 Chats', 'vault-session');
+        $method = $factory->resolveGeneratedMethod($api, $operation['operationId'] ?? null, 'getChatMessages');
+        $args = $buildArgs->invoke($proxy, $api, $method, $operation, $inputs);
+
+        $this->assertSame(50, $args[0]);
+        $this->assertSame('vault-session', $args[1]);
+        $this->assertSame('11111111111@c.us', $args[2]);
+        $this->assertSame(1774040340, $args[8]);
+        $this->assertSame(1773994500, $args[9]);
+        $this->assertFalse($args[10]);
+    }
+
     public function test_webhook_config_resolver_uses_custom_host_registry(): void
     {
         config()->set('waha.registry.driver', 'custom');
