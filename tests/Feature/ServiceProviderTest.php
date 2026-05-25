@@ -7,7 +7,11 @@ use AfroTechnology\Waha\Contracts\HostRegistry;
 use AfroTechnology\Waha\Facades\Waha as WahaFacade;
 use AfroTechnology\Waha\Generated\Api\StorageApi;
 use AfroTechnology\Waha\OpenApi\GeneratedClientFactory;
+use AfroTechnology\Waha\OpenApi\OpenApiRouter;
+use AfroTechnology\Waha\OpenApi\OpenApiSpecRepository;
 use AfroTechnology\Waha\OpenApi\WahaApiProxy;
+use AfroTechnology\Waha\OpenApi\WahaTagProxy;
+use AfroTechnology\Waha\Support\ApiKeyMissingException;
 use AfroTechnology\Waha\Tests\TestCase;
 use AfroTechnology\Waha\WahaManager;
 use AfroTechnology\Waha\Webhooks\Config\WebhookConfigResolver;
@@ -61,6 +65,77 @@ final class ServiceProviderTest extends TestCase
         $this->assertInstanceOf(StorageApi::class, $api);
         $this->assertSame('https://vault-waha.test', $api->getConfig()->getHost());
         $this->assertSame('custom-secret', $api->getConfig()->getApiKey('X-Custom-Waha-Key'));
+    }
+
+    public function test_openapi_factory_uses_session_scoped_key_when_session_is_known(): void
+    {
+        config()->set('waha.registry.driver', 'custom');
+        config()->set('waha.registry.custom.host_registry', CustomHostRegistry::class);
+        config()->set('waha.registry.custom.api_key_provider', CustomApiKeyProvider::class);
+
+        $manager = $this->app->make(WahaManager::class);
+        $factoryMethod = new \ReflectionMethod($manager, 'getClientFactory');
+        $factoryMethod->setAccessible(true);
+        $factory = $factoryMethod->invoke($manager);
+
+        $api = $factory->makeTagApi('vault', 'Storage', 'vault-session');
+
+        $this->assertInstanceOf(StorageApi::class, $api);
+        $this->assertSame('custom-session-secret', $api->getConfig()->getApiKey('X-Custom-Waha-Key'));
+        $this->assertSame(['X-Custom-Waha-Key' => 'custom-session-secret'], $factory->authHeaders('vault', 'vault-session'));
+    }
+
+    public function test_openapi_factory_rejects_missing_session_key_in_strict_mode(): void
+    {
+        config()->set('waha.registry.driver', 'custom');
+        config()->set('waha.registry.custom.host_registry', CustomHostRegistry::class);
+        config()->set('waha.registry.custom.api_key_provider', CustomApiKeyProvider::class);
+
+        $manager = $this->app->make(WahaManager::class);
+        $factoryMethod = new \ReflectionMethod($manager, 'getClientFactory');
+        $factoryMethod->setAccessible(true);
+        $factory = $factoryMethod->invoke($manager);
+
+        $this->expectException(ApiKeyMissingException::class);
+
+        $factory->authHeaders('vault', 'missing-session');
+    }
+
+    public function test_openapi_proxy_extracts_body_session_before_building_generated_client(): void
+    {
+        $router = new OpenApiRouter((new OpenApiSpecRepository(dirname(__DIR__, 2).'/resources/openapi/openapi.json'))->load());
+        $operation = collect($router->operationsByTag('📤 Chatting'))
+            ->first(fn (array $operation): bool => ($operation['alias'] ?? null) === 'sendText');
+
+        $this->assertIsArray($operation);
+
+        config()->set('waha.registry.driver', 'custom');
+        config()->set('waha.registry.custom.host_registry', CustomHostRegistry::class);
+        config()->set('waha.registry.custom.api_key_provider', CustomApiKeyProvider::class);
+
+        $manager = $this->app->make(WahaManager::class);
+        $factoryMethod = new \ReflectionMethod($manager, 'getClientFactory');
+        $factoryMethod->setAccessible(true);
+        $factory = $factoryMethod->invoke($manager);
+
+        $proxy = new WahaTagProxy($router, $factory, 'vault', '📤 Chatting');
+        $buildInputs = new \ReflectionMethod($proxy, 'buildOperationInputs');
+        $buildInputs->setAccessible(true);
+        $sessionFromInputs = new \ReflectionMethod($proxy, 'sessionFromInputs');
+        $sessionFromInputs->setAccessible(true);
+
+        $inputs = $buildInputs->invoke($proxy, $operation, [
+            '11111111111@c.us',
+            'Hello',
+            null,
+            null,
+            true,
+            false,
+            'vault-session',
+        ]);
+
+        $this->assertSame('vault-session', $sessionFromInputs->invoke($proxy, $inputs));
+        $this->assertSame(['X-Custom-Waha-Key' => 'custom-session-secret'], $factory->authHeaders('vault', 'vault-session'));
     }
 
     public function test_webhook_config_resolver_uses_custom_host_registry(): void

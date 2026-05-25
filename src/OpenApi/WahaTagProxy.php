@@ -103,7 +103,9 @@ class WahaTagProxy
 
     private function invokeOperation(array $op, array $arguments)
     {
-        $api = $this->clientFactory->makeTagApi($this->hostKey, $this->tagName);
+        $inputs = $this->buildOperationInputs($op, $arguments);
+        $session = $this->sessionFromInputs($inputs);
+        $api = $this->clientFactory->makeTagApi($this->hostKey, $this->tagName, $session);
 
         $method = $this->clientFactory->resolveGeneratedMethod(
             api: $api,
@@ -111,7 +113,6 @@ class WahaTagProxy
             alias: (string) ($op['alias'] ?? ''),
         );
 
-        $inputs = $this->buildOperationInputs($op, $arguments);
         $callArgs = $this->buildCallArgsByReflection($api, $method, $op, $inputs);
 
         // If caller wants non-model output, bypass OpenAPI deserialization entirely.
@@ -500,7 +501,7 @@ class WahaTagProxy
 
         $headers = [
             'Accept' => 'application/json',
-            ...$this->clientFactory->authHeaders($this->hostKey),
+            ...$this->clientFactory->authHeaders($this->hostKey, $this->sessionFromInputs($inputs)),
         ];
 
         $path = (string) ($op['path'] ?? '');
@@ -539,6 +540,40 @@ class WahaTagProxy
         $decoded = json_decode($raw, true);
 
         return $decoded ?? $raw;
+    }
+
+    /**
+     * @param  array<string, mixed>  $inputs
+     */
+    private function sessionFromInputs(array $inputs): ?string
+    {
+        foreach (['path', 'query'] as $scope) {
+            $values = $inputs[$scope] ?? null;
+            $value = is_array($values) ? ($values['session'] ?? null) : null;
+            if (is_string($value) && $value !== '') {
+                return $value;
+            }
+        }
+
+        $body = $inputs['body'] ?? null;
+
+        if (is_array($body)) {
+            $value = $body['session'] ?? null;
+
+            return is_string($value) && $value !== '' ? $value : null;
+        }
+
+        if (is_object($body) && method_exists($body, 'getSession')) {
+            try {
+                $value = $body->getSession();
+
+                return is_string($value) && $value !== '' ? $value : null;
+            } catch (\Throwable) {
+                return null;
+            }
+        }
+
+        return null;
     }
 
     private function formatResponse(mixed $value): mixed

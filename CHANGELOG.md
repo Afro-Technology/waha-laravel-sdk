@@ -12,7 +12,7 @@ The format is based on **Keep a Changelog**, and this project follows **Semantic
 -
 
 ### Fixed
--
+- OpenAPI proxy requests now use session-scoped API keys when a session is present, matching the low-level HTTP client behavior.
 
 ## [0.1.0] - 2026-02-25
 ### Added

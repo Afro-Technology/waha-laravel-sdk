@@ -5,6 +5,7 @@ namespace AfroTechnology\Waha\OpenApi;
 use AfroTechnology\Waha\Contracts\ApiKeyProvider;
 use AfroTechnology\Waha\Contracts\HostRegistry;
 use AfroTechnology\Waha\Debug\WahaDebugManager;
+use AfroTechnology\Waha\Support\ApiKeyMissingException;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use Illuminate\Support\Facades\Log;
@@ -41,7 +42,7 @@ final class GeneratedClientFactory
         return is_string($def) && $def !== '' ? $def : 'default';
     }
 
-    public function makeTagApi(string $hostKey, string $tagName): object
+    public function makeTagApi(string $hostKey, string $tagName, ?string $session = null): object
     {
         $method = OpenApiRouter::normalizeTagToMethod($tagName);
         $classShort = ucfirst($method).'Api';
@@ -68,7 +69,7 @@ final class GeneratedClientFactory
         // --- API KEY INJECTION (generator-agnostic) ---
         // openapi-generator PHP uses the *header name* as the apiKey identifier (e.g. 'X-Api-Key').
         $headerName = $this->headerName($hostKey);
-        $apiKey = $this->adminKey($hostKey);
+        $apiKey = $this->apiKey($hostKey, $session);
 
         if (is_string($apiKey) && $apiKey !== '') {
             // Primary path (matches generated code):
@@ -328,9 +329,9 @@ final class GeneratedClientFactory
     /**
      * @return array<string, string>
      */
-    public function authHeaders(string $hostKey): array
+    public function authHeaders(string $hostKey, ?string $session = null): array
     {
-        $apiKey = $this->adminKey($hostKey);
+        $apiKey = $this->apiKey($hostKey, $session);
 
         if (! is_string($apiKey) || $apiKey === '') {
             return [];
@@ -339,5 +340,24 @@ final class GeneratedClientFactory
         return [
             $this->headerName($hostKey) => $apiKey,
         ];
+    }
+
+    private function apiKey(string $hostKey, ?string $session = null): ?string
+    {
+        $apiKey = null;
+
+        if ($this->keys && is_string($session) && $session !== '') {
+            $apiKey = $this->keys->sessionKey($hostKey, $session);
+        }
+
+        if (is_string($apiKey) && $apiKey !== '') {
+            return $apiKey;
+        }
+
+        if ($this->keys && is_string($session) && $session !== '' && $this->keys->mode($hostKey) === 'strict_session_key') {
+            throw new ApiKeyMissingException("Session-scoped API key is required for session '{$session}' on host '{$hostKey}'.");
+        }
+
+        return $this->adminKey($hostKey);
     }
 }
