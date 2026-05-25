@@ -195,12 +195,16 @@ class WahaTagProxy
             }
 
             // Prefer named params for non-session path/query params.
-            if (array_key_exists($pName, $named)) {
+            // OpenAPI may expose query/path names that are not valid PHP named
+            // argument identifiers, e.g. "filter.timestamp.lte". Accept their
+            // PHP-safe aliases such as "filter_timestamp_lte".
+            $namedValue = $this->namedValueForOpenApiParam($named, $pName);
+            if ($namedValue['exists']) {
                 if ($in === 'path') {
-                    $pathParams[$pName] = $named[$pName];
+                    $pathParams[$pName] = $namedValue['value'];
                 }
                 if ($in === 'query') {
-                    $queryParams[$pName] = $named[$pName];
+                    $queryParams[$pName] = $namedValue['value'];
                 }
             }
         }
@@ -352,6 +356,65 @@ class WahaTagProxy
         return new $modelClass($data);
     }
 
+    /**
+     * @param  array<string, mixed>  $named
+     * @return array{exists: bool, value: mixed}
+     */
+    private function namedValueForOpenApiParam(array $named, string $openApiName): array
+    {
+        foreach ($this->openApiParamAliases($openApiName) as $alias) {
+            if (array_key_exists($alias, $named)) {
+                return ['exists' => true, 'value' => $named[$alias]];
+            }
+        }
+
+        return ['exists' => false, 'value' => null];
+    }
+
+    /**
+     * @return list<string>
+     */
+    private function openApiParamAliases(string $openApiName): array
+    {
+        $safeName = str_replace(['.', '-'], '_', $openApiName);
+        $snakeName = $this->normalizeOperationParamName($openApiName);
+
+        return array_values(array_unique(array_filter([
+            $openApiName,
+            $safeName,
+            $snakeName,
+        ], fn (mixed $value): bool => is_string($value) && $value !== '')));
+    }
+
+    /**
+     * @param  array<string, mixed>  $values
+     * @return array{exists: bool, value: mixed}
+     */
+    private function operationValueForGeneratedParam(array $values, string $generatedName): array
+    {
+        if (array_key_exists($generatedName, $values)) {
+            return ['exists' => true, 'value' => $values[$generatedName]];
+        }
+
+        $normalizedGeneratedName = $this->normalizeOperationParamName($generatedName);
+
+        foreach ($values as $key => $value) {
+            if (is_string($key) && $this->normalizeOperationParamName($key) === $normalizedGeneratedName) {
+                return ['exists' => true, 'value' => $value];
+            }
+        }
+
+        return ['exists' => false, 'value' => null];
+    }
+
+    private function normalizeOperationParamName(string $name): string
+    {
+        $name = (string) preg_replace('/(?<!^)[A-Z]/', '_$0', $name);
+        $name = (string) preg_replace('/[^A-Za-z0-9]+/', '_', $name);
+
+        return strtolower(trim($name, '_'));
+    }
+
     private function buildCallArgsByReflection(object $api, string $method, array $op, array $inputs): array
     {
         $rm = new \ReflectionMethod($api, $method);
@@ -366,14 +429,14 @@ class WahaTagProxy
         foreach ($rm->getParameters() as $p) {
             $pName = $p->getName();
 
-            if (is_array($path) && array_key_exists($pName, $path)) {
-                $args[] = $path[$pName];
+            if (is_array($path) && ($pathValue = $this->operationValueForGeneratedParam($path, $pName))['exists']) {
+                $args[] = $pathValue['value'];
 
                 continue;
             }
 
-            if (is_array($query) && array_key_exists($pName, $query)) {
-                $args[] = $query[$pName];
+            if (is_array($query) && ($queryValue = $this->operationValueForGeneratedParam($query, $pName))['exists']) {
+                $args[] = $queryValue['value'];
 
                 continue;
             }
